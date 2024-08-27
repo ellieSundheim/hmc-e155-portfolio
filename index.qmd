@@ -1,0 +1,19 @@
+---
+title: "E155 Portfolio"
+image: images/headshot.jpg
+about:
+    template: jolla
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          href: www.linkedin.com/in/ellie-sundheim
+        - icon: github
+          text: Github
+          href: https://github.com/ellieSundheim
+    
+        
+---
+
+Hi! 
+I'm Ellie, a senior at Harvey Mudd College studying engineering. I'm interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket.
+

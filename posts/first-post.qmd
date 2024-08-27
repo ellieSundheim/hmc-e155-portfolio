@@ -1,0 +1,10 @@
+---
+title: "First Quarto Post"
+description: "Welcome to my Quarto portfolio"
+author: "Ellie Sundheim"
+date: "8/26/24"
+categories:
+  - reflection
+  - labreport
+draft: false
+---
