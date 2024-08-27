@@ -1,0 +1,4 @@
+---
+title: Resources
+---
+This website was created as part of E155: Microprocessors, taught at Harvey Mudd College in Fall 2024 by Prof. Brake. The course website is found [here](https://hmc-e155.github.io/).

@@ -8,3 +8,4 @@ categories:
   - labreport
 draft: false
 ---
+Something that I learned while making this website is that whitespaces can mess up markdown. I also avoided a problem with Github Authentication by choosing the coward's route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start anew.
