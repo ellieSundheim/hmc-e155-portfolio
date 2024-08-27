@@ -1,6 +1,6 @@
 ---
-title: "First Quarto Post"
-description: "Welcome to my Quarto portfolio"
+title: "Learning Goals"
+description: "Answers to the question 'what do I want to get out of this class?'"
 author: "Ellie Sundheim"
 date: "8/26/24"
 categories:
@@ -8,4 +8,6 @@ categories:
   - labreport
 draft: false
 ---
-Something that I learned while making this website is that whitespaces can mess up markdown. I also avoided a problem with Github Authentication by choosing the coward's route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start anew.
+This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.
+
+Note: I'm already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward's route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh.
