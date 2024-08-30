@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This website was created as part of E155: Microprocessors, taught at Harvey Mudd College in Fall 2024 by Prof. Brake. The course website is found here."
+  },
+  {
+    "objectID": "posts/first-post.html",
+    "href": "posts/first-post.html",
+    "title": "Learning Goals",
+    "section": "",
+    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "Learning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
+  },
+  {
+    "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
+    "href": "labs.html#lab-2-multiplexed-7-segment-display",
+    "title": "Labs",
+    "section": "Lab 2: Multiplexed 7-Segment Display",
+    "text": "Lab 2: Multiplexed 7-Segment Display"
+  },
+  {
+    "objectID": "labs.html#lab-3-keypad-scanner",
+    "href": "labs.html#lab-3-keypad-scanner",
+    "title": "Labs",
+    "section": "Lab 3: Keypad Scanner",
+    "text": "Lab 3: Keypad Scanner"
+  },
+  {
+    "objectID": "labs.html#lab-4-arm-assembly-sort",
+    "href": "labs.html#lab-4-arm-assembly-sort",
+    "title": "Labs",
+    "section": "Lab 4: ARM Assembly Sort",
+    "text": "Lab 4: ARM Assembly Sort"
+  },
+  {
+    "objectID": "labs.html#lab-5-digital-audio",
+    "href": "labs.html#lab-5-digital-audio",
+    "title": "Labs",
+    "section": "Lab 5: Digital Audio",
+    "text": "Lab 5: Digital Audio"
+  },
+  {
+    "objectID": "labs.html#lab-6-the-iot-and-spi",
+    "href": "labs.html#lab-6-the-iot-and-spi",
+    "title": "Labs",
+    "section": "Lab 6: The IOT and SPI",
+    "text": "Lab 6: The IOT and SPI"
+  },
+  {
+    "objectID": "labs.html#lab-7-the-advanced-encryption-standard",
+    "href": "labs.html#lab-7-the-advanced-encryption-standard",
+    "title": "Labs",
+    "section": "Lab 7: The Advanced Encryption Standard",
+    "text": "Lab 7: The Advanced Encryption Standard"
+  }
+]
