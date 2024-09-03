@@ -5,7 +5,6 @@ author: "Ellie Sundheim"
 date: "8/26/24"
 categories:
   - reflection
-  - labreport
 draft: false
 ---
 This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.
