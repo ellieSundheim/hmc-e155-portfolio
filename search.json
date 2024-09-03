@@ -112,8 +112,8 @@
     "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
   },
   {
-    "objectID": "labs/lab1/index.html#tldr",
-    "href": "labs/lab1/index.html#tldr",
+    "objectID": "labs/lab1/index.html#summary",
+    "href": "labs/lab1/index.html#summary",
     "title": "Lab 1: Board Assembly and Test",
     "section": "",
     "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
@@ -137,14 +137,7 @@
     "href": "labs/lab1/index.html#requirements",
     "title": "Lab 1: Board Assembly and Test",
     "section": "Requirements",
-    "text": "Requirements"
-  },
-  {
-    "objectID": "labs/lab1/index.html#my-lab-meets-the-following-requirements",
-    "href": "labs/lab1/index.html#my-lab-meets-the-following-requirements",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "My lab meets the following requirements:",
-    "text": "My lab meets the following requirements:\nNumber of hours spent: 15"
+    "text": "Requirements\nMy lab meets the Proficiency specs: - Development board is fully assembled (e.g., all parts soldered) - Verilog module to control LEDs and a 7-segment display written - FPGA programmed with Verilog code. - 7-segment display can display all sixteen hexadecimal digits from 0x0 through 0xF - All digits are unique (e.g., 0x6 and 0xb are different shapes) - DIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.) - LEDs display the specified logic operations properly.\nNumber of hours spent: 15"
   },
   {
     "objectID": "labs/lab1/index.html#comments-for-next-time",
