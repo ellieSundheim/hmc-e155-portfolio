@@ -7,25 +7,46 @@
     "text": "This website was created as part of E155: Microprocessors, taught at Harvey Mudd College in Fall 2024 by Prof. Brake. The course website is found here."
   },
   {
-    "objectID": "posts/first-post.html",
-    "href": "posts/first-post.html",
-    "title": "Learning Goals",
+    "objectID": "posts/lab1-post.html",
+    "href": "posts/lab1-post.html",
+    "title": "Lab 1: Board Assembly and Testing",
     "section": "",
-    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
+    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "E155 Blog",
+    "objectID": "posts/lab1-post.html#tldr",
+    "href": "posts/lab1-post.html#tldr",
+    "title": "Lab 1: Board Assembly and Testing",
     "section": "",
-    "text": "Learning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "E155 Portfolio",
-    "section": "",
-    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
+    "objectID": "posts/lab1-post.html#design-approach",
+    "href": "posts/lab1-post.html#design-approach",
+    "title": "Lab 1: Board Assembly and Testing",
+    "section": "Design Approach",
+    "text": "Design Approach"
+  },
+  {
+    "objectID": "posts/lab1-post.html#testing-approach",
+    "href": "posts/lab1-post.html#testing-approach",
+    "title": "Lab 1: Board Assembly and Testing",
+    "section": "Testing Approach",
+    "text": "Testing Approach"
+  },
+  {
+    "objectID": "posts/lab1-post.html#requirements",
+    "href": "posts/lab1-post.html#requirements",
+    "title": "Lab 1: Board Assembly and Testing",
+    "section": "Requirements?",
+    "text": "Requirements?"
+  },
+  {
+    "objectID": "posts/lab1-post.html#comments-for-next-time",
+    "href": "posts/lab1-post.html#comments-for-next-time",
+    "title": "Lab 1: Board Assembly and Testing",
+    "section": "Comments for next time",
+    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly."
   },
   {
     "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
@@ -68,5 +89,75 @@
     "title": "Labs",
     "section": "Lab 7: The Advanced Encryption Standard",
     "text": "Lab 7: The Advanced Encryption Standard"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "Lab 1: Board Assembly and Testing\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 3, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/lab1/index.html",
+    "href": "labs/lab1/index.html",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "",
+    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
+  },
+  {
+    "objectID": "labs/lab1/index.html#tldr",
+    "href": "labs/lab1/index.html#tldr",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "",
+    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
+  },
+  {
+    "objectID": "labs/lab1/index.html#design-approach",
+    "href": "labs/lab1/index.html#design-approach",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Design Approach",
+    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. My block diagram looks like this:  The full schematic looks like this. I realized after I finished that I had done the current limiting resistor incorrectly- there should be one on each signal line, and the 3.3V to the common anode should not have one."
+  },
+  {
+    "objectID": "labs/lab1/index.html#testing-approach",
+    "href": "labs/lab1/index.html#testing-approach",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Testing Approach",
+    "text": "Testing Approach\nI tested my System Verilog manually by forcing s to each of the values, then comparing seg[6:0] to what it should be. The waveform looks like this:  Note that the led signal is bad. This is because I didn’t properly integrate the HSOSC with the testbench. Since the code was reused from a previous demo project, I was willing to try on hardware rather than continue to simulate this time, but going forward I would fix this before moving on."
+  },
+  {
+    "objectID": "labs/lab1/index.html#requirements",
+    "href": "labs/lab1/index.html#requirements",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Requirements",
+    "text": "Requirements"
+  },
+  {
+    "objectID": "labs/lab1/index.html#my-lab-meets-the-following-requirements",
+    "href": "labs/lab1/index.html#my-lab-meets-the-following-requirements",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "My lab meets the following requirements:",
+    "text": "My lab meets the following requirements:\nNumber of hours spent: 15"
+  },
+  {
+    "objectID": "labs/lab1/index.html#comments-for-next-time",
+    "href": "labs/lab1/index.html#comments-for-next-time",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Comments for next time",
+    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly."
+  },
+  {
+    "objectID": "posts/first-post.html",
+    "href": "posts/first-post.html",
+    "title": "Learning Goals",
+    "section": "",
+    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
   }
 ]

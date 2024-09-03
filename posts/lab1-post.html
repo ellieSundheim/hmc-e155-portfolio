@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ellie Sundheim">
+<meta name="dcterms.date" content="2024-09-03">
+<meta name="description" content="Some lessons were learned…">
 
-<title>E155 Blog – E155 Portfolio</title>
+<title>Lab 1: Board Assembly and Testing – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,65 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -138,7 +81,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">E155 Portfolio</span>
     </a>
   </div>
@@ -149,19 +92,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -175,22 +118,52 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">TL;DR</a></li>
+  <li><a href="#design-approach" id="toc-design-approach" class="nav-link" data-scroll-target="#design-approach">Design Approach</a></li>
+  <li><a href="#testing-approach" id="toc-testing-approach" class="nav-link" data-scroll-target="#testing-approach">Testing Approach</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements?</a></li>
+  <li><a href="#comments-for-next-time" id="toc-comments-for-next-time" class="nav-link" data-scroll-target="#comments-for-next-time">Comments for next time</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">E155 Blog</h1>
-</div>
+<h1 class="title">Lab 1: Board Assembly and Testing</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">labreport</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Some lessons were learned…
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ellie Sundheim </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 3, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -200,73 +173,27 @@ window.Quarto = {
 </header>
 
 
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">TL;DR</h2>
+<p>The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF).</p>
+</section>
+<section id="design-approach" class="level2">
+<h2 class="anchored" data-anchor-id="design-approach">Design Approach</h2>
+</section>
+<section id="testing-approach" class="level2">
+<h2 class="anchored" data-anchor-id="testing-approach">Testing Approach</h2>
+</section>
+<section id="requirements" class="level2">
+<h2 class="anchored" data-anchor-id="requirements">Requirements?</h2>
+</section>
+<section id="comments-for-next-time" class="level2">
+<h2 class="anchored" data-anchor-id="comments-for-next-time">Comments for next time</h2>
+<p>I thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="labreport" data-listing-date-sort="1725346800000" data-listing-file-modified-sort="1725401379481" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206">
-<div class="thumbnail">
-<p><a href="./posts/lab1-post.html" class="no-external"></a></p><a href="./posts/lab1-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/lab1-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/lab1-post.html" class="no-external">Lab 1: Board Assembly and Testing</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/lab1-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/lab1-post.html" class="no-external">Some lessons were learned…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/lab1-post.html" class="no-external">
-<div class="listing-date">
-Sep 3, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="reflection" data-listing-date-sort="1724655600000" data-listing-file-modified-sort="1725400879548" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="143">
-<div class="thumbnail">
-<p><a href="./posts/first-post.html" class="no-external"></a></p><a href="./posts/first-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/first-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/first-post.html" class="no-external">Learning Goals</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/first-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/first-post.html" class="no-external">Answers to the question ‘what do I want to get out of this class?’</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/first-post.html" class="no-external">
-<div class="listing-date">
-Aug 26, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
