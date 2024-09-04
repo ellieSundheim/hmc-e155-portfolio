@@ -1,21 +1,12 @@
 ---
-title: "Lab 1: Board Assembly and Testing"
+title: "Week 1 Reflection"
 description: "Some lessons were learned..."
 author: "Ellie Sundheim"
-date: "9/3/24"
+date: "9/6/24"
 categories:
-  - labreport
+  - reflection
 draft: false
 ---
-## TL;DR
-The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF).
+At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn't the first time I've come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I'm okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.
 
-## Design Approach
-
-## Testing Approach
-
-## Requirements?
-
-## Comments for next time
-I thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I'm fixing this problem by starting earlier this upcoming week. 
-Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading "Testing Your Board" caught me off guard. I'm fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly.
+Anyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It's like breadboarding, but better: I don't have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench.
