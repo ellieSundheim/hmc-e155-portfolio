@@ -9,44 +9,9 @@
   {
     "objectID": "posts/lab1-post.html",
     "href": "posts/lab1-post.html",
-    "title": "Lab 1: Board Assembly and Testing",
+    "title": "Week 1 Reflection",
     "section": "",
-    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
-  },
-  {
-    "objectID": "posts/lab1-post.html#tldr",
-    "href": "posts/lab1-post.html#tldr",
-    "title": "Lab 1: Board Assembly and Testing",
-    "section": "",
-    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
-  },
-  {
-    "objectID": "posts/lab1-post.html#design-approach",
-    "href": "posts/lab1-post.html#design-approach",
-    "title": "Lab 1: Board Assembly and Testing",
-    "section": "Design Approach",
-    "text": "Design Approach"
-  },
-  {
-    "objectID": "posts/lab1-post.html#testing-approach",
-    "href": "posts/lab1-post.html#testing-approach",
-    "title": "Lab 1: Board Assembly and Testing",
-    "section": "Testing Approach",
-    "text": "Testing Approach"
-  },
-  {
-    "objectID": "posts/lab1-post.html#requirements",
-    "href": "posts/lab1-post.html#requirements",
-    "title": "Lab 1: Board Assembly and Testing",
-    "section": "Requirements?",
-    "text": "Requirements?"
-  },
-  {
-    "objectID": "posts/lab1-post.html#comments-for-next-time",
-    "href": "posts/lab1-post.html#comments-for-next-time",
-    "title": "Lab 1: Board Assembly and Testing",
-    "section": "Comments for next time",
-    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly."
+    "text": "At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn’t the first time I’ve come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I’m okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.\nAnyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It’s like breadboarding, but better: I don’t have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench."
   },
   {
     "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
@@ -102,7 +67,7 @@
     "href": "blog.html",
     "title": "E155 Blog",
     "section": "",
-    "text": "Lab 1: Board Assembly and Testing\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 3, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+    "text": "Week 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "labs/lab1/index.html",
