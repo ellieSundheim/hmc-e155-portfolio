@@ -1,27 +1,39 @@
 ---
 title: "Lab 2: Multiplexed Seven Segment Displays"
-about:
-    template: jolla
-    links:
-        - icon: github
-          text: Github
-          href: https://github.com/ellieSundheim/microPs-lab2
 ---
 ## Summary
-The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly.
+The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly.
 
 ## Design and Testing Methodology
 
+The FPGA pins can only handle ??? mA of current (source: ). The resistors were chosen to keep them under this limit with a simple Ohm's Law calculation.
 
+For LEDS: 3.3V/?? mA = ?? \Omega.
+For 2N2906 gates: 3.3V/?? mA = \Omega
+For 2n3906 collector: 5V/?? = ?? \Omega
 
 ## Technical Documentation
+
+The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab2).
+
 ### Block Diagram
-### Schematic
+
+![Lab 2 Block Diagram](/labs/lab2/images/block_diagram_lab2.jpg)
+
+The top level is structural Verilog, which implements the 4 other modules.
+
+### Schematic 
+
 ![Lab 2 Schematic](/labs/lab2/images/lab2_schematic.pdf)
+
 The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.
 
-## Results and Discussion
-One thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low and connecting the same digit selection signal to the gates of the transistors for both anodes.
+## Results and Discussion 
+
+### Testbench 
+The testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time.
+
+One thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn't hurt to use a synchronizer for the inputs.
 
 
 
