@@ -56,6 +56,48 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
+    "objectID": "labs/lab2/index.html",
+    "href": "labs/lab2/index.html",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+  },
+  {
+    "objectID": "labs/lab2/index.html#summary",
+    "href": "labs/lab2/index.html#summary",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+  },
+  {
+    "objectID": "labs/lab2/index.html#design-and-testing-methodology",
+    "href": "labs/lab2/index.html#design-and-testing-methodology",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology"
+  },
+  {
+    "objectID": "labs/lab2/index.html#technical-documentation",
+    "href": "labs/lab2/index.html#technical-documentation",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nBlock Diagram\n\n\nSchematic\n The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+  },
+  {
+    "objectID": "labs/lab2/index.html#results-and-discussion",
+    "href": "labs/lab2/index.html#results-and-discussion",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low and connecting the same digit selection signal to the gates of the transistors for both anodes."
+  },
+  {
+    "objectID": "labs/lab2/index.html#conclusion",
+    "href": "labs/lab2/index.html#conclusion",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 14 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 2)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "E155 Portfolio",
