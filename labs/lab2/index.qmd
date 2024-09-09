@@ -1,3 +1,31 @@
 ---
-title: Lab 2
+title: "Lab 2: Multiplexed Seven Segment Displays"
+about:
+    template: jolla
+    links:
+        - icon: github
+          text: Github
+          href: https://github.com/ellieSundheim/microPs-lab2
 ---
+## Summary
+The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly.
+
+## Design and Testing Methodology
+
+
+
+## Technical Documentation
+### Block Diagram
+### Schematic
+![Lab 2 Schematic](/labs/lab2/images/lab2_schematic.pdf)
+The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.
+
+## Results and Discussion
+One thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low and connecting the same digit selection signal to the gates of the transistors for both anodes.
+
+
+
+## Conclusion
+The design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 14 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 2) 
+
+Licensing really sucks - I wish we had used our first week's lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would've known better what to expect and I keep learning things that weren't in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn't know how to actually disntinguish between non- and synthesizable modules in Radiant.
