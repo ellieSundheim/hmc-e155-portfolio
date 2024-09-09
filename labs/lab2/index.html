@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -117,6 +118,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
@@ -125,59 +127,86 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
   <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
   </ul></li>
-  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#testbench" id="toc-testbench" class="nav-link" data-scroll-target="#testbench">Testbench</a></li>
+  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 2: Multiplexed Seven Segment Displays</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header><main class="content" id="quarto-document-content">
+  
+
+
+</header>
+
 
 <section id="summary" class="level2">
-<h2 data-anchor-id="summary">Summary</h2>
-<p>The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly.</p>
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly.</p>
 </section>
 <section id="design-and-testing-methodology" class="level2">
-<h2 data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>The FPGA pins can only handle ??? mA of current (source: ). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.</p>
+<p>For LEDS: 3.3V/?? mA = ?? . For 2N2906 gates: 3.3V/?? mA = For 2n3906 collector: 5V/?? = ?? </p>
 </section>
 <section id="technical-documentation" class="level2">
-<h2 data-anchor-id="technical-documentation">Technical Documentation</h2>
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab2">here</a>.</p>
 <section id="block-diagram" class="level3">
-<h3 data-anchor-id="block-diagram">Block Diagram</h3>
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab2/images/block_diagram_lab2.jpg" class="img-fluid figure-img"></p>
+<figcaption>Lab 2 Block Diagram</figcaption>
+</figure>
+</div>
+<p>The top level is structural Verilog, which implements the 4 other modules.</p>
 </section>
 <section id="schematic" class="level3">
-<h3 data-anchor-id="schematic">Schematic</h3>
-<p><embed src="../..\labs/lab2/images/lab2_schematic.pdf" class="img-fluid"> The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.</p>
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="../..\labs/lab2/images/lab2_schematic.pdf" class="img-fluid"></p>
+<figcaption>Lab 2 Schematic</figcaption>
+</figure>
+</div>
+<p>The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.</p>
 </section>
 </section>
 <section id="results-and-discussion" class="level2">
-<h2 data-anchor-id="results-and-discussion">Results and Discussion</h2>
-<p>One thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low and connecting the same digit selection signal to the gates of the transistors for both anodes.</p>
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<section id="testbench" class="level3">
+<h3 class="anchored" data-anchor-id="testbench">Testbench</h3>
+<p>The testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time.</p>
+<p>One thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs.</p>
+</section>
 </section>
 <section id="conclusion" class="level2">
-<h2 data-anchor-id="conclusion">Conclusion</h2>
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>The design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 14 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 2)</p>
 <p>Licensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant.</p>
 
 
 </section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://github.com/ellieSundheim/microPs-lab2" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -198,6 +227,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

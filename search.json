@@ -60,35 +60,35 @@
     "href": "labs/lab2/index.html",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "",
-    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
   },
   {
     "objectID": "labs/lab2/index.html#summary",
     "href": "labs/lab2/index.html#summary",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "",
-    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
   },
   {
     "objectID": "labs/lab2/index.html#design-and-testing-methodology",
     "href": "labs/lab2/index.html#design-and-testing-methodology",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology"
+    "text": "Design and Testing Methodology\nThe FPGA pins can only handle ??? mA of current (source: ). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: 3.3V/?? mA = ?? . For 2N2906 gates: 3.3V/?? mA = For 2n3906 collector: 5V/?? = ??"
   },
   {
     "objectID": "labs/lab2/index.html#technical-documentation",
     "href": "labs/lab2/index.html#technical-documentation",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\n\nBlock Diagram\n\n\nSchematic\n The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which implements the 4 other modules.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
   },
   {
     "objectID": "labs/lab2/index.html#results-and-discussion",
     "href": "labs/lab2/index.html#results-and-discussion",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low and connecting the same digit selection signal to the gates of the transistors for both anodes."
+    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
   },
   {
     "objectID": "labs/lab2/index.html#conclusion",
