@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -163,8 +192,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="design-and-testing-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
-<p>The FPGA pins can only handle ??? mA of current (source: ). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.</p>
-<p>For LEDS: 3.3V/?? mA = ?? . For 2N2906 gates: 3.3V/?? mA = For 2n3906 collector: 5V/?? = ?? </p>
+<p>The FPGA pins can only handle <span class="math inline">\(8 \mu A\)</span> of current (source: Table 4.17, row 3V3 in <a href="https://hmc-e155.github.io/assets/doc/FPGA-DS-02008-2-0-iCE40-UltraPlus-Family-Data-Sheet.pdf">the FPGA datasheet</a>). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.</p>
+<p>For LEDS: <span class="math inline">\(3.3V/8 mA =  413 \Omega.\)</span> -&gt; rounded to <span class="math inline">\(470 \Omega\)</span>.</p>
+<p>The gate current <span class="math inline">\(i_b\)</span> is supposed to be no more than 8 mA, so using $ i_b = /frac{V_in - 0.7V}{R_b}$, the gate resistor should be <span class="math inline">\(R_b = 325\Omega\)</span>. With some margin and using common resistor sizes, I used <span class="math inline">\(330 \Omega\)</span>.</p>
+<p>The large current <span class="math inline">\(I_c\)</span> flowing through the transistor is limited to 200 mA by its datasheet, <a href="https://hmc-e155.github.io/assets/doc/2N3906-D.pdf">“MAXIMUM RATINGS” table on page 1</a>. Choosing a factor of safety of 2 means we want 100 mA through each. <span class="math inline">\(5V/ 100 mA = 50 \Omega\)</span> -&gt; used <span class="math inline">\(68 \Omega\)</span> because that was available.</p>
+<p>For each anode, we cannot exceed more than 30 mA per segment - since we’re now powering them with 5V, <span class="math inline">\(R = (5V - 0.7V)/ 0.03 A = 143 \Omega\)</span>. I left them as they were from last week (<span class="math inline">\(150 \Omega\)</span>) because that was close enough.</p>
 </section>
 <section id="technical-documentation" class="level2">
 <h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
@@ -177,16 +209,11 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Lab 2 Block Diagram</figcaption>
 </figure>
 </div>
-<p>The top level is structural Verilog, which implements the 4 other modules.</p>
+<p>The top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.</p>
 </section>
 <section id="schematic" class="level3">
 <h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="../..\labs/lab2/images/lab2_schematic.pdf" class="img-fluid"></p>
-<figcaption>Lab 2 Schematic</figcaption>
-</figure>
-</div>
+<p><embed src="../..\labs/lab2/images/lab2_schematic.pdf" class="img-fluid">{width = 125%}</p>
 <p>The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.</p>
 </section>
 </section>
@@ -194,13 +221,14 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
 <section id="testbench" class="level3">
 <h3 class="anchored" data-anchor-id="testbench">Testbench</h3>
-<p>The testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time.</p>
+<p>The testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time. I learned that ModelSim will default to picoseconds, not nanoseconds, which I figured out when I didn’t see reset finish its initial pulse. I didn’t bother to test the seven segment module again as it didn’t change from last week’s code. <img src="./images/lab2_short_time_scale.png" class="img-fluid" alt="Testbench results for lab 2, short time scale"> <img src="./images/lab2_long_time_scale.png" class="img-fluid" alt="Testbench results for lab 2, longer time scale"></p>
+<p>Going forward, I should probably use testvectors with my testbench, but I appreciated the simple way of just forcing values and pausing as a nice transition from the manual way I did originally.</p>
 <p>One thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs.</p>
 </section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 14 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 2)</p>
+<p>The design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 15 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 3)</p>
 <p>Licensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant.</p>
 
 

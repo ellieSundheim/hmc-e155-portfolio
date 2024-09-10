@@ -74,28 +74,28 @@
     "href": "labs/lab2/index.html#design-and-testing-methodology",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe FPGA pins can only handle ??? mA of current (source: ). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: 3.3V/?? mA = ?? . For 2N2906 gates: 3.3V/?? mA = For 2n3906 collector: 5V/?? = ??"
+    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 \\mu A\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nThe gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = /frac{V_in - 0.7V}{R_b}$, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. Choosing a factor of safety of 2 means we want 100 mA through each. \\(5V/ 100 mA = 50 \\Omega\\) -&gt; used \\(68 \\Omega\\) because that was available.\nFor each anode, we cannot exceed more than 30 mA per segment - since we’re now powering them with 5V, \\(R = (5V - 0.7V)/ 0.03 A = 143 \\Omega\\). I left them as they were from last week (\\(150 \\Omega\\)) because that was close enough."
   },
   {
     "objectID": "labs/lab2/index.html#technical-documentation",
     "href": "labs/lab2/index.html#technical-documentation",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which implements the 4 other modules.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n{width = 125%}\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
   },
   {
     "objectID": "labs/lab2/index.html#results-and-discussion",
     "href": "labs/lab2/index.html#results-and-discussion",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
+    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time. I learned that ModelSim will default to picoseconds, not nanoseconds, which I figured out when I didn’t see reset finish its initial pulse. I didn’t bother to test the seven segment module again as it didn’t change from last week’s code.  \nGoing forward, I should probably use testvectors with my testbench, but I appreciated the simple way of just forcing values and pausing as a nice transition from the manual way I did originally.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
   },
   {
     "objectID": "labs/lab2/index.html#conclusion",
     "href": "labs/lab2/index.html#conclusion",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 14 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 2)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
+    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 15 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 3)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
   },
   {
     "objectID": "index.html",
@@ -116,42 +116,42 @@
     "href": "labs/lab1/index.html",
     "title": "Lab 1: Board Assembly and Test",
     "section": "",
-    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
+    "text": "(Editor’s Note: This lab was updated onn 9/9 to reflect changes made in hopes of acheiving an excellence rating. The original of this page as it was when first submitted can be found on the website Github repo.)"
   },
   {
     "objectID": "labs/lab1/index.html#summary",
     "href": "labs/lab1/index.html#summary",
     "title": "Lab 1: Board Assembly and Test",
-    "section": "",
-    "text": "The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
+    "section": "Summary",
+    "text": "Summary\nThe main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
   },
   {
     "objectID": "labs/lab1/index.html#design-approach",
     "href": "labs/lab1/index.html#design-approach",
     "title": "Lab 1: Board Assembly and Test",
     "section": "Design Approach",
-    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. My block diagram looks like this:  The full schematic looks like this. I realized after I finished that I had done the current limiting resistor incorrectly- there should be one on each signal line, and the 3.3V to the common anode should not have one."
+    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. The oscillator module uses the onboard high speed oscillator (HSOSC) which was configured to run at 24 Mhz and then divided down to 2.4 Hz for led[2]. The led module uses the clock because it has a counter, but the rest of the LEDs use combinational logic. The seven-segment display is its own module for reusability. \nThe schematic shows all the connections to the FPGA. The DIP switches were configured to use internal 100 kOhm pull-up resistors. Putting the same resistor on each line made it so that each LED got the same amount of current running through it. The resistor was chosen so that the current on each segment was no more than 20 mA (which is giving plenty of headroom according to the datasheet, which on page 2, Table “Absolute Maximum Ratings” says 30 mA is the limit.) \\((3.3V - 0.7V)/20 mA = 130 \\Omega\\). I used 150 Ohm resistors because they were available."
   },
   {
     "objectID": "labs/lab1/index.html#testing-approach",
     "href": "labs/lab1/index.html#testing-approach",
     "title": "Lab 1: Board Assembly and Test",
     "section": "Testing Approach",
-    "text": "Testing Approach\nI tested my System Verilog manually by forcing s to each of the values, then comparing seg[6:0] to what it should be. The waveform looks like this:  Note that the led signal is bad. This is because I didn’t properly integrate the HSOSC with the testbench. Since the code was reused from a previous demo project, I was willing to try on hardware rather than continue to simulate this time, but going forward I would fix this before moving on."
+    "text": "Testing Approach\nI tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination. The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24]."
   },
   {
     "objectID": "labs/lab1/index.html#requirements",
     "href": "labs/lab1/index.html#requirements",
     "title": "Lab 1: Board Assembly and Test",
     "section": "Requirements",
-    "text": "Requirements\nMy lab meets the Proficiency specs: - Development board is fully assembled (e.g., all parts soldered) - Verilog module to control LEDs and a 7-segment display written - FPGA programmed with Verilog code. - 7-segment display can display all sixteen hexadecimal digits from 0x0 through 0xF - All digits are unique (e.g., 0x6 and 0xb are different shapes) - DIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.) - LEDs display the specified logic operations properly.\nNumber of hours spent: 15"
+    "text": "Requirements\nMy lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.\nNumber of hours spent: 15 + 2"
   },
   {
     "objectID": "labs/lab1/index.html#comments-for-next-time",
     "href": "labs/lab1/index.html#comments-for-next-time",
     "title": "Lab 1: Board Assembly and Test",
     "section": "Comments for next time",
-    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly."
+    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly. This lab was waaaay easier the second time around when I fixed it for excellence after completing lab 2. I think I just needed more practice with the tools and workflow to be comfortable with it."
   },
   {
     "objectID": "posts/first-post.html",

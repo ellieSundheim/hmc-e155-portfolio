@@ -66,6 +66,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -136,26 +165,28 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </header><main class="content" id="quarto-document-content">
 
+<p>(Editor’s Note: This lab was updated onn 9/9 to reflect changes made in hopes of acheiving an excellence rating. The original of this page as it was when first submitted can be found on the <a href="https://github.com/ellieSundheim/hmc-e155-portfolio">website Github repo</a>.)</p>
 <section id="summary" class="level2">
 <h2 data-anchor-id="summary">Summary</h2>
 <p>The main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF).</p>
 </section>
 <section id="design-approach" class="level2">
 <h2 data-anchor-id="design-approach">Design Approach</h2>
-<p>To design the seven-segment display, I started with the given inputs and outputs of the system. My block diagram looks like this: <img src="./images/lab01_block_diagram.jpg" class="img-fluid" alt="Block diagram"> The full schematic looks like this. I realized after I finished that I had done the current limiting resistor incorrectly- there should be one on each signal line, and the 3.3V to the common anode should not have one. <img src="./images/lab01_schematic.jpg" class="img-fluid" alt="Schematic"></p>
+<p>To design the seven-segment display, I started with the given inputs and outputs of the system. The oscillator module uses the onboard high speed oscillator (HSOSC) which was configured to run at 24 Mhz and then divided down to 2.4 Hz for led[2]. The led module uses the clock because it has a counter, but the rest of the LEDs use combinational logic. The seven-segment display is its own module for reusability. <img src="./images/lab01_block_diagram_redo.jpg" class="img-fluid" alt="New block diagram"></p>
+<p>The schematic shows all the connections to the FPGA. The DIP switches were configured to use internal 100 kOhm pull-up resistors. Putting the same resistor on each line made it so that each LED got the same amount of current running through it. The resistor was chosen so that the current on each segment was no more than 20 mA (which is giving plenty of headroom according to the datasheet, which on page 2, Table “Absolute Maximum Ratings” says 30 mA is the limit.) <span class="math inline">\((3.3V - 0.7V)/20 mA = 130 \Omega\)</span>. I used 150 Ohm resistors because they were available. <img src="./images/lab01_schematic_redo.jpg" class="img-fluid" alt="New Schematic"></p>
 </section>
 <section id="testing-approach" class="level2">
 <h2 data-anchor-id="testing-approach">Testing Approach</h2>
-<p>I tested my System Verilog manually by forcing s to each of the values, then comparing seg[6:0] to what it should be. The waveform looks like this: <img src="./images/lab01_waves.jpg" class="img-fluid" alt="Waveforms from testing"> Note that the led signal is bad. This is because I didn’t properly integrate the HSOSC with the testbench. Since the code was reused from a previous demo project, I was willing to try on hardware rather than continue to simulate this time, but going forward I would fix this before moving on.</p>
+<p>I tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination. The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24]. <img src="./images/lab1redo_testbench.png" class="img-fluid" alt="Oscillator and 7 segment logic"> <img src="./images/lab1_led2_testbench.png" class="img-fluid" alt="led[2] toggling"></p>
 </section>
 <section id="requirements" class="level2">
 <h2 data-anchor-id="requirements">Requirements</h2>
-<p>My lab meets the Proficiency specs: - Development board is fully assembled (e.g., all parts soldered) - Verilog module to control LEDs and a 7-segment display written - FPGA programmed with Verilog code. - 7-segment display can display all sixteen hexadecimal digits from 0x0 through 0xF - All digits are unique (e.g., 0x6 and 0xb are different shapes) - DIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.) - LEDs display the specified logic operations properly.</p>
-<p>Number of hours spent: 15</p>
+<p>My lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.</p>
+<p>Number of hours spent: 15 + 2</p>
 </section>
 <section id="comments-for-next-time" class="level2">
 <h2 data-anchor-id="comments-for-next-time">Comments for next time</h2>
-<p>I thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly.</p>
+<p>I thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly. This lab was waaaay easier the second time around when I fixed it for excellence after completing lab 2. I think I just needed more practice with the tools and workflow to be comfortable with it.</p>
 
 
 </section>
