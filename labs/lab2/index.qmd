@@ -6,11 +6,17 @@ The main goal of this assignement was learn how to multiplex hardware in order t
 
 ## Design and Testing Methodology
 
-The FPGA pins can only handle ??? mA of current (source: ). The resistors were chosen to keep them under this limit with a simple Ohm's Law calculation.
+The FPGA pins can only handle $8 \mu A$ of current (source: Table 4.17, row 3V3 in [the FPGA datasheet](https://hmc-e155.github.io/assets/doc/FPGA-DS-02008-2-0-iCE40-UltraPlus-Family-Data-Sheet.pdf)). The resistors were chosen to keep them under this limit with a simple Ohm's Law calculation.
 
-For LEDS: 3.3V/?? mA = ?? \Omega.
-For 2N2906 gates: 3.3V/?? mA = \Omega
-For 2n3906 collector: 5V/?? = ?? \Omega
+For LEDS: $3.3V/8 mA =  413 \Omega.$ -> rounded to 470 \Omega
+
+The gate current $i_b$ is supposed to be no more than 8 mA, so using 
+$ i_b = /frac{V_in - 0.7V}{R_b} $, we find that the gate resistor should be $R_b = 325\Omega$. With some margin and using common resistor sizes, I used $330 \Omega$
+
+The large current $I_c$ flowing through the transistor is limited to 200 mA in its datasheet, ["MAXIMUM RATINGS" table on page 1](https://hmc-e155.github.io/assets/doc/2N3906-D.pdf). Choosing a factor of safety of 2 means we want 100 mA through each.
+For 2n3906 collector: $5V/ 100 mA = 50 \Omega$ -> used 68 \Omega because that was available.
+
+For each anode, we cannot excced for than 30 mA per segment - since we're now powering them with 5V, $R = 5V/ 0.03 A = 167 \Omega$. I left them from last week ($150 \Omega$) because that was close enough.
 
 ## Technical Documentation
 
@@ -24,7 +30,7 @@ The top level is structural Verilog, which implements the 4 other modules.
 
 ### Schematic 
 
-![Lab 2 Schematic](/labs/lab2/images/lab2_schematic.pdf)
+![Lab 2 Schematic](/labs/lab2/images/lab2_schematic.pdf){width = 125%}
 
 The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.
 
