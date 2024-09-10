@@ -31,7 +31,7 @@ The top level is structural Verilog, which instantiates the 4 other modules. The
 
 ### Schematic 
 
-![Lab 2 Schematic](/labs/lab2/images/lab2_schematic.pdf){width = 125%}
+![Lab 2 Schematic](/labs/lab2/images/lab2_schematic.png)
 
 The schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to.
 
