@@ -81,7 +81,7 @@
     "href": "labs/lab2/index.html#technical-documentation",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n{width = 125%}\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
   },
   {
     "objectID": "labs/lab2/index.html#results-and-discussion",
