@@ -23,7 +23,8 @@ The schematic shows all the connections to the FPGA. The DIP switches were confi
 ## Testing Approach
 I tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination.
 The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24].
-![Oscillator and 7 segment logic](./images/lab1_led2_testbench.png)
+![Oscillator and 7 segment logic](./images/lab1redo_testbench.png)
+![led[2] toggling](./images/lab1_led2_testbench.png)
 
 ## Requirements
 My lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.
