@@ -17,6 +17,8 @@ The large current $I_c$ flowing through the transistor is limited to 200 mA by i
 
 For each anode, we cannot exceed more than 30 mA per segment - since we're now powering them with 5V, $R = (5V - 0.7V)/ 0.03 A = 143 \Omega$. I left them as they were from last week ($150 \Omega$) because that was close enough.
 
+Humans can only see flickering up to about 90 Hz [(source)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8537539/). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount so I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode.
+
 ## Technical Documentation
 
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab2).
