@@ -124,7 +124,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a>
   <ul class="collapse">
   <li><a href="#state-transition-diagram" id="toc-state-transition-diagram" class="nav-link" data-scroll-target="#state-transition-diagram">State Transition Diagram</a></li>
-  <li><a href="#state-transition-table" id="toc-state-transition-table" class="nav-link" data-scroll-target="#state-transition-table">State Transition Table</a></li>
   </ul></li>
   <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
   <ul class="collapse">
@@ -176,9 +175,6 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>State Transition Diagram</figcaption>
 </figure>
 </div>
-</section>
-<section id="state-transition-table" class="level3">
-<h3 class="anchored" data-anchor-id="state-transition-table">State Transition Table</h3>
 <p>I originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).</p>
 <p>The debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit.</p>
 </section>
@@ -225,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). I spent roughly 14.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5)</p>
+<p>The design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)</p>
 
 
 </section>
