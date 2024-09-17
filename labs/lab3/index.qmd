@@ -1,3 +1,50 @@
 ---
 title: Lab 3
 ---
+## Summary
+The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing.
+
+## Design and Testing Methodology
+
+To start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.
+
+I originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).
+
+The debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit.
+
+## Technical Documentation
+
+The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab3).
+
+### Block Diagram
+
+![Lab 3 Block Diagram](/labs/lab3/images/lab3_block_diagram.png)
+
+The top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs. 
+
+### Schematic 
+
+![Lab 3 Schematic](/labs/lab3/images/lab3_schematic.png)
+
+The schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn't match either of the given ones on the lab 3 page. I don't know why we don't have any handheld multimeters that scream when resistance is zero but I would have liked that.
+
+## Results and Discussion 
+
+### Testbench 
+
+I simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later).
+![Synchronizer](/labs/lab3/images/working%20sync%20module.png)
+
+The FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high.
+![Async is out of sync, wrong row is being read in right column](/labs/lab3/images/async%20happened%20during%20r1%20but%20didn't%20register%20until%20r3%20so%20wrong%20num.png)
+
+I fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be "pulse R0 and read R2".
+![Async corrected](/labs/lab3/images/async%20happened%20during%20pulseR1%20so%20output%20was%207%20-%20yay.png)
+
+Here is the full simulation:
+
+![Full simulation](images/it%20sure%20looks%20like%20it%20works%20in%20sim%20but%20the%20hardware%20is%20stuck%20in%2000.png)
+
+## Conclusion
+The design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). I spent roughly 14.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5) 
+

@@ -7,3 +7,4 @@ categories:
   - reflection
 draft: false
 ---
+A slightly late post this week, caused by spending 14 hours of my Friday traveling to my clinic sponsor for a site visit. For me this site visit brought into focus how MicroP's really is just-in-time learning for this project.
