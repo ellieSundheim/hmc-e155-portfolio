@@ -1,0 +1,9 @@
+---
+title: "Week 2 Reflection"
+description: "Connections of every kind"
+author: "Ellie Sundheim"
+date: "9/17/24"
+categories:
+  - reflection
+draft: false
+---
