@@ -11,8 +11,6 @@ To start the design for this lab, I considered how I would need to read the keyp
 ### State Transition Diagram
 ![State Transition Diagram](/labs/lab3/images/Lab3_FSM.jpg)
 
-### State Transition Table
-
 I originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).
 
 The debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit.
@@ -51,5 +49,5 @@ Here is the full simulation:
 ![Full simulation](images/it%20sure%20looks%20like%20it%20works%20in%20sim%20but%20the%20hardware%20is%20stuck%20in%2000.png)
 
 ## Conclusion
-The design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). I spent roughly 14.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5) 
+The design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2) 
 
