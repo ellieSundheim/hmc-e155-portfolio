@@ -1,6 +1,6 @@
 ---
 title: Week 3 Reflection
-description: ""
+description: "Another week, another learning opportunity"
 author: "Ellie Sundheim"
 date: "9/20/24"
 categories:
