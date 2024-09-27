@@ -8,26 +8,44 @@ categories:
 draft: false
 ---
 The project proposal is coming up and I'm taking stock of what ideas I have so far. To be honest, I'm not in love with any of the ones I have right now as they exist, but they're a starting point. Prof Brake's criteria are that it uses the MCU and FPGA meaningfully; my criteria are that I think it's fun and/or cool enough to spend a few late nights on; project partner Daniel's criteria are that it doesn't take a lot of distracting mechanical aspects. The following in no particular order are my ideas and how they fit into everyone's requirements for the project.
+
+
 ## Build-A-Zhu Zhu Pet
 These cute little guys were incredibly popular when I was in second grade. They also seem like something I would be able to build myself from scratch now that I'm in the 16th grade.
+
 Which new hardware? Motor, small speaker
+
 Uses the FPGA? Yes, probably a FSM to track which noises it should be making based on nose button presses and if it should be moving based on back button presses
+
 Uses the MCU? Yes, to control the motor and speaker
+
 Is useful or interesting? I really liked them when I was 7 at least
+
 Involves a lot of mechanical acessories? Maybe...depends on how cute we want them to be
 
 ## Hamster Treadmill
+
 There may or may not have been a theme when I asked the dinner table what I should do for this project. I can buy a hamster at Petsmart since I'm over 18. This is a functional treadmill with normal displays for distance and pace and controls for speed and incline.
+
 Which new hardware? Motor, LED display
+
 Uses the FPGA? Yes, needs to respond to input (up/down buttons) and output LEDs to show progress
+
 Uses the MCU? Yes, to control the motors and maybe do some of the hard math about elapsed pace
+
 Is useful or interesting? Is a funny idea but loses a lot of appeal once Prof Brake and/or the IRB committee vetos the live hamster
+
 Involves a lot of mechanical acessories? Treadmill structure, belt, two motors
 
 ## Balancing Triple Pendulum
+
 The only serious suggestion made. These people already did this so I'm not sure what we could do better/differently. We would still learn a lot by just trying to reverse engineer it but we should probably have a better reason before we commit to it.
 {{< video https://youtu.be/I5GvwWKkBmg?si=RpwWVHjtbz4UcOkO >}}
+
 Which new hardware? Motors, accelerometers?/other sensors?
+
 Uses the FPGA/MCU? Not sure which one does which task(s) but probably both, FPGA for anything that needs to be done fast and MCU for beefier calculations
+
 Is useful or interesting? Is an interesting control problem but unclear if it can A) hold my attention long enough or B) attract visitors on demo day
+
 Involves a lot of mechanical acessories? Three bars/pivots, track
