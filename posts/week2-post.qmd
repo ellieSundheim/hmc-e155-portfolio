@@ -1,0 +1,12 @@
+---
+title: "Week 2 Reflection"
+description: "Connections of every kind"
+author: "Ellie Sundheim"
+date: "9/17/24"
+categories:
+  - reflection
+draft: false
+---
+A slightly late post this week, caused by spending 14 hours of my Friday traveling to my clinic sponsor for a site visit. For me this site visit brought into focus how MicroP's really is just-in-time learning for this project. As I've spend the past couple weeks getting up to speed learning how to use Radiant, I'm also thinking about how we're going to install Vivado and what features I do and don't like. Even though I theorectically learned what FPGAs and MCUs are in E85, I feel like I can throw around the words more comfortably after eating, sleeping, and breathing Lab 1 tutorials for a weekend. I'm still working on the in's and out's of SPI (and QSOPI?) so there may be some reverse just-in-time learning from Clinic to MicroPs too.
+
+I'm kind of glad that I have my clinic project because for these past few weeks, I've been struggling to articulate what the new content in MicroP's is. I've felt that thus far, I've already seen everything we've done in 85. For example, the combinational logic in lab1 was no different from any of the other combinational blocks I wrote in the spring. FSMs are somewhat cookie cutter. My current conclusion about what's newer and harder in 155 is that the 85 gutter bumpers have come off. I no longer get specific modules to write- I have to break down the problem into modules myself. There is no more self-checking testbench with a hash code- I need to think of what tests would show if it works or not and then write them myself. I don't get pointed to specific sections of the documentation, I just have to know what to look for myself. That's cool and all, but I think I'm looking forward to seeing truly new material later this semester (and in my Clinic project) so that I don't feel like this was all stuff I could have figured out with just 85 and saved myself the stress of doing so in a time-pressured environment.
