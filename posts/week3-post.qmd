@@ -1,0 +1,15 @@
+---
+title: Week 3 Reflection
+description: "Another week, another learning opportunity"
+author: "Ellie Sundheim"
+date: "9/20/24"
+categories:
+  - reflection
+draft: false
+---
+Something fun that I learned this week is that even when a testbench simulates perfectly, your design can still not work in hardware. And by fun, I mean frustrating. 
+
+There's probably a bajillion (contrived) metaphors in there, but the one that scares me the most is the one where my cute little college tricks absolutely fail me in the real world. I sure can blink an LED and box an answer on the problem set, and that's been holding up my GPA just fine. Simulation would suggest that I will be a fine engineer. And yet I worry that there are unsimualtable aspects that I cannot forsee, but that will casue sudden and serious problems when I try to take my life out of the testbench and into hardware. Anyhow, I don't really have time for existential crises during the semester but I'll schedule it in over winter break (sarcasm).
+
+
+
