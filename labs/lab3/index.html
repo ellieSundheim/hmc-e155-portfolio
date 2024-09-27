@@ -115,8 +115,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a>
+  <ul class="collapse">
+  <li><a href="#state-transition-diagram" id="toc-state-transition-diagram" class="nav-link" data-scroll-target="#state-transition-diagram">State Transition Diagram</a></li>
+  </ul></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#testbench" id="toc-testbench" class="nav-link" data-scroll-target="#testbench">Testbench</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -140,8 +160,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing.</p>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>To start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.</p>
+<section id="state-transition-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="state-transition-diagram">State Transition Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab3/images/Lab3_FSM.jpg" class="img-fluid figure-img"></p>
+<figcaption>State Transition Diagram</figcaption>
+</figure>
+</div>
+<p>I originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).</p>
+<p>The debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit.</p>
+</section>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab3">here</a>.</p>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab3/images/lab3_block_diagram.png" class="img-fluid figure-img"></p>
+<figcaption>Lab 3 Block Diagram</figcaption>
+</figure>
+</div>
+<p>The top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs.</p>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab3/images/lab3_schematic.png" class="img-fluid figure-img"></p>
+<figcaption>Lab 3 Schematic</figcaption>
+</figure>
+</div>
+<p>The schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn’t match either of the given ones on the lab 3 page. I don’t know why we don’t have any handheld multimeters that scream when resistance is zero but I would have liked that.</p>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<section id="testbench" class="level3">
+<h3 class="anchored" data-anchor-id="testbench">Testbench</h3>
+<p>I simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later). <img src="../..\labs/lab3/images/working sync module.png" class="img-fluid" alt="Synchronizer"></p>
+<p>The FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high. <img src="../..\labs/lab3/images/async happened during r1 but didn't register until r3 so wrong num.png" class="img-fluid" alt="Async is out of sync, wrong row is being read in right column"></p>
+<p>I fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be “pulse R0 and read R2”. <img src="../..\labs/lab3/images/async happened during pulseR1 so output was 7 - yay.png" class="img-fluid" alt="Async corrected"></p>
+<p>Here is the full simulation:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/it sure looks like it works in sim but the hardware is stuck in 00.png" class="img-fluid figure-img"></p>
+<figcaption>Full simulation</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

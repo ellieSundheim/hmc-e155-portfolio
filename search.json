@@ -18,21 +18,28 @@
     "href": "posts/week4-post.html#build-a-zhu-zhu-pet",
     "title": "Week 4 Reflection",
     "section": "Build-A-Zhu Zhu Pet",
-    "text": "Build-A-Zhu Zhu Pet\nThese cute little guys were incredibly popular when I was in second grade. They also seem like something I would be able to build myself from scratch now that I’m in the 16th grade.\nWhich new hardware? Motor, small speaker\nUses the FPGA? Yes, probably a FSM to track which noises it should be making based on nose button presses and if it should be moving based on back button presses\nUses the MCU? Yes, to control the motor and speaker\nIs useful or interesting? I really liked them when I was 7 at least\nInvolves a lot of mechanical acessories? Maybe…depends on how cute we want them to be"
+    "text": "Build-A-Zhu Zhu Pet\nThese cute little guys were incredibly popular when I was in second grade. They also seem like something I would be able to build myself from scratch now that I’m in the 16th grade.\n\nWhich new hardware? Motor, small speaker\n\nUses the FPGA? Yes, probably a FSM to track which noises it should be making based on nose button presses and if it should be moving based on back button presses\n\nUses the MCU? Yes, to control the motor and speaker\n\nIs useful or interesting? I really liked them when I was 7 at least\n\nInvolves a lot of mechanical acessories? Maybe…depends on how cute we want them to be"
   },
   {
     "objectID": "posts/week4-post.html#hamster-treadmill",
     "href": "posts/week4-post.html#hamster-treadmill",
     "title": "Week 4 Reflection",
     "section": "Hamster Treadmill",
-    "text": "Hamster Treadmill\nThere may or may not have been a theme when I asked the dinner table what I should do for this project. I can buy a hamster at Petsmart since I’m over 18. This is a functional treadmill with normal displays for distance and pace and controls for speed and incline.\nWhich new hardware? Motor, LED display\nUses the FPGA? Yes, needs to respond to input (up/down buttons) and output LEDs to show progress\nUses the MCU? Yes, to control the motors and maybe do some of the hard math about elapsed pace\nIs useful or interesting? Is a funny idea but loses a lot of appeal once Prof Brake and/or the IRB committee vetos the live hamster\nInvolves a lot of mechanical acessories? Treadmill structure, belt, two motors"
+    "text": "Hamster Treadmill\nThere may or may not have been a theme when I asked the dinner table what I should do for this project. I can buy a hamster at Petsmart since I’m over 18. This is a functional treadmill with normal displays for distance and pace and controls for speed and incline.\n\nWhich new hardware? Motor, LED display\n\nUses the FPGA? Yes, needs to respond to input (up/down buttons) and output LEDs to show progress\n\nUses the MCU? Yes, to control the motors and maybe do some of the hard math about elapsed pace\n\nIs useful or interesting? Is a funny idea but loses a lot of appeal once Prof Brake and/or the IRB committee vetos the live hamster\n\nInvolves a lot of mechanical acessories? Treadmill structure, belt, two motors"
   },
   {
     "objectID": "posts/week4-post.html#balancing-triple-pendulum",
     "href": "posts/week4-post.html#balancing-triple-pendulum",
     "title": "Week 4 Reflection",
     "section": "Balancing Triple Pendulum",
-    "text": "Balancing Triple Pendulum\nThe only serious suggestion made. These people already did this so I’m not sure what we could do better/differently. We would still learn a lot by just trying to reverse engineer it but we should probably have a better reason before we commit to it.\n\nWhich new hardware? Motors, accelerometers?/other sensors?\nUses the FPGA/MCU? Not sure which one does which task(s) but probably both, FPGA for anything that needs to be done fast and MCU for beefier calculations\nIs useful or interesting? Is an interesting control problem but unclear if it can A) hold my attention long enough or B) attract visitors on demo day\nInvolves a lot of mechanical acessories? Three bars/pivots, track"
+    "text": "Balancing Triple Pendulum\nThe only serious suggestion made. These people already did this so I’m not sure what we could do better/differently. We would still learn a lot by just trying to reverse engineer it but we should probably have a better reason before we commit to it.\n\n\nWhich new hardware? Motors, accelerometers?/other sensors?\n\nUses the FPGA/MCU? Not sure which one does which task(s) but probably both, FPGA for anything that needs to be done fast and MCU for beefier calculations\n\nIs useful or interesting? Is an interesting control problem but unclear if it can A) hold my attention long enough or B) attract visitors on demo day\n\nInvolves a lot of mechanical acessories? Three bars/pivots, track"
+  },
+  {
+    "objectID": "posts/week2-post.html",
+    "href": "posts/week2-post.html",
+    "title": "Week 2 Reflection",
+    "section": "",
+    "text": "A slightly late post this week, caused by spending 14 hours of my Friday traveling to my clinic sponsor for a site visit. For me this site visit brought into focus how MicroP’s really is just-in-time learning for this project. As I’ve spend the past couple weeks getting up to speed learning how to use Radiant, I’m also thinking about how we’re going to install Vivado and what features I do and don’t like. Even though I theorectically learned what FPGAs and MCUs are in E85, I feel like I can throw around the words more comfortably after eating, sleeping, and breathing Lab 1 tutorials for a weekend. I’m still working on the in’s and out’s of SPI (and QSOPI?) so there may be some reverse just-in-time learning from Clinic to MicroPs too.\nI’m kind of glad that I have my clinic project because for these past few weeks, I’ve been struggling to articulate what the new content in MicroP’s is. I’ve felt that thus far, I’ve already seen everything we’ve done in 85. For example, the combinational logic in lab1 was no different from any of the other combinational blocks I wrote in the spring. FSMs are somewhat cookie cutter. My current conclusion about what’s newer and harder in 155 is that the 85 gutter bumpers have come off. I no longer get specific modules to write- I have to break down the problem into modules myself. There is no more self-checking testbench with a hash code- I need to think of what tests would show if it works or not and then write them myself. I don’t get pointed to specific sections of the documentation, I just have to know what to look for myself. That’s cool and all, but I think I’m looking forward to seeing truly new material later this semester (and in my Clinic project) so that I don’t feel like this was all stuff I could have figured out with just 85 and saved myself the stress of doing so in a time-pressured environment."
   },
   {
     "objectID": "posts/first-post.html",
@@ -40,6 +47,48 @@
     "title": "Learning Goals",
     "section": "",
     "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
+  },
+  {
+    "objectID": "labs/lab3/index.html",
+    "href": "labs/lab3/index.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+  },
+  {
+    "objectID": "labs/lab3/index.html#summary",
+    "href": "labs/lab3/index.html#summary",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+  },
+  {
+    "objectID": "labs/lab3/index.html#design-and-testing-methodology",
+    "href": "labs/lab3/index.html#design-and-testing-methodology",
+    "title": "Lab 3",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nTo start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.\n\nState Transition Diagram\n\n\n\nState Transition Diagram\n\n\nI originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).\nThe debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit."
+  },
+  {
+    "objectID": "labs/lab3/index.html#technical-documentation",
+    "href": "labs/lab3/index.html#technical-documentation",
+    "title": "Lab 3",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 3 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs.\n\n\nSchematic\n\n\n\nLab 3 Schematic\n\n\nThe schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn’t match either of the given ones on the lab 3 page. I don’t know why we don’t have any handheld multimeters that scream when resistance is zero but I would have liked that."
+  },
+  {
+    "objectID": "labs/lab3/index.html#results-and-discussion",
+    "href": "labs/lab3/index.html#results-and-discussion",
+    "title": "Lab 3",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\nTestbench\nI simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later). \nThe FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high. \nI fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be “pulse R0 and read R2”. \nHere is the full simulation:\n\n\n\nFull simulation"
+  },
+  {
+    "objectID": "labs/lab3/index.html#conclusion",
+    "href": "labs/lab3/index.html#conclusion",
+    "title": "Lab 3",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)"
   },
   {
     "objectID": "labs/lab1/index.html",
@@ -88,7 +137,7 @@
     "href": "blog.html",
     "title": "E155 Blog",
     "section": "",
-    "text": "Week 4 Reflection\n\n\n\n\n\nTrying to think of a cool final project\n\n\n\n\n\nSep 27, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+    "text": "Week 4 Reflection\n\n\n\n\n\nTrying to think of a cool final project\n\n\n\n\n\nSep 27, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Reflection\n\n\n\n\n\nAnother week, another learning opportunity\n\n\n\n\n\nSep 20, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Reflection\n\n\n\n\n\nConnections of every kind\n\n\n\n\n\nSep 17, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -116,7 +165,7 @@
     "href": "labs/lab2/index.html#design-and-testing-methodology",
     "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 \\mu A\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nThe gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = /frac{V_in - 0.7V}{R_b}$, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. Choosing a factor of safety of 2 means we want 100 mA through each. \\(5V/ 100 mA = 50 \\Omega\\) -&gt; used \\(68 \\Omega\\) because that was available.\nFor each anode, we cannot exceed more than 30 mA per segment - since we’re now powering them with 5V, \\(R = (5V - 0.7V)/ 0.03 A = 143 \\Omega\\). I left them as they were from last week (\\(150 \\Omega\\)) because that was close enough.\nHumans can only see flickering up to about 90 Hz (source). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount so I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode."
+    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 mA\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: The FPGA pins output 3.3V so \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nFor the transistor: The gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = $, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. The 5V supply from the dev board should be able to supply that much. I need at least 7*25mA = 175 mA to power my seven segments at 25mA each. \\(5V/ 200 mA = 25 \\Omega\\) -&gt; used \\(27 \\Omega\\) because that was available.\nFor each cathode: we cannot exceed more than 30 mA per segment and the transistor can only provide up to 200 mA so I want 25mA per segment. Since we’re now powering them with 5V instead of 3.3V like lab 1, \\(R_{cathode} = (5V - 0.7V)/ 0.025 A = 172 \\Omega\\). Rounding to the nearest available resistor, I used ???.\nHumans can only see flickering up to about 90 Hz (source). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount of flicker. I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode."
   },
   {
     "objectID": "labs/lab2/index.html#technical-documentation",
@@ -187,5 +236,12 @@
     "title": "Week 1 Reflection",
     "section": "",
     "text": "At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn’t the first time I’ve come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I’m okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.\nAnyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It’s like breadboarding, but better: I don’t have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench."
+  },
+  {
+    "objectID": "posts/week3-post.html",
+    "href": "posts/week3-post.html",
+    "title": "Week 3 Reflection",
+    "section": "",
+    "text": "Something fun that I learned this week is that even when a testbench simulates perfectly, your design can still not work in hardware. And by fun, I mean frustrating.\nThere’s probably a bajillion (contrived) metaphors in there, but the one that scares me the most is the one where my cute little college tricks absolutely fail me in the real world. I sure can blink an LED and box an answer on the problem set, and that’s been holding up my GPA just fine. Simulation would suggest that I will be a fine engineer. And yet I worry that there are unsimualtable aspects that I cannot forsee, but that will casue sudden and serious problems when I try to take my life out of the testbench and into hardware. Anyhow, I don’t really have time for existential crises during the semester but I’ll schedule it in over winter break (sarcasm)."
   }
 ]
