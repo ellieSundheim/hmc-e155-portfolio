@@ -6,6 +6,7 @@ The main goal of this assignement was learn how to multiplex hardware in order t
 
 ## Design and Testing Methodology
 
+
 The FPGA pins can only handle $8 mA$ of current (source: Table 4.17, row 3V3 in [the FPGA datasheet](https://hmc-e155.github.io/assets/doc/FPGA-DS-02008-2-0-iCE40-UltraPlus-Family-Data-Sheet.pdf)). The resistors were chosen to keep them under this limit with a simple Ohm's Law calculation.
 
 For LEDS: The FPGA pins output 3.3V so $3.3V/8 mA =  413 \Omega.$ -> rounded to $470 \Omega$.
