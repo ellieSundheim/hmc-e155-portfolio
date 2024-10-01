@@ -1,3 +1,33 @@
 ---
 title: Lab 4
 ---
+## Summary
+The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals.
+
+## Videos  
+{{< video https://drive.google.com/file/d/1_OBgJDXr8koShIAFQ_6nDfhm-299gJNR/view?usp=sharing >}}
+{{< video https://drive.google.com/file/d/1cG-EuHoF3OLJXTUP2zK2WhGvkZB2ciRK/view?usp=sharing >}}
+
+## Design and Testing Methodology
+
+
+
+
+
+## Technical Documentation
+The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab4).
+
+### Block Diagram
+
+
+
+### Schematic 
+![Lab 4 Schematic](/labs/lab4/images/lab4_schematic.png)
+
+The schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips.
+
+## Results and Discussion 
+
+## Conclusion
+The design works as intended to play music using the timers on the STM32L432KC MCU. I spent roughly 16 hours on this lab. (Tues: 2, Fri: 4, Sat: 3, Sun: 4, Mon: 3) 
+
