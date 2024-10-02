@@ -2,24 +2,37 @@
 title: Lab 4
 ---
 ## Summary
-The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals.
+The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals.\
 
 ## Videos  
-{{< video https://drive.google.com/file/d/1_OBgJDXr8koShIAFQ_6nDfhm-299gJNR/view?usp=sharing >}}
-{{< video https://drive.google.com/file/d/1cG-EuHoF3OLJXTUP2zK2WhGvkZB2ciRK/view?usp=sharing >}}
+{{< video https://youtu.be/zs1GuMFyv-A >}}
+{{< video https://youtu.be/T2zXMTQ6aTw >}}
 
 ## Design and Testing Methodology
 
+The main idea behind this lab is that there are two timers, one for frequency and one for duration. The frequency timer generates the square wave that is output to the speaker; the duration timer controls how long a given frequency is played. I used TIM2 for frequency because it can be output to a GPIO pin that is already on the E155 breakout board (PB3) and 32-bit auto-reset register. I was going to use TIM3 for duration because they have the same memory structure so I could reuse code, but then I read the fine print and the STM32L432KC doesn't actually have TIM3 (the datasheet is for a couple different MCUs). Luckily, standardization meant that I could still reuse a lot of the struct when I switched to TIM15. \
 
+Because of the integer division that happens when frequency is updated, it is possible that ARR could be up to one clock cycle short or long. (Same with CCRx, but we don't really care about duty cycle so long as it's close to 50%.) Therefore, one clock cycle can take no longer than 0.01ms and the clock needs to be run at a minimum of 100kHz.\
+
+|             | **220Hz** | **1000Hz** |
+|-------------|-----------|------------|
+| **-1%**     | 4.591ms   | 1.010ms    |
+| **nominal** | 4.545ms   | 1.000ms    |
+| **+1%**     | 4.500ms   | 0.990ms    |
+: Table 1 - Periods at 220Hz and 100Hz
+
+The overall system clock was chosen to run at 80 MHz using the PLL. The prescaler for TIM2 was 800 so that its counter ran at 100 kHz, and the prescaler for TIM15 was 10,000 so that its counter ran at 8 kHz.\
+
+For the frequency clock, 100 kHz means that a single clock cycle takes 1E-5 seconds. The maximum frequency that can be produced* is 50 kHz, if CCRx is set to 1 and ARR is set to 2 (the smallest possible square wave). The minimum frequency is 1.53 Hz ($\frac{100E3}{2^{16}}$) if CCRx is set to 0xFFFF and ARR is set to 0xFFFFFFFF.\
+
+For the duration clock, 8 kHz means that a single clock cycle takes 1.25E-4 seconds (0.125 ms). The minimum duration is 0.125 ms because the delay can be a single clock cycle if ARR is set to 1. The ARR register for TIM15 is only 16 bits, so the maximum duration that can be produced is $\frac{1}{8E3}2^{16}$ or 8.19 seconds. This frequency was chosen so that longer notes could be held.\
+
+*produced by the MCU, to be clear. The speaker has its own range of possible frequencies which is a much smaller subset of the frequencies that the PWM can produce.\
 
 
 
 ## Technical Documentation
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab4).
-
-### Block Diagram
-
-
 
 ### Schematic 
 ![Lab 4 Schematic](/labs/lab4/images/lab4_schematic.png)
