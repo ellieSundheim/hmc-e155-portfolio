@@ -27,6 +27,9 @@ For the frequency clock, 100 kHz means that a single clock cycle takes 1E-5 seco
 
 For the duration clock, 8 kHz means that a single clock cycle takes 1.25E-4 seconds (0.125 ms). The minimum duration is 0.125 ms because the delay can be a single clock cycle if ARR is set to 1. The ARR register for TIM15 is only 16 bits, so the maximum duration that can be produced is $\frac{1}{8E3}2^{16}$ or 8.19 seconds. This frequency was chosen so that longer notes could be held.\
 
+
+For testing, I used an LED connected to the PB3 pin and blinked it slowly in two different ways. To test the duration counter, I used one of the existing GPIO functions to wait 2 seconds, then toggle the pin in an infinite loop. To test the frequency counter, I slowed the clock temporarily to 4 kHz and blinked the LED at a frequency of 4 Hz.\
+
 *produced by the MCU, to be clear. The speaker has its own range of possible frequencies which is a much smaller subset of the frequencies that the PWM can produce.\
 
 
@@ -40,6 +43,7 @@ The source code for this lab can be found [here](https://github.com/ellieSundhei
 The schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips.
 
 ## Results and Discussion 
+The hardest parts about this lab were 1) figuring out how many timers to use and which ones and 2) figuring out which registers needed to be set and when. However, once the code worked it was pretty fun to play music! Check out my blog post from this week for an exploration of ChatGPT's hidden musical talents.
 
 ## Conclusion
 The design works as intended to play music using the timers on the STM32L432KC MCU. I spent roughly 16 hours on this lab. (Tues: 2, Fri: 4, Sat: 3, Sun: 4, Mon: 3) 
