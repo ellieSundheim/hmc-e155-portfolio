@@ -88,21 +88,21 @@
     "href": "labs/lab4/index.html#design-and-testing-methodology",
     "title": "Lab 4",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology"
+    "text": "Design and Testing Methodology\nThe main idea behind this lab is that there are two timers, one for frequency and one for duration. The frequency timer generates the square wave that is output to the speaker; the duration timer controls how long a given frequency is played. I used TIM2 for frequency because it can be output to a GPIO pin that is already on the E155 breakout board (PB3) and 32-bit auto-reset register. I was going to use TIM3 for duration because they have the same memory structure so I could reuse code, but then I read the fine print and the STM32L432KC doesn’t actually have TIM3 (the datasheet is for a couple different MCUs). Luckily, standardization meant that I could still reuse a lot of the struct when I switched to TIM15.\n\nBecause of the integer division that happens when frequency is updated, it is possible that ARR could be up to one clock cycle short or long. (Same with CCRx, but we don’t really care about duty cycle so long as it’s close to 50%.) Therefore, one clock cycle can take no longer than 0.01ms and the clock needs to be run at a minimum of 100kHz.\n\n\nTable 1 - Periods at 220Hz and 100Hz\n\n\n\n220Hz\n1000Hz\n\n\n\n\n-1%\n4.591ms\n1.010ms\n\n\nnominal\n4.545ms\n1.000ms\n\n\n+1%\n4.500ms\n0.990ms\n\n\n\nThe overall system clock was chosen to run at 80 MHz using the PLL. The prescaler for TIM2 was 800 so that its counter ran at 100 kHz, and the prescaler for TIM15 was 10,000 so that its counter ran at 8 kHz.\n\nFor the frequency clock, 100 kHz means that a single clock cycle takes 1E-5 seconds. The maximum frequency that can be produced* is 50 kHz, if CCRx is set to 1 and ARR is set to 2 (the smallest possible square wave). The minimum frequency is 1.53 Hz (\\(\\frac{100E3}{2^{16}}\\)) if CCRx is set to 0xFFFF and ARR is set to 0xFFFFFFFF.\n\nFor the duration clock, 8 kHz means that a single clock cycle takes 1.25E-4 seconds (0.125 ms). The minimum duration is 0.125 ms because the delay can be a single clock cycle if ARR is set to 1. The ARR register for TIM15 is only 16 bits, so the maximum duration that can be produced is \\(\\frac{1}{8E3}2^{16}\\) or 8.19 seconds. This frequency was chosen so that longer notes could be held.\n\nFor testing, I used an LED connected to the PB3 pin and blinked it slowly in two different ways. To test the duration counter, I used one of the existing GPIO functions to wait 2 seconds, then toggle the pin in an infinite loop. To test the frequency counter, I slowed the clock temporarily to 4 kHz and blinked the LED at a frequency of 4 Hz.\n\n*produced by the MCU, to be clear. The speaker has its own range of possible frequencies which is a much smaller subset of the frequencies that the PWM can produce."
   },
   {
     "objectID": "labs/lab4/index.html#technical-documentation",
     "href": "labs/lab4/index.html#technical-documentation",
     "title": "Lab 4",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\nSchematic\n\n\n\nLab 4 Schematic\n\n\nThe schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips."
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nSchematic\n\n\n\nLab 4 Schematic\n\n\nThe schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips."
   },
   {
     "objectID": "labs/lab4/index.html#results-and-discussion",
     "href": "labs/lab4/index.html#results-and-discussion",
     "title": "Lab 4",
     "section": "Results and Discussion",
-    "text": "Results and Discussion"
+    "text": "Results and Discussion\nThe hardest parts about this lab were 1) figuring out how many timers to use and which ones and 2) figuring out which registers needed to be set and when. However, once the code worked it was pretty fun to play music! Check out my blog post from this week for an exploration of ChatGPT’s hidden musical talents."
   },
   {
     "objectID": "labs/lab4/index.html#conclusion",
