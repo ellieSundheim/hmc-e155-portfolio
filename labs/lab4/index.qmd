@@ -42,6 +42,10 @@ The source code for this lab can be found [here](https://github.com/ellieSundhei
 
 The schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips.
 
+### Sheet Music
+
+!["You Are My Sunshine", trad. American melody](/labs/lab4/images/you-are-my-sunshine-sheet-music.png)
+
 ## Results and Discussion 
 The hardest parts about this lab were 1) figuring out how many timers to use and which ones and 2) figuring out which registers needed to be set and when. However, once the code worked it was pretty fun to play music! Check out my blog post from this week for an exploration of ChatGPT's hidden musical talents.
 
