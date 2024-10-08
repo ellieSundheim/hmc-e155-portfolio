@@ -2,34 +2,38 @@
 title: Lab 5
 ---
 ## Summary
-The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor.  \
+The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction.  \
 
 ## Video 
 {{< video https://youtu.be/XDTTOyFxA5U >}}
 
 
 ## Design and Testing Methodology
+This code made use of the Extended Interrupts and Events Controller (EXTI) peripheral on the STM32L432KC. The 2 channels of the quad encoder were connected to GPIO pins PA8 and PA10, which can be configured to trigger EXTI lines 8 and 10 on both rising and falling edges. Keeping track of all edges, not just one or the other, increased the resolution.\
 
+
+These interrupts are handled by two separate interrupt handlers because the interrupts are enabled by two separate registers in the NVIC. This made it slightly easier to keep track of which line had triggered (although I would have been able to check either way). I used a timer to measure when each edge occurred, arbitrarily choosing to reset the clock to zero on the rising A interrupt. As seen below, knowing the relative timing of the rising and falling edges on B allowed me to find the direction of rotation (which I verified by running the motor at a low speed and watching the flat edge rotate). From measurements at full speed I knew edges occurred roughly every 0.5 ms, so I set the clock to be 100 kHz so that there would be roughly 50 clock cycles per pulse.\
+
+![Quad encoder signals and relative phases](/labs/lab5/images/Quad_encoder.jpg)
+
+To convert number of edges per unit time into a rotational velocity, I used the following coverstion:
+$\frac{\text{edges}}{\text{seconds}} * \frac{1 \text{ pulse}}{2 \text{ edges}} * \frac{1 \text{ rev}}{120 \text{ pulses}} = \frac{\text{revs}}{\text{seconds}} $
 
 
 ## Technical Documentation
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab5).
 
 ### Flowchart
+![Lab 5 Flowchart](/labs/lab5/images/Lab5_flowchart.jpg)
 
-
-### Schematic 
-![Lab 5 Schematic](/labs/lab5/images/lab5_schematic.png)
-
-
-
+The flowchart shows how the interrupts exit and return from the main body loop.
 
 ## Results and Discussion 
 To verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\
 
 ![Full speed encoder output](/labs/lab5/images/12V_encoder.png)
 
-For example, I count ??? edges here in a time of ??? ms, which translates to rev/s. I expect the hand-calculated speed to be slightly faster because I measured from edge to edge, whereas the code measures a set amount of time and probably leaves off in the middle of a pulse.
+For example, I count 23 edges here in a time of 10 ms, which translates to 9.583 rev/s. I expect some difference between measured and the code output because I used a different time frame in which to measure. This difference can be attributed to both actual fluctutation in the motor speed and to the error that comes from sampling for a short-ish period of time. Overall, the measured and code-output speeds agree to within 0.25 rev/s (15 rpm).\
 
 |  **Voltage**| **Hand-Calc Speed** | **Code Output** |
 |-------------|-----------|------------|
