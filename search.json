@@ -42,18 +42,18 @@
     "text": "Lab 3: Keypad Scanner"
   },
   {
-    "objectID": "labs.html#lab-4-arm-assembly-sort",
-    "href": "labs.html#lab-4-arm-assembly-sort",
+    "objectID": "labs.html#lab-4-digital-audio",
+    "href": "labs.html#lab-4-digital-audio",
     "title": "Labs",
-    "section": "Lab 4: ARM Assembly Sort",
-    "text": "Lab 4: ARM Assembly Sort"
+    "section": "Lab 4: Digital Audio",
+    "text": "Lab 4: Digital Audio"
   },
   {
-    "objectID": "labs.html#lab-5-digital-audio",
-    "href": "labs.html#lab-5-digital-audio",
+    "objectID": "labs.html#lab-5-interrupts",
+    "href": "labs.html#lab-5-interrupts",
     "title": "Labs",
-    "section": "Lab 5: Digital Audio",
-    "text": "Lab 5: Digital Audio"
+    "section": "Lab 5: Interrupts",
+    "text": "Lab 5: Interrupts"
   },
   {
     "objectID": "labs.html#lab-6-the-iot-and-spi",
@@ -257,6 +257,55 @@
     "title": "Lab 3",
     "section": "Conclusion",
     "text": "Conclusion\nThe design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)"
+  },
+  {
+    "objectID": "labs/lab5/index.html",
+    "href": "labs/lab5/index.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor."
+  },
+  {
+    "objectID": "labs/lab5/index.html#summary",
+    "href": "labs/lab5/index.html#summary",
+    "title": "Lab 5",
+    "section": "",
+    "text": "The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor."
+  },
+  {
+    "objectID": "labs/lab5/index.html#video",
+    "href": "labs/lab5/index.html#video",
+    "title": "Lab 5",
+    "section": "Video",
+    "text": "Video"
+  },
+  {
+    "objectID": "labs/lab5/index.html#design-and-testing-methodology",
+    "href": "labs/lab5/index.html#design-and-testing-methodology",
+    "title": "Lab 5",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology"
+  },
+  {
+    "objectID": "labs/lab5/index.html#technical-documentation",
+    "href": "labs/lab5/index.html#technical-documentation",
+    "title": "Lab 5",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nFlowchart\n\n\nSchematic\n\n\n\nLab 5 Schematic"
+  },
+  {
+    "objectID": "labs/lab5/index.html#results-and-discussion",
+    "href": "labs/lab5/index.html#results-and-discussion",
+    "title": "Lab 5",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nTo verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\n\n\n\n\nFull speed encoder output\n\n\nFor example, I count ??? edges here in a time of ??? ms, which translates to rev/s. I expect the hand-calculated speed to be slightly faster because I measured from edge to edge, whereas the code measures a set amount of time and probably leaves off in the middle of a pulse.\n\nTable 1 - Comparison of actual to measured speeds\n\n\nVoltage\nHand-Calc Speed\nCode Output\n\n\n\n\n5V\n3.958 rev/s\n3.942 rev/s\n\n\n8V\n6.25 rev/s\n6.48 rev/s\n\n\n12v\n9.583 rev/s\n9.74 rev/s"
+  },
+  {
+    "objectID": "labs/lab5/index.html#conclusion",
+    "href": "labs/lab5/index.html#conclusion",
+    "title": "Lab 5",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to read the speed of a motor and print it in real time. I spent roughly 10 hours on this lab. (Sat: 3, Sun: 4, Mon: 1, Tues: 2)"
   },
   {
     "objectID": "posts/first-post.html",
