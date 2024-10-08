@@ -1,3 +1,44 @@
 ---
 title: Lab 5
 ---
+## Summary
+The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor.  \
+
+## Video 
+{{< video https://youtu.be/XDTTOyFxA5U >}}
+
+
+## Design and Testing Methodology
+
+
+
+## Technical Documentation
+The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab5).
+
+### Flowchart
+
+
+### Schematic 
+![Lab 5 Schematic](/labs/lab5/images/lab5_schematic.png)
+
+
+
+
+## Results and Discussion 
+To verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\
+
+![Full speed encoder output](/labs/lab5/images/12V_encoder.png)
+
+For example, I count ??? edges here in a time of ??? ms, which translates to rev/s. I expect the hand-calculated speed to be slightly faster because I measured from edge to edge, whereas the code measures a set amount of time and probably leaves off in the middle of a pulse.
+
+|  **Voltage**| **Hand-Calc Speed** | **Code Output** |
+|-------------|-----------|------------|
+| 5V          | 3.958 rev/s   | 3.942 rev/s    |
+| 8V          | 6.25 rev/s   | 6.48 rev/s    |
+| 12v         | 9.583 rev/s   | 9.74 rev/s    |
+: Table 1 - Comparison of actual to measured speeds
+
+
+## Conclusion
+The design works as intended to read the speed of a motor and print it in real time. I spent roughly 10 hours on this lab. (Sat: 3, Sun: 4, Mon: 1, Tues: 2)
+
