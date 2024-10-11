@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ellie Sundheim">
+<meta name="dcterms.date" content="2024-10-11">
+<meta name="description" content="Taking stock of my progress thus far">
 
-<title>E155 Blog – E155 Portfolio</title>
+<title>Halfway Point – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,65 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -138,7 +81,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">E155 Portfolio</span>
     </a>
   </div>
@@ -149,19 +92,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -183,14 +126,34 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">E155 Blog</h1>
-</div>
+<h1 class="title">Halfway Point</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">reflection</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Taking stock of my progress thus far
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ellie Sundheim </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 11, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -200,213 +163,16 @@ window.Quarto = {
 </header>
 
 
+<p>It’s the start of fall break and the halfway pause in the semester that hopefully gives me the strength to get through the rest of it. It seems like a natural time to go back to the goals I set in the first week and evaluate how I’m stacking up.<br>
+</p>
+<p>One of the things I said I wanted to develop was better judgement. I can most easily see my progress on this in my progress through a lab. In the first few weeks, I had a hard time getting my bearings and figuring out how much work would be involved, and in what order, and what kinds of errors I could expect to encounter. Part of this might be that the labs have shifted to programming, something I’m more practiced with than digital design, but I think my ability to judge a task accurately has really improved.<br>
+</p>
+<p>Another character trait that I said I wanted to work on was neighborliness. To be honest, when I first identified this one, I looked at the whole catagory of moral traits and scoffed internally about how an engineering class could help me develop these. I’ve got to eat my words a little - after some long hours working alone in my room, it’s nice to go into the lab (even with its lack of windows) and talk to other people who are sturggling with similar things. I appreciate it when we can share the silly ways we’ve messed up on the labs and comiserate a little bit.<br>
+</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="reflection" data-listing-date-sort="1728630000000" data-listing-file-modified-sort="1728687749017" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="253">
-<div class="thumbnail">
-<p><a href="./posts/week6-post.html" class="no-external"></a></p><a href="./posts/week6-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/week6-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week6-post.html" class="no-external">Halfway Point</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/week6-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/week6-post.html" class="no-external">Taking stock of my progress thus far</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/week6-post.html" class="no-external">
-<div class="listing-date">
-Oct 11, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="reflection" data-listing-date-sort="1728025200000" data-listing-file-modified-sort="1728001707576" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="316">
-<div class="thumbnail">
-<p><a href="./posts/week5-post.html" class="no-external"></a></p><a href="./posts/week5-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/week5-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week5-post.html" class="no-external">ChatGPT, the musician</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/week5-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/week5-post.html" class="no-external">Merrily, merrily, merrily, merrily, life is but a dream</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/week5-post.html" class="no-external">
-<div class="listing-date">
-Oct 4, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="reflection" data-listing-date-sort="1727420400000" data-listing-file-modified-sort="1727999122348" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="451">
-<div class="thumbnail">
-<p><a href="./posts/week4-post.html" class="no-external"></a></p><a href="./posts/week4-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/week4-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week4-post.html" class="no-external">Week 4 Reflection</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/week4-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/week4-post.html" class="no-external">Trying to think of a cool final project</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/week4-post.html" class="no-external">
-<div class="listing-date">
-Sep 27, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="reflection" data-listing-date-sort="1726815600000" data-listing-file-modified-sort="1727471487068" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="150">
-<div class="thumbnail">
-<p><a href="./posts/week3-post.html" class="no-external"></a></p><a href="./posts/week3-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/week3-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week3-post.html" class="no-external">Week 3 Reflection</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/week3-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/week3-post.html" class="no-external">Another week, another learning opportunity</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/week3-post.html" class="no-external">
-<div class="listing-date">
-Sep 20, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="reflection" data-listing-date-sort="1726556400000" data-listing-file-modified-sort="1727471487067" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="339">
-<div class="thumbnail">
-<p><a href="./posts/week2-post.html" class="no-external"></a></p><a href="./posts/week2-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/week2-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week2-post.html" class="no-external">Week 2 Reflection</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/week2-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/week2-post.html" class="no-external">Connections of every kind</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/week2-post.html" class="no-external">
-<div class="listing-date">
-Sep 17, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="reflection" data-listing-date-sort="1725606000000" data-listing-file-modified-sort="1725853823089" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="256">
-<div class="thumbnail">
-<p><a href="./posts/lab1-post.html" class="no-external"></a></p><a href="./posts/lab1-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/lab1-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/lab1-post.html" class="no-external">Week 1 Reflection</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/lab1-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/lab1-post.html" class="no-external">Some lessons were learned…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/lab1-post.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="reflection" data-listing-date-sort="1724655600000" data-listing-file-modified-sort="1725853823089" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="143">
-<div class="thumbnail">
-<p><a href="./posts/first-post.html" class="no-external"></a></p><a href="./posts/first-post.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/first-post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/first-post.html" class="no-external">Learning Goals</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/first-post.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/first-post.html" class="no-external">Answers to the question ‘what do I want to get out of this class?’</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/first-post.html" class="no-external">
-<div class="listing-date">
-Aug 26, 2024
-</div>
-<div class="listing-author">
-Ellie Sundheim
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
