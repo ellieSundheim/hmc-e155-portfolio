@@ -1,0 +1,14 @@
+---
+title: Halfway Point
+description: "Taking stock of my progress thus far"
+author: "Ellie Sundheim"
+date: "10/11/24"
+categories:
+  - reflection
+draft: false
+---
+It's the start of fall break and the halfway pause in the semester that hopefully gives me the strength to get through the rest of it. It seems like a natural time to go back to the goals I set in the first week and evaluate how I'm stacking up.\
+
+One of the things I said I wanted to develop was better judgement. I can most easily see my progress on this in my progress through a lab. In the first few weeks, I had a hard time getting my bearings and figuring out how much work would be involved, and in what order, and what kinds of errors I could expect to encounter. Part of this might be that the labs have shifted to programming, something I'm more practiced with than digital design, but I think my ability to judge a task accurately has really improved.\
+
+Another character trait that I said I wanted to work on was neighborliness. To be honest, when I first identified this one, I looked at the whole catagory of moral traits and scoffed internally about how an engineering class could help me develop these. I've got to eat my words a little - after some long hours working alone in my room, it's nice to go into the lab (even with its lack of windows) and talk to other people who are sturggling with similar things. I appreciate it when we can share the silly ways we've messed up on the labs and comiserate a little bit. \
