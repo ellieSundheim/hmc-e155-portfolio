@@ -49,200 +49,53 @@
     "text": "A slightly late post this week, caused by spending 14 hours of my Friday traveling to my clinic sponsor for a site visit. For me this site visit brought into focus how MicroP’s really is just-in-time learning for this project. As I’ve spend the past couple weeks getting up to speed learning how to use Radiant, I’m also thinking about how we’re going to install Vivado and what features I do and don’t like. Even though I theorectically learned what FPGAs and MCUs are in E85, I feel like I can throw around the words more comfortably after eating, sleeping, and breathing Lab 1 tutorials for a weekend. I’m still working on the in’s and out’s of SPI (and QSOPI?) so there may be some reverse just-in-time learning from Clinic to MicroPs too.\nI’m kind of glad that I have my clinic project because for these past few weeks, I’ve been struggling to articulate what the new content in MicroP’s is. I’ve felt that thus far, I’ve already seen everything we’ve done in 85. For example, the combinational logic in lab1 was no different from any of the other combinational blocks I wrote in the spring. FSMs are somewhat cookie cutter. My current conclusion about what’s newer and harder in 155 is that the 85 gutter bumpers have come off. I no longer get specific modules to write- I have to break down the problem into modules myself. There is no more self-checking testbench with a hash code- I need to think of what tests would show if it works or not and then write them myself. I don’t get pointed to specific sections of the documentation, I just have to know what to look for myself. That’s cool and all, but I think I’m looking forward to seeing truly new material later this semester (and in my Clinic project) so that I don’t feel like this was all stuff I could have figured out with just 85 and saved myself the stress of doing so in a time-pressured environment."
   },
   {
-    "objectID": "posts/first-post.html",
-    "href": "posts/first-post.html",
-    "title": "Learning Goals",
+    "objectID": "posts/lab1-post.html",
+    "href": "posts/lab1-post.html",
+    "title": "Week 1 Reflection",
     "section": "",
-    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
+    "text": "At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn’t the first time I’ve come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I’m okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.\nAnyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It’s like breadboarding, but better: I don’t have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench."
   },
   {
-    "objectID": "labs/lab5/index.html",
-    "href": "labs/lab5/index.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction."
+    "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
+    "href": "labs.html#lab-2-multiplexed-7-segment-display",
+    "title": "Labs",
+    "section": "Lab 2: Multiplexed 7-Segment Display",
+    "text": "Lab 2: Multiplexed 7-Segment Display"
   },
   {
-    "objectID": "labs/lab5/index.html#summary",
-    "href": "labs/lab5/index.html#summary",
-    "title": "Lab 5",
-    "section": "",
-    "text": "The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction."
+    "objectID": "labs.html#lab-3-keypad-scanner",
+    "href": "labs.html#lab-3-keypad-scanner",
+    "title": "Labs",
+    "section": "Lab 3: Keypad Scanner",
+    "text": "Lab 3: Keypad Scanner"
   },
   {
-    "objectID": "labs/lab5/index.html#video",
-    "href": "labs/lab5/index.html#video",
-    "title": "Lab 5",
-    "section": "Video",
-    "text": "Video"
+    "objectID": "labs.html#lab-4-digital-audio",
+    "href": "labs.html#lab-4-digital-audio",
+    "title": "Labs",
+    "section": "Lab 4: Digital Audio",
+    "text": "Lab 4: Digital Audio"
   },
   {
-    "objectID": "labs/lab5/index.html#design-and-testing-methodology",
-    "href": "labs/lab5/index.html#design-and-testing-methodology",
-    "title": "Lab 5",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThis code made use of the Extended Interrupts and Events Controller (EXTI) peripheral on the STM32L432KC. The 2 channels of the quad encoder were connected to GPIO pins PA8 and PA10, which can be configured to trigger EXTI lines 8 and 10 on both rising and falling edges. Keeping track of all edges, not just one or the other, increased the resolution.\n\nThese interrupts are handled by two separate interrupt handlers because the interrupts are enabled by two separate registers in the NVIC. This made it slightly easier to keep track of which line had triggered (although I would have been able to check either way). I used a timer to measure when each edge occurred, arbitrarily choosing to reset the clock to zero on the rising A interrupt. As seen below, knowing the relative timing of the rising and falling edges on B allowed me to find the direction of rotation (which I verified by running the motor at a low speed and watching the flat edge rotate). From measurements at full speed I knew edges occurred roughly every 0.5 ms, so I set the clock to be 100 kHz so that there would be roughly 50 clock cycles per pulse.\n\n\n\n\nQuad encoder signals and relative phases\n\n\nTo convert number of edges per unit time into a rotational velocity, I used the following coverstion: $ * * = $"
+    "objectID": "labs.html#lab-5-interrupts",
+    "href": "labs.html#lab-5-interrupts",
+    "title": "Labs",
+    "section": "Lab 5: Interrupts",
+    "text": "Lab 5: Interrupts"
   },
   {
-    "objectID": "labs/lab5/index.html#technical-documentation",
-    "href": "labs/lab5/index.html#technical-documentation",
-    "title": "Lab 5",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nFlowchart\n\n\n\nLab 5 Flowchart\n\n\nThe flowchart shows how the interrupts exit and return from the main body loop."
+    "objectID": "labs.html#lab-6-the-iot-and-spi",
+    "href": "labs.html#lab-6-the-iot-and-spi",
+    "title": "Labs",
+    "section": "Lab 6: The IOT and SPI",
+    "text": "Lab 6: The IOT and SPI"
   },
   {
-    "objectID": "labs/lab5/index.html#results-and-discussion",
-    "href": "labs/lab5/index.html#results-and-discussion",
-    "title": "Lab 5",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nTo verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\n\n\n\n\nFull speed encoder output\n\n\nFor example, I count 23 edges here in a time of 10 ms, which translates to 9.583 rev/s. I expect some difference between measured and the code output because I used a different time frame in which to measure. This difference can be attributed to both actual fluctutation in the motor speed and to the error that comes from sampling for a short-ish period of time. Overall, the measured and code-output speeds agree to within 0.25 rev/s (15 rpm).\n\n\nTable 1 - Comparison of actual to measured speeds\n\n\nVoltage\nHand-Calc Speed\nCode Output\n\n\n\n\n5V\n3.958 rev/s\n3.942 rev/s\n\n\n8V\n6.25 rev/s\n6.48 rev/s\n\n\n12v\n9.583 rev/s\n9.74 rev/s"
-  },
-  {
-    "objectID": "labs/lab5/index.html#conclusion",
-    "href": "labs/lab5/index.html#conclusion",
-    "title": "Lab 5",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to read the speed of a motor and print it in real time. I spent roughly 10 hours on this lab. (Sat: 3, Sun: 4, Mon: 1, Tues: 2)"
-  },
-  {
-    "objectID": "labs/lab3/index.html",
-    "href": "labs/lab3/index.html",
-    "title": "Lab 3",
-    "section": "",
-    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
-  },
-  {
-    "objectID": "labs/lab3/index.html#summary",
-    "href": "labs/lab3/index.html#summary",
-    "title": "Lab 3",
-    "section": "",
-    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
-  },
-  {
-    "objectID": "labs/lab3/index.html#design-and-testing-methodology",
-    "href": "labs/lab3/index.html#design-and-testing-methodology",
-    "title": "Lab 3",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nTo start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.\n\nState Transition Diagram\n\n\n\nState Transition Diagram\n\n\nI originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).\nThe debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit."
-  },
-  {
-    "objectID": "labs/lab3/index.html#technical-documentation",
-    "href": "labs/lab3/index.html#technical-documentation",
-    "title": "Lab 3",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 3 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs.\n\n\nSchematic\n\n\n\nLab 3 Schematic\n\n\nThe schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn’t match either of the given ones on the lab 3 page. I don’t know why we don’t have any handheld multimeters that scream when resistance is zero but I would have liked that."
-  },
-  {
-    "objectID": "labs/lab3/index.html#results-and-discussion",
-    "href": "labs/lab3/index.html#results-and-discussion",
-    "title": "Lab 3",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\n\nTestbench\nI simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later). \nThe FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high. \nI fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be “pulse R0 and read R2”. \nHere is the full simulation:\n\n\n\nFull simulation"
-  },
-  {
-    "objectID": "labs/lab3/index.html#conclusion",
-    "href": "labs/lab3/index.html#conclusion",
-    "title": "Lab 3",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)"
-  },
-  {
-    "objectID": "labs/lab1/index.html",
-    "href": "labs/lab1/index.html",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "",
-    "text": "(Editor’s Note: This lab was updated onn 9/9 to reflect changes made in hopes of acheiving an excellence rating. The original of this page as it was when first submitted can be found on the website Github repo.)"
-  },
-  {
-    "objectID": "labs/lab1/index.html#summary",
-    "href": "labs/lab1/index.html#summary",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Summary",
-    "text": "Summary\nThe main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
-  },
-  {
-    "objectID": "labs/lab1/index.html#design-approach",
-    "href": "labs/lab1/index.html#design-approach",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Design Approach",
-    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. The oscillator module uses the onboard high speed oscillator (HSOSC) which was configured to run at 24 Mhz and then divided down to 2.4 Hz for led[2]. The led module uses the clock because it has a counter, but the rest of the LEDs use combinational logic. The seven-segment display is its own module for reusability. \nThe schematic shows all the connections to the FPGA. The DIP switches were configured to use internal 100 kOhm pull-up resistors. Putting the same resistor on each line made it so that each LED got the same amount of current running through it. The resistor was chosen so that the current on each segment was no more than 20 mA (which is giving plenty of headroom according to the datasheet, which on page 2, Table “Absolute Maximum Ratings” says 30 mA is the limit.) \\((3.3V - 0.7V)/20 mA = 130 \\Omega\\). I used 150 Ohm resistors because they were available."
-  },
-  {
-    "objectID": "labs/lab1/index.html#testing-approach",
-    "href": "labs/lab1/index.html#testing-approach",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Testing Approach",
-    "text": "Testing Approach\nI tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination. The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24]."
-  },
-  {
-    "objectID": "labs/lab1/index.html#requirements",
-    "href": "labs/lab1/index.html#requirements",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Requirements",
-    "text": "Requirements\nMy lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.\nNumber of hours spent: 15 + 2"
-  },
-  {
-    "objectID": "labs/lab1/index.html#comments-for-next-time",
-    "href": "labs/lab1/index.html#comments-for-next-time",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Comments for next time",
-    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly. This lab was waaaay easier the second time around when I fixed it for excellence after completing lab 2. I think I just needed more practice with the tools and workflow to be comfortable with it."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "E155 Blog",
-    "section": "",
-    "text": "Halfway Point\n\n\n\n\n\nTaking stock of my progress thus far\n\n\n\n\n\nOct 11, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT, the musician\n\n\n\n\n\nMerrily, merrily, merrily, merrily, life is but a dream\n\n\n\n\n\nOct 4, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Reflection\n\n\n\n\n\nTrying to think of a cool final project\n\n\n\n\n\nSep 27, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Reflection\n\n\n\n\n\nAnother week, another learning opportunity\n\n\n\n\n\nSep 20, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Reflection\n\n\n\n\n\nConnections of every kind\n\n\n\n\n\nSep 17, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "E155 Portfolio",
-    "section": "",
-    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
-  },
-  {
-    "objectID": "labs/lab2/index.html",
-    "href": "labs/lab2/index.html",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "",
-    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
-  },
-  {
-    "objectID": "labs/lab2/index.html#summary",
-    "href": "labs/lab2/index.html#summary",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "",
-    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
-  },
-  {
-    "objectID": "labs/lab2/index.html#design-and-testing-methodology",
-    "href": "labs/lab2/index.html#design-and-testing-methodology",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 mA\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: The FPGA pins output 3.3V so \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nFor the transistor: The gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = $, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. The 5V supply from the dev board should be able to supply that much. I need at least 7*25mA = 175 mA to power my seven segments at 25mA each. \\(5V/ 200 mA = 25 \\Omega\\) -&gt; used \\(27 \\Omega\\) because that was available.\nFor each cathode: we cannot exceed more than 30 mA per segment and the transistor can only provide up to 200 mA so I want 25mA per segment. Since we’re now powering them with 5V instead of 3.3V like lab 1, \\(R_{cathode} = (5V - 0.7V)/ 0.025 A = 172 \\Omega\\). Rounding to the nearest available resistor, I used ???.\nHumans can only see flickering up to about 90 Hz (source). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount of flicker. I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode."
-  },
-  {
-    "objectID": "labs/lab2/index.html#technical-documentation",
-    "href": "labs/lab2/index.html#technical-documentation",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
-  },
-  {
-    "objectID": "labs/lab2/index.html#results-and-discussion",
-    "href": "labs/lab2/index.html#results-and-discussion",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time. I learned that ModelSim will default to picoseconds, not nanoseconds, which I figured out when I didn’t see reset finish its initial pulse. I didn’t bother to test the seven segment module again as it didn’t change from last week’s code.  \nGoing forward, I should probably use testvectors with my testbench, but I appreciated the simple way of just forcing values and pausing as a nice transition from the manual way I did originally.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
-  },
-  {
-    "objectID": "labs/lab2/index.html#conclusion",
-    "href": "labs/lab2/index.html#conclusion",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 15 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 3)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
+    "objectID": "labs.html#lab-7-the-advanced-encryption-standard",
+    "href": "labs.html#lab-7-the-advanced-encryption-standard",
+    "title": "Labs",
+    "section": "Lab 7: The Advanced Encryption Standard",
+    "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
     "objectID": "labs/lab4/index.html",
@@ -294,53 +147,207 @@
     "text": "Conclusion\nThe design works as intended to play music using the timers on the STM32L432KC MCU. I spent roughly 16 hours on this lab. (Tues: 2, Fri: 4, Sat: 3, Sun: 4, Mon: 3)"
   },
   {
-    "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
-    "href": "labs.html#lab-2-multiplexed-7-segment-display",
-    "title": "Labs",
-    "section": "Lab 2: Multiplexed 7-Segment Display",
-    "text": "Lab 2: Multiplexed 7-Segment Display"
-  },
-  {
-    "objectID": "labs.html#lab-3-keypad-scanner",
-    "href": "labs.html#lab-3-keypad-scanner",
-    "title": "Labs",
-    "section": "Lab 3: Keypad Scanner",
-    "text": "Lab 3: Keypad Scanner"
-  },
-  {
-    "objectID": "labs.html#lab-4-digital-audio",
-    "href": "labs.html#lab-4-digital-audio",
-    "title": "Labs",
-    "section": "Lab 4: Digital Audio",
-    "text": "Lab 4: Digital Audio"
-  },
-  {
-    "objectID": "labs.html#lab-5-interrupts",
-    "href": "labs.html#lab-5-interrupts",
-    "title": "Labs",
-    "section": "Lab 5: Interrupts",
-    "text": "Lab 5: Interrupts"
-  },
-  {
-    "objectID": "labs.html#lab-6-the-iot-and-spi",
-    "href": "labs.html#lab-6-the-iot-and-spi",
-    "title": "Labs",
-    "section": "Lab 6: The IOT and SPI",
-    "text": "Lab 6: The IOT and SPI"
-  },
-  {
-    "objectID": "labs.html#lab-7-the-advanced-encryption-standard",
-    "href": "labs.html#lab-7-the-advanced-encryption-standard",
-    "title": "Labs",
-    "section": "Lab 7: The Advanced Encryption Standard",
-    "text": "Lab 7: The Advanced Encryption Standard"
-  },
-  {
-    "objectID": "posts/lab1-post.html",
-    "href": "posts/lab1-post.html",
-    "title": "Week 1 Reflection",
+    "objectID": "labs/lab2/index.html",
+    "href": "labs/lab2/index.html",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "",
-    "text": "At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn’t the first time I’ve come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I’m okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.\nAnyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It’s like breadboarding, but better: I don’t have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench."
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+  },
+  {
+    "objectID": "labs/lab2/index.html#summary",
+    "href": "labs/lab2/index.html#summary",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+  },
+  {
+    "objectID": "labs/lab2/index.html#design-and-testing-methodology",
+    "href": "labs/lab2/index.html#design-and-testing-methodology",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 mA\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: The FPGA pins output 3.3V so \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nFor the transistor: The gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = $, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. The 5V supply from the dev board should be able to supply that much. I need at least 7*25mA = 175 mA to power my seven segments at 25mA each. \\(5V/ 200 mA = 25 \\Omega\\) -&gt; used \\(27 \\Omega\\) because that was available.\nFor each cathode: we cannot exceed more than 30 mA per segment and the transistor can only provide up to 200 mA so I want 25mA per segment. Since we’re now powering them with 5V instead of 3.3V like lab 1, \\(R_{cathode} = (5V - 0.7V)/ 0.025 A = 172 \\Omega\\). Rounding to the nearest available resistor, I used ???.\nHumans can only see flickering up to about 90 Hz (source). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount of flicker. I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode."
+  },
+  {
+    "objectID": "labs/lab2/index.html#technical-documentation",
+    "href": "labs/lab2/index.html#technical-documentation",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+  },
+  {
+    "objectID": "labs/lab2/index.html#results-and-discussion",
+    "href": "labs/lab2/index.html#results-and-discussion",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time. I learned that ModelSim will default to picoseconds, not nanoseconds, which I figured out when I didn’t see reset finish its initial pulse. I didn’t bother to test the seven segment module again as it didn’t change from last week’s code.  \nGoing forward, I should probably use testvectors with my testbench, but I appreciated the simple way of just forcing values and pausing as a nice transition from the manual way I did originally.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
+  },
+  {
+    "objectID": "labs/lab2/index.html#conclusion",
+    "href": "labs/lab2/index.html#conclusion",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 15 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 3)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "(Re)building momentum\n\n\n\n\n\nPlanning ahead for the rest of the semester\n\n\n\n\n\nOct 18, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nHalfway Point\n\n\n\n\n\nTaking stock of my progress thus far\n\n\n\n\n\nOct 11, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT, the musician\n\n\n\n\n\nMerrily, merrily, merrily, merrily, life is but a dream\n\n\n\n\n\nOct 4, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Reflection\n\n\n\n\n\nTrying to think of a cool final project\n\n\n\n\n\nSep 27, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Reflection\n\n\n\n\n\nAnother week, another learning opportunity\n\n\n\n\n\nSep 20, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Reflection\n\n\n\n\n\nConnections of every kind\n\n\n\n\n\nSep 17, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/lab1/index.html",
+    "href": "labs/lab1/index.html",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "",
+    "text": "(Editor’s Note: This lab was updated onn 9/9 to reflect changes made in hopes of acheiving an excellence rating. The original of this page as it was when first submitted can be found on the website Github repo.)"
+  },
+  {
+    "objectID": "labs/lab1/index.html#summary",
+    "href": "labs/lab1/index.html#summary",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Summary",
+    "text": "Summary\nThe main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
+  },
+  {
+    "objectID": "labs/lab1/index.html#design-approach",
+    "href": "labs/lab1/index.html#design-approach",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Design Approach",
+    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. The oscillator module uses the onboard high speed oscillator (HSOSC) which was configured to run at 24 Mhz and then divided down to 2.4 Hz for led[2]. The led module uses the clock because it has a counter, but the rest of the LEDs use combinational logic. The seven-segment display is its own module for reusability. \nThe schematic shows all the connections to the FPGA. The DIP switches were configured to use internal 100 kOhm pull-up resistors. Putting the same resistor on each line made it so that each LED got the same amount of current running through it. The resistor was chosen so that the current on each segment was no more than 20 mA (which is giving plenty of headroom according to the datasheet, which on page 2, Table “Absolute Maximum Ratings” says 30 mA is the limit.) \\((3.3V - 0.7V)/20 mA = 130 \\Omega\\). I used 150 Ohm resistors because they were available."
+  },
+  {
+    "objectID": "labs/lab1/index.html#testing-approach",
+    "href": "labs/lab1/index.html#testing-approach",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Testing Approach",
+    "text": "Testing Approach\nI tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination. The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24]."
+  },
+  {
+    "objectID": "labs/lab1/index.html#requirements",
+    "href": "labs/lab1/index.html#requirements",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Requirements",
+    "text": "Requirements\nMy lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.\nNumber of hours spent: 15 + 2"
+  },
+  {
+    "objectID": "labs/lab1/index.html#comments-for-next-time",
+    "href": "labs/lab1/index.html#comments-for-next-time",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Comments for next time",
+    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly. This lab was waaaay easier the second time around when I fixed it for excellence after completing lab 2. I think I just needed more practice with the tools and workflow to be comfortable with it."
+  },
+  {
+    "objectID": "labs/lab3/index.html",
+    "href": "labs/lab3/index.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+  },
+  {
+    "objectID": "labs/lab3/index.html#summary",
+    "href": "labs/lab3/index.html#summary",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+  },
+  {
+    "objectID": "labs/lab3/index.html#design-and-testing-methodology",
+    "href": "labs/lab3/index.html#design-and-testing-methodology",
+    "title": "Lab 3",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nTo start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.\n\nState Transition Diagram\n\n\n\nState Transition Diagram\n\n\nI originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).\nThe debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit."
+  },
+  {
+    "objectID": "labs/lab3/index.html#technical-documentation",
+    "href": "labs/lab3/index.html#technical-documentation",
+    "title": "Lab 3",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 3 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs.\n\n\nSchematic\n\n\n\nLab 3 Schematic\n\n\nThe schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn’t match either of the given ones on the lab 3 page. I don’t know why we don’t have any handheld multimeters that scream when resistance is zero but I would have liked that."
+  },
+  {
+    "objectID": "labs/lab3/index.html#results-and-discussion",
+    "href": "labs/lab3/index.html#results-and-discussion",
+    "title": "Lab 3",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\nTestbench\nI simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later). \nThe FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high. \nI fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be “pulse R0 and read R2”. \nHere is the full simulation:\n\n\n\nFull simulation"
+  },
+  {
+    "objectID": "labs/lab3/index.html#conclusion",
+    "href": "labs/lab3/index.html#conclusion",
+    "title": "Lab 3",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)"
+  },
+  {
+    "objectID": "labs/lab5/index.html",
+    "href": "labs/lab5/index.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction."
+  },
+  {
+    "objectID": "labs/lab5/index.html#summary",
+    "href": "labs/lab5/index.html#summary",
+    "title": "Lab 5",
+    "section": "",
+    "text": "The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction."
+  },
+  {
+    "objectID": "labs/lab5/index.html#video",
+    "href": "labs/lab5/index.html#video",
+    "title": "Lab 5",
+    "section": "Video",
+    "text": "Video"
+  },
+  {
+    "objectID": "labs/lab5/index.html#design-and-testing-methodology",
+    "href": "labs/lab5/index.html#design-and-testing-methodology",
+    "title": "Lab 5",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThis code made use of the Extended Interrupts and Events Controller (EXTI) peripheral on the STM32L432KC. The 2 channels of the quad encoder were connected to GPIO pins PA8 and PA10, which can be configured to trigger EXTI lines 8 and 10 on both rising and falling edges. Keeping track of all edges, not just one or the other, increased the resolution.\n\nThese interrupts are handled by two separate interrupt handlers because the interrupts are enabled by two separate registers in the NVIC. This made it slightly easier to keep track of which line had triggered (although I would have been able to check either way). I used a timer to measure when each edge occurred, arbitrarily choosing to reset the clock to zero on the rising A interrupt. As seen below, knowing the relative timing of the rising and falling edges on B allowed me to find the direction of rotation (which I verified by running the motor at a low speed and watching the flat edge rotate). From measurements at full speed I knew edges occurred roughly every 0.5 ms, so I set the clock to be 100 kHz so that there would be roughly 50 clock cycles per pulse.\n\n\n\n\nQuad encoder signals and relative phases\n\n\nTo convert number of edges per unit time into a rotational velocity, I used the following coverstion: $ * * = $"
+  },
+  {
+    "objectID": "labs/lab5/index.html#technical-documentation",
+    "href": "labs/lab5/index.html#technical-documentation",
+    "title": "Lab 5",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nFlowchart\n\n\n\nLab 5 Flowchart\n\n\nThe flowchart shows how the interrupts exit and return from the main body loop."
+  },
+  {
+    "objectID": "labs/lab5/index.html#results-and-discussion",
+    "href": "labs/lab5/index.html#results-and-discussion",
+    "title": "Lab 5",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nTo verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\n\n\n\n\nFull speed encoder output\n\n\nFor example, I count 23 edges here in a time of 10 ms, which translates to 9.583 rev/s. I expect some difference between measured and the code output because I used a different time frame in which to measure. This difference can be attributed to both actual fluctutation in the motor speed and to the error that comes from sampling for a short-ish period of time. Overall, the measured and code-output speeds agree to within 0.25 rev/s (15 rpm).\n\n\nTable 1 - Comparison of actual to measured speeds\n\n\nVoltage\nHand-Calc Speed\nCode Output\n\n\n\n\n5V\n3.958 rev/s\n3.942 rev/s\n\n\n8V\n6.25 rev/s\n6.48 rev/s\n\n\n12v\n9.583 rev/s\n9.74 rev/s"
+  },
+  {
+    "objectID": "labs/lab5/index.html#conclusion",
+    "href": "labs/lab5/index.html#conclusion",
+    "title": "Lab 5",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to read the speed of a motor and print it in real time. I spent roughly 10 hours on this lab. (Sat: 3, Sun: 4, Mon: 1, Tues: 2)"
+  },
+  {
+    "objectID": "posts/first-post.html",
+    "href": "posts/first-post.html",
+    "title": "Learning Goals",
+    "section": "",
+    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
+  },
+  {
+    "objectID": "posts/oct18-post.html",
+    "href": "posts/oct18-post.html",
+    "title": "(Re)building momentum",
+    "section": "",
+    "text": "To complement my post from last week, where I looked back at the 7 weeks that have already past, this week I want to look at the 8 weeks that remain in the semester. I still have two labs (6 and 7) left to go. Lab 6 shouldn’t be too bad (I say now, having not started it yet) because it is more of the same device driver writing that we’ve been doing for the past two labs. Lab 7 makes me a bit more nervous because I think the FPGA is a harder to work with and to debug than the MCU (I may just be traumatized by lab 3). Still, I feel like I’ve got a handle on both of them. Imagine telling my week 2 self that!\n\nAs for the upcoming project, my lab partner and I are going to build a hands-free arm wrestling system using two electromyography EMG sensors and an LED display. The sensors will be on armbands and all you have to do is flex and based on the difference in the readings, the LEDs will display who is currently putting out more force and winning. I’m excitingly waiting for our parts from Digikey and Amazon to get in so we can get started! One, I think our project is fun but also two, I want to cut down the risk as soon as possible by getting the EMG sensor built and tested. It will be a bit rough to get much done while we still have the labs but I think we can swing it."
   },
   {
     "objectID": "posts/week3-post.html",
