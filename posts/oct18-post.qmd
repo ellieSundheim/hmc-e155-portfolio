@@ -1,0 +1,12 @@
+---
+title: (Re)building momentum
+description: "Planning ahead for the rest of the semester"
+author: "Ellie Sundheim"
+date: "10/18/24"
+categories:
+  - reflection
+draft: false
+---
+To complement my post from last week, where I looked back at the 7 weeks that have already past, this week I want to look at the 8 weeks that remain in the semester. I still have two labs (6 and 7) left to go. Lab 6 shouldn't be too bad (I say now, having not started it yet) because it is more of the same device driver writing that we've been doing for the past two labs. Lab 7 makes me a bit more nervous because I think the FPGA is a harder to work with and to debug than the MCU (I may just be traumatized by lab 3). Still, I feel like I've got a handle on both of them. Imagine telling my week 2 self that!\
+
+As for the upcoming project, my lab partner and I are going to build a hands-free arm wrestling system using two electromyography EMG sensors and an LED display. The sensors will be on armbands and all you have to do is flex and based on the difference in the readings, the LEDs will display who is currently putting out more force and winning. I'm excitingly waiting for our parts from Digikey and Amazon to get in so we can get started! One, I think our project is fun but also two, I want to cut down the risk as soon as possible by getting the EMG sensor built and tested. It will be a bit rough to get much done while we still have the labs but I think we can swing it.
