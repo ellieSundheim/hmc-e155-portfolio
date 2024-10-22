@@ -120,8 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link active" data-scroll-target="#video">Video</a></li>
   <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
   <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
   <ul class="collapse">
@@ -154,11 +153,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction.<br>
+<p>(note: updated 10/22/24 to include schematic, polling comparison) ## Summary The main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction.<br>
 </p>
-</section>
 <section id="video" class="level2">
 <h2 class="anchored" data-anchor-id="video">Video</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XDTTOyFxA5U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
@@ -182,6 +178,12 @@ ul.task-list li input[type="checkbox"] {
 <p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab5">here</a>.</p>
 <section id="flowchart" class="level3">
 <h3 class="anchored" data-anchor-id="flowchart">Flowchart</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab5/images/lab5_schematic.png" class="img-fluid figure-img"></p>
+<figcaption>Lab 5 Schematic</figcaption>
+</figure>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../..\labs/lab5/images/Lab5_flowchart.jpg" class="img-fluid figure-img"></p>
@@ -230,6 +232,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<p>Using interrupts provides an advantage over manual polling. The while loop in <code>main()</code> has a delay of 500 ms, but at no point does the entire loop run uninterrupted. When the motor is at its nominal 10 rev/s (12V) speed, there are approximately 50 interrupts that happen within a single loop. To reconstruct the square wave from the encoder by polling, we would need to sample at twice the frequency, or minimum 20Hz. This would mean our delay could <em>at most</em> be 50 ms, which is 10x the loop that we’re able to run using interrupts. Interrupts make this way easier!<br>
+</p>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
