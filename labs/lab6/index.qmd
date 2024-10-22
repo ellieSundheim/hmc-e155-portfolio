@@ -2,14 +2,22 @@
 title: Lab 6
 ---
 ## Summary
-The main goal of this assignment was to   \
+
+The main goals of this assignment were to learn how to control the SPI peripheral on the STM32L432KC MCU 
+and to learn how to interface sensor results with a webpage. I got more practice writing device drivers, 
+and learned for the first time how to use a logic analyzer and write HTML code. \
 
 ## Video 
-{{< video https://youtu.be/XDTTOyFxA5U >}}
+{{< video  https://youtu.be/IM4z_4Q8VTQ >}}
 
 
 ## Design and Testing Methodology
+I split this lab into 3 main tasks:
+- 1, get SPI working on its own
+- 2, get SPI working with the temperature sensor, and 
+- 3, get the temperature sensor working with the webpage
 
+Getting SPI working on its own was a challenge in its own right. The 
 
 ## Technical Documentation
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab6).
@@ -20,6 +28,7 @@ The source code for this lab can be found [here](https://github.com/ellieSundhei
 
 ![SPI Logic Analyzer Output](/labs/lab6/images/spi.png)
 
+This lab still isn't perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I'm not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling readTemperature again and throwing away that result when changing the resolution to try to get ahead, but that didn't work either.\
 
 
 ## Conclusion
