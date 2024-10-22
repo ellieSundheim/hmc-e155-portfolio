@@ -115,8 +115,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -140,8 +151,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>The main goals of this assignment were to learn how to control the SPI peripheral on the STM32L432KC MCU and to learn how to interface sensor results with a webpage. I got more practice writing device drivers, and learned for the first time how to use a logic analyzer and write HTML code.<br>
+</p>
+</section>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IM4z_4Q8VTQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>I split this lab into 3 main tasks: - 1, get SPI working on its own - 2, get SPI working with the temperature sensor, and - 3, get the temperature sensor working with the webpage</p>
+<p>Getting SPI working on its own was a challenge in its own right. The</p>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab6">here</a>.</p>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab6/images/spi.png" class="img-fluid figure-img"></p>
+<figcaption>SPI Logic Analyzer Output</figcaption>
+</figure>
+</div>
+<p>This lab still isn’t perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I’m not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling readTemperature again and throwing away that result when changing the resolution to try to get ahead, but that didn’t work either.<br>
+</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The design works as intended to read the speed of a motor and print it in real time. I spent roughly 16 hours on this lab. (Sat: 4.5, Sun: 5.5, Mon: 4, Tues: 2)</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

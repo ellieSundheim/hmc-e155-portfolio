@@ -98,6 +98,55 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
+    "objectID": "labs/lab6/index.html",
+    "href": "labs/lab6/index.html",
+    "title": "Lab 6",
+    "section": "",
+    "text": "The main goals of this assignment were to learn how to control the SPI peripheral on the STM32L432KC MCU and to learn how to interface sensor results with a webpage. I got more practice writing device drivers, and learned for the first time how to use a logic analyzer and write HTML code."
+  },
+  {
+    "objectID": "labs/lab6/index.html#summary",
+    "href": "labs/lab6/index.html#summary",
+    "title": "Lab 6",
+    "section": "",
+    "text": "The main goals of this assignment were to learn how to control the SPI peripheral on the STM32L432KC MCU and to learn how to interface sensor results with a webpage. I got more practice writing device drivers, and learned for the first time how to use a logic analyzer and write HTML code."
+  },
+  {
+    "objectID": "labs/lab6/index.html#video",
+    "href": "labs/lab6/index.html#video",
+    "title": "Lab 6",
+    "section": "Video",
+    "text": "Video"
+  },
+  {
+    "objectID": "labs/lab6/index.html#design-and-testing-methodology",
+    "href": "labs/lab6/index.html#design-and-testing-methodology",
+    "title": "Lab 6",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nI split this lab into 3 main tasks: - 1, get SPI working on its own - 2, get SPI working with the temperature sensor, and - 3, get the temperature sensor working with the webpage\nGetting SPI working on its own was a challenge in its own right. The"
+  },
+  {
+    "objectID": "labs/lab6/index.html#technical-documentation",
+    "href": "labs/lab6/index.html#technical-documentation",
+    "title": "Lab 6",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here."
+  },
+  {
+    "objectID": "labs/lab6/index.html#results-and-discussion",
+    "href": "labs/lab6/index.html#results-and-discussion",
+    "title": "Lab 6",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\n\n\nSPI Logic Analyzer Output\n\n\nThis lab still isn’t perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I’m not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling readTemperature again and throwing away that result when changing the resolution to try to get ahead, but that didn’t work either."
+  },
+  {
+    "objectID": "labs/lab6/index.html#conclusion",
+    "href": "labs/lab6/index.html#conclusion",
+    "title": "Lab 6",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to read the speed of a motor and print it in real time. I spent roughly 16 hours on this lab. (Sat: 4.5, Sun: 5.5, Mon: 4, Tues: 2)"
+  },
+  {
     "objectID": "labs/lab4/index.html",
     "href": "labs/lab4/index.html",
     "title": "Lab 4",
