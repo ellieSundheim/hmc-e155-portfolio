@@ -17,16 +17,25 @@ I split this lab into 3 main tasks:
 - 2, get SPI working with the temperature sensor, and 
 - 3, get the temperature sensor working with the webpage
 
-Getting SPI working on its own was a challenge in its own right. The 
+Getting SPI working on its own was a challenge in its own right. I ran into some issues with controlling the chip select
+via the built-in SSM and SSI registers, so I switched to using a GPIO pin as CS and changing it manually.\
+
+This manual chip select was helpful when I started talking to the temperature sensor. I set up SPI to use 8 bit packets.
+However, the DS1722 needs to receive 16 bits at a time, 8 bits of address and 8 bits of data. I could have switched the bit packet
+size to be 16, but the method I chose was to keep 8 bits packets, and to keep CS high in between. Figure 1 shows the output of a single SPI transaction where I read both the MSB and LSB registers. Note that at this time, the register was configured with the default 8 bit resolution.\
+
+![Figure 1: SPI Logic Analyzer Output](/labs/lab6/images/spi.png)
+
+ After I got it working, I packaged the GPIO statements and individual SPI calls together in my functions `readTemperature()` and `configDS1722res()`. The way I chose to process the raw MSB and LSB registers into temperatures was by removing the sign bit from the MSB, then converting the remaining seven bits to an integer. For each of the decimals, I masked and shifted the bits to isolate each power of two and then multiplied them by their decimal equivalent. Because the unused resolution bits get padded with zeros, this had the advantage of being able to give the correct decimal without needing to know what resolution it was set to.\
+
+The final (and hardest) step was interfacing with the ESP430 and the associated webpage. I tried to merge my main() function from SPI testing directly in, and kept running into an error where the chip would drop the wifi network once I tried to load the page. Because the example webpage worked, I went back to that version of main() and added in my lines one by one to see where it broke. It turned out to be assigning pin PA11 to MISO that crashed it, which likely means that pin was in use by the ESP430 already. I switched it to PA6 (since that also had the SPI1 MISO alternate function) and the chip quit crashing.\
 
 ## Technical Documentation
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab6).
 
+![Lab 6 Schematic]()
 
 ## Results and Discussion 
-
-
-![SPI Logic Analyzer Output](/labs/lab6/images/spi.png)
 
 This lab still isn't perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I'm not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling readTemperature again and throwing away that result when changing the resolution to try to get ahead, but that didn't work either.\
 
