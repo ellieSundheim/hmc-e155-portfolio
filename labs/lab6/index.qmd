@@ -33,12 +33,11 @@ The final (and hardest) step was interfacing with the ESP430 and the associated 
 ## Technical Documentation
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab6).
 
-![Lab 6 Schematic]()
+![Lab 6 Schematic](/labs/lab6/images/lab6_schematic.png)
 
 ## Results and Discussion 
 
-This lab still isn't perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I'm not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling readTemperature again and throwing away that result when changing the resolution to try to get ahead, but that didn't work either.\
-
+This lab still isn't perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update the resolution immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I'm not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling readTemperature() again in the configDS1722res() function and throwing away that result to try to get ahead, but that didn't work either.\
 
 ## Conclusion
-The design works as intended to read the speed of a motor and print it in real time. I spent roughly 16 hours on this lab. (Sat: 4.5, Sun: 5.5, Mon: 4, Tues: 2) 
+The design works as intended to read the temperature over SPI and display it via an HTML page. I spent roughly 16 hours on this lab. (Sat: 4.5, Sun: 5.5, Mon: 4, Tues: 2) 
