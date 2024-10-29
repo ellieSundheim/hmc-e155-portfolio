@@ -157,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The main goals of this assignment were to understand how the Advanced Encryption Standard(AES) works and to implement it from scratch on an FPGA.<br>
+<p>The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI.<br>
 </p>
 </section>
 <section id="video" class="level2">
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
 <p>This design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.<br>
 </p>
-<p>Using the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys.<br>
+<p>Using the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys. The reason that the design must be sequential is that there are not enough LUTs on the FPGA to do it entirely combinationally. Therefore, the given sbox module was sequetial to fit in BRAM instead. I use the FSM to wait 3 clock cycles before outputting for one clock cycle.<br>
 </p>
 </section>
 <section id="technical-documentation" class="level2">
@@ -196,7 +196,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
 <p>I tested each individual module (exept <code>mux</code> and <code>flopenr</code> because they were so simple, and <code>mixColumns</code> because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.<br>
 </p>
-<p><img src="../..\labs/lab7/images/subBytes_sucess.png" class="img-fluid" alt="subBytes testbench"> <img src="../..\labs/lab7/images/shiftRows_success.png" class="img-fluid" alt="shiftRows testbench"> <img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="addRoundKey testbench"> <img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="keyExpand testbench"> <img src="../..\labs/lab7/images/controller_success.png" class="img-fluid" alt="controller sucess"> Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing <code>done</code> and <code>outmuxen</code>.<br>
+<p><code>subBytes</code><br>
+<img src="../..\labs/lab7/images/subBytes_sucess.png" class="img-fluid" alt="subBytes testbench"></p>
+<p><code>shiftRows</code><br>
+<img src="../..\labs/lab7/images/shiftRows_success.png" class="img-fluid" alt="shiftRows testbench"></p>
+<p><code>addRoundKey</code><br>
+<img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="addRoundKey testbench"></p>
+<p><code>keyExpand</code><br>
+<img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="keyExpand testbench"></p>
+<p><code>controller</code><br>
+<img src="../..\labs/lab7/images/controller_success.png" class="img-fluid" alt="controller sucess"> Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing <code>done</code> and <code>outmuxen</code>.<br>
 </p>
 <p>To meet proficiency specs, I captured the testbenches for the overal <code>aes_core</code> and <code>aes_spi</code> modules.<br>
 </p>

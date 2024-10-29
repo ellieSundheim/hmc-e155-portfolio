@@ -389,14 +389,14 @@
     "href": "labs/lab7/index.html",
     "title": "Lab 7 - The Advanced Encryption Standard",
     "section": "",
-    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard(AES) works and to implement it from scratch on an FPGA."
+    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI."
   },
   {
     "objectID": "labs/lab7/index.html#summary",
     "href": "labs/lab7/index.html#summary",
     "title": "Lab 7 - The Advanced Encryption Standard",
     "section": "",
-    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard(AES) works and to implement it from scratch on an FPGA."
+    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI."
   },
   {
     "objectID": "labs/lab7/index.html#video",
@@ -410,7 +410,7 @@
     "href": "labs/lab7/index.html#design-and-testing-methodology",
     "title": "Lab 7 - The Advanced Encryption Standard",
     "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThis design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.\n\nUsing the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys."
+    "text": "Design and Testing Methodology\nThis design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.\n\nUsing the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys. The reason that the design must be sequential is that there are not enough LUTs on the FPGA to do it entirely combinationally. Therefore, the given sbox module was sequetial to fit in BRAM instead. I use the FSM to wait 3 clock cycles before outputting for one clock cycle."
   },
   {
     "objectID": "labs/lab7/index.html#technical-documentation",
@@ -424,7 +424,7 @@
     "href": "labs/lab7/index.html#results-and-discussion",
     "title": "Lab 7 - The Advanced Encryption Standard",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nI tested each individual module (exept mux and flopenr because they were so simple, and mixColumns because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.\n\n     Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing done and outmuxen.\n\nTo meet proficiency specs, I captured the testbenches for the overal aes_core and aes_spi modules.\n\n \nI added red and green LEDs to my breadboard to read out the failure and success pins."
+    "text": "Results and Discussion\nI tested each individual module (exept mux and flopenr because they were so simple, and mixColumns because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.\n\nsubBytes\n\nshiftRows\n\naddRoundKey\n\nkeyExpand\n\ncontroller\n Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing done and outmuxen.\n\nTo meet proficiency specs, I captured the testbenches for the overal aes_core and aes_spi modules.\n\n \nI added red and green LEDs to my breadboard to read out the failure and success pins."
   },
   {
     "objectID": "labs/lab7/index.html#conclusion",
