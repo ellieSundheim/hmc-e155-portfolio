@@ -17,7 +17,7 @@ Using the hint, I designed my system to be a controller and datapath structure. 
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab7).
 
 ### Block Diagram
-![Lab 7 Block Diagram](/labs/lab7/images/lab7_blockdiagram.jpg)
+![Lab 7 Block Diagram](/labs/lab7/images/lab7_blockdiagram.png)
 
 ### Schematic
 ![Lab 7 Schematic](/labs/lab7/images/lab7_schematic.png)
