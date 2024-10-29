@@ -6,7 +6,6 @@ title: Lab 7 - The Advanced Encryption Standard
 The main goals of this assignment were to understand how the Advanced Encryption Standard(AES) works and to implement it from scratch on an FPGA.\
 
 ## Video 
-{{< video   >}}
 
 
 ## Design and Testing Methodology
