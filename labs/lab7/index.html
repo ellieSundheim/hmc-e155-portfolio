@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 7 – E155 Portfolio</title>
+<title>Lab 7 - The Advanced Encryption Standard – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,15 +115,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
+  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  </ul></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 7</h1>
+<h1 class="title">Lab 7 - The Advanced Encryption Standard</h1>
 </div>
 
 
@@ -140,8 +155,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>The main goals of this assignment were to understand how the Advanced Encryption Standard(AES) works and to implement it from scratch on an FPGA.<br>
+</p>
+</section>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+</section>
+<section id="design-and-testing-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
+<p>This design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.<br>
+</p>
+<p>Using the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys.<br>
+</p>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab7">here</a>.</p>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab7/images/lab7_blockdiagram.jpg" class="img-fluid figure-img"></p>
+<figcaption>Lab 7 Block Diagram</figcaption>
+</figure>
+</div>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\labs/lab7/images/lab7_schematic.png" class="img-fluid figure-img"></p>
+<figcaption>Lab 7 Schematic</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<p>I tested each individual module (exept <code>mux</code> and <code>flopenr</code> because they were so simple, and <code>mixColumns</code> because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.<br>
+</p>
+<p><img src="../..\labs/lab7/images/subBytes_sucess.png" class="img-fluid" alt="subBytes testbench"> <img src="../..\labs/lab7/images/shiftRows_success.png" class="img-fluid" alt="shiftRows testbench"> <img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="addRoundKey testbench"> <img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="keyExpand testbench"> <img src="../..\labs/lab7/images/controller_success.png" class="img-fluid" alt="controller sucess"> Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing <code>done</code> and <code>outmuxen</code>.<br>
+</p>
+<p>To meet proficiency specs, I captured the testbenches for the overal <code>aes_core</code> and <code>aes_spi</code> modules.<br>
+</p>
+<p><img src="../..\labs/lab7/images/full_aes_core_success.png" class="img-fluid" alt="aes_core testbench"> <img src="../..\labs/lab7/images/aes_spi_success.png" class="img-fluid" alt="aes_spi tesbench"></p>
+<p>I added red and green LEDs to my breadboard to read out the failure and success pins.<br>
+</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The design works as intended to implement AES on an FPGA. I spent roughly 17 hours on this lab. (Fri: 2, Sat: 3.5, Sun: 6.5, Mon: 5).</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
