@@ -10,23 +10,36 @@ The main goals of this assignment were to understand how the Advanced Encryption
 
 
 ## Design and Testing Methodology
-This design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.
+This design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.\
 
-Using the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys.
+Using the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys.\
 
 ## Technical Documentation
 The source code for this lab can be found [here](https://github.com/ellieSundheim/microPs-lab7).
 
 ### Block Diagram
+![Lab 7 Block Diagram](/labs/lab7/images/lab7_blockdiagram.jpg)
 
 ### Schematic
 ![Lab 7 Schematic](/labs/lab7/images/lab7_schematic.png)
 
-### FSM
-
 ## Results and Discussion 
 
+I tested each individual module (exept `mux` and `flopenr` because they were so simple, and `mixColumns` because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.\
 
+![subBytes testbench](/labs/lab7/images/subBytes_sucess.png)
+![shiftRows testbench](/labs/lab7/images/shiftRows_success.png)
+![addRoundKey testbench](/labs/lab7/images/addRoundKey_success.png)
+![keyExpand testbench](/labs/lab7/images/addRoundKey_success.png)
+![controller sucess](/labs/lab7/images/controller_success.png)
+Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing `done` and `outmuxen`.\
+
+To meet proficiency specs, I captured the testbenches for the overal `aes_core` and `aes_spi` modules.\
+
+![aes_core testbench](/labs/lab7/images/full_aes_core_success.png)
+![aes_spi tesbench](/labs/lab7/images/aes_spi_success.png)
+
+I added red and green LEDs to my breadboard to read out the failure and success pins.\
 
 ## Conclusion
 The design works as intended to implement AES on an FPGA. I spent roughly 17 hours on this lab. (Fri: 2, Sat: 3.5, Sun: 6.5, Mon: 5).
