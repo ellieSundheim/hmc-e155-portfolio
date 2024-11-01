@@ -6,7 +6,7 @@ title: Lab 7 - The Advanced Encryption Standard
 The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI.\
 
 ## Video 
-
+{{< video https://youtu.be/apQ5NA8MxEg >}}
 
 ## Design and Testing Methodology
 This design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.\
