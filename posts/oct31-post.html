@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ellie Sundheim">
+<meta name="dcterms.date" content="2024-10-31">
+<meta name="description" content="Inspired by some cool Youtube videos">
 
-<title>Lab 7 - The Advanced Encryption Standard – E155 Portfolio</title>
+<title>Future Applications of MicroPs – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">E155 Portfolio</span>
     </a>
   </div>
@@ -89,19 +92,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../labs.html"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html"> 
+    <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -115,37 +118,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
-  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
-  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
-  <ul class="collapse">
-  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
-  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
-  </ul></li>
-  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 7 - The Advanced Encryption Standard</h1>
-</div>
+<h1 class="title">Future Applications of MicroPs</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">reflection</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Inspired by some cool Youtube videos
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ellie Sundheim </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 31, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -155,78 +163,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI.<br>
-</p>
-</section>
-<section id="video" class="level2">
-<h2 class="anchored" data-anchor-id="video">Video</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/apQ5NA8MxEg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="design-and-testing-methodology" class="level2">
-<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
-<p>This design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.<br>
-</p>
-<p>Using the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys. The reason that the design must be sequential is that there are not enough LUTs on the FPGA to do it entirely combinationally. Therefore, the given sbox module was sequetial to fit in BRAM instead. I use the FSM to wait 3 clock cycles before outputting for one clock cycle.<br>
-</p>
-</section>
-<section id="technical-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
-<p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab7">here</a>.</p>
-<section id="block-diagram" class="level3">
-<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../..\labs/lab7/images/lab7_blockdiagram.png" class="img-fluid figure-img"></p>
-<figcaption>Lab 7 Block Diagram</figcaption>
-</figure>
-</div>
-</section>
-<section id="schematic" class="level3">
-<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../..\labs/lab7/images/lab7_schematic.png" class="img-fluid figure-img"></p>
-<figcaption>Lab 7 Schematic</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="results-and-discussion" class="level2">
-<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
-<p>I tested each individual module (exept <code>mux</code> and <code>flopenr</code> because they were so simple, and <code>mixColumns</code> because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.<br>
-</p>
-<p><code>subBytes</code><br>
-<img src="../..\labs/lab7/images/subBytes_sucess.png" class="img-fluid" alt="subBytes testbench"></p>
-<p><code>shiftRows</code><br>
-<img src="../..\labs/lab7/images/shiftRows_success.png" class="img-fluid" alt="shiftRows testbench"></p>
-<p><code>addRoundKey</code><br>
-<img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="addRoundKey testbench"></p>
-<p><code>keyExpand</code><br>
-<img src="../..\labs/lab7/images/addRoundKey_success.png" class="img-fluid" alt="keyExpand testbench"></p>
-<p><code>controller</code><br>
-<img src="../..\labs/lab7/images/controller_success.png" class="img-fluid" alt="controller sucess"> Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing <code>done</code> and <code>outmuxen</code>.<br>
-</p>
-<p>To meet proficiency specs, I captured the testbenches for the overal <code>aes_core</code> and <code>aes_spi</code> modules.<br>
-</p>
-<p><img src="../..\labs/lab7/images/full_aes_core_success.png" class="img-fluid" alt="aes_core testbench"> <img src="../..\labs/lab7/images/aes_spi_success.png" class="img-fluid" alt="aes_spi tesbench"></p>
-<p>I added red and green LEDs to my breadboard to read out the failure and success pins.<br>
-</p>
-<p>Finally, I recorded one SPI transaction on the logic analyzer. The entire AES encoding takes place in fewer than 2 microseconds! That’s fast.<br>
-<img src="../..\labs/lab7/images/aes_spi.png" class="img-fluid" alt="aes spi logic analyzer"> D0 = PA5 = load<br>
-D1 = PB3 = sck<br>
-D2 = PB5 = mosi<br>
-D3 = PB4 = miso<br>
-D4 = PA6 = done<br>
-</p>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The design works as intended to implement AES on an FPGA. I spent roughly 17 hours on this lab. (Fri: 2, Sat: 3.5, Sun: 6.5, Mon: 5).</p>
+<p>I’ve been thinking about how I’ll use my very expensive education after college. For HSA classes, I never expected them to be useful, so that’s not a problem. Most of them I enjoyed in the moment. I still pull out fun facts and make random connections to other topics and sound well-rounded when I talk to other people, and that’s all I wanted out of my humanities anyway. For some of my classes, like E72 or E&amp;M, I’ll continue to use tools built on the fundamental concepts they teach, like Fourier series and magnetic fields, even if I don’t necessarily develop them from first principles again. Some of my classes, like E83, I will just appreciate what my mech E colleagues think about (from a safe distance). But MicoPs (and perahps a select few others), I hope and expect to use for both work and personal projects. Work, I already know, will involve microcontrollers to some extent. I hope I can use more interesting ones than Arduinos - my background in E155 should be enough for me to make educated guesses about what an Arduino is and is not capable of, and why I might want a different microcontroller with other peripherals. Personal projects are where it gets fun. I rejected a suggestion of my dad’s for the final project for being “too simple,” but it is something I can see myself making for him as a gift - a sensor to see if the garage door is open, since my mom and siblings have a tendency to forget about it. Maybe I’ll make it like the temperature sensor in lab 6 so he can check it from anywhere, and even close it. My dad has also wanted to make some sort of candy delivery system for Halloween for a while, and I finally think I have the skills to make it cool and not lame. I think he wanted the screaming monkeys from the Wizard of Oz crossed with a Rube Goldberg machine, and with my new knowledge of speakers and motors, I think I can inflict some serious pyschic damage on unsuspecting trick-or-treaters. Hopefully, my $ * 4 credits = 17,000$ dollar of microPs tuition is worth it.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
