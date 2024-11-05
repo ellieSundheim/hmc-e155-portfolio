@@ -1,0 +1,15 @@
+---
+title: Week 8(?) Reflection
+description: "Playing numbers games"
+author: "Ellie Sundheim"
+date: "10/25/24"
+categories:
+  - reflection
+draft: false
+---
+Taking a break from introspection this week, I found [this article](https://www.eetimes.eu/women-in-quantum-see-remedy-for-talent-shortage-recruit-more-women/) that I'd like to dig into, since it relates to both microPs and my Clinic project. The TL;DR is that quantum computing is a rapidly growing field that needs all the talent it can get. However, according to this article, women account for only 2% of the applicants to jobs in the field. Yikes. (For context, women make up 9% of electrical engineers currently in the workforce and 21% of physicists. The number I'd expect isn't 50, but it is higher than 2.) The article goes on to hypothesize about why this is the case even though the number of quantum programs keeps increasing. To be honest, I didn't find any of their reasoning to be particularly compelling. And that made me think about why I won't be going into quantum computing (at least not now).\
+
+- *I already have my dream job.* I'm really excited to work on aerospace projects, especially space robots! Quantum computing is cool, but I wouldn't get to travel to NASA to test my work.\
+- *I don't feel qualified.* Given the team we work with on our Clinic project, I don't think that I would have the career I want unless I got a PhD. And while I won't rule that out entirely, I'm not really sure that I care about quantum computers (or anything, for that matter) deeply enough to commit another 7 years of my life to studying it.\
+
+Things I do like about the quantum computing industry are that it is cutting edge,and the open environment. My friend from high school with degrees in engineering physics and EE works for a quantum computing company in CO, and his work sounds super cool! I have also been impressed by the short interactions that I have had with the qick creators, and appreciate the general spirit of prioritizing total knowledge of the field vs locking up pieces with patents as quickly as possible (not a pun). Also, there are quantum hubs near where I'd want to live and work in the future. So maybe, HRL, maybe. Keep the free t-shirts coming and we can talk.\
