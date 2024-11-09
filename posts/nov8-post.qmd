@@ -1,0 +1,12 @@
+---
+title: Week 10 Reflection
+description: "what a week."
+author: "Ellie Sundheim"
+date: "11/8/24"
+categories:
+  - reflection
+draft: false
+---
+And just like that, all the MicroPs labs are over! Sort of. It's nice that almost all of the labs will have taught me a skill that we need for the final project. (Especially Lab 7, since we're reusing a good chunk of it wholesale.) I think Labs 4 and 5 especially have given me the confidence to write device drivers, such that I'm feeling pretty good about the ADC driver I've been writing for the project (especially once I figure out how to make 0 volts read as zero volts and not some low but non-zero value).\
+
+I was fairly happy with how our design review went, especially since our presentation was not interrupted by a fire alarm. The consensus on our analog design appears to be to do the bare minimum needed to read in an amplified and rectified signal that takes advantage of the full ADC range, but to perhaps move some of the filtering to the digital domain. That makes sense to me since this is supposed to be an digital class (analog is my spring tech elective). People had no shortage of other games for us to implement. We've only committed to a single player bar graph and a multiplayer arm wrestling, but I'm hoping we have time to do at least one other. I especially liked the suggestion of a game that takes into account how fast one can flex and relax - I think something like Cookie Clicker or the pomegranete in Fruit Ninja could be fun. Finally, the feedback was all over the place for the display updates, but I'm glad that other people think the one screen per state is reasonable. I'm not entirely sure what all the suggestions for multiplexing were about since I think we have enough pins for all the outputs, but I'll keep it in the back of my mind in case we realize a need for it later.\
