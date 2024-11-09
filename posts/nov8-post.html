@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ellie Sundheim">
+<meta name="dcterms.date" content="2024-11-08">
+<meta name="description" content="what a week.">
 
-<title>Lab 6 - SPI and the IOT – E155 Portfolio</title>
+<title>Week 10 Reflection – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">E155 Portfolio</span>
     </a>
   </div>
@@ -89,19 +92,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../labs.html"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html"> 
+    <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -115,33 +118,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
-  <li><a href="#design-and-testing-methodology" id="toc-design-and-testing-methodology" class="nav-link" data-scroll-target="#design-and-testing-methodology">Design and Testing Methodology</a></li>
-  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a></li>
-  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 6 - SPI and the IOT</h1>
-</div>
+<h1 class="title">Week 10 Reflection</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">reflection</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    what a week.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ellie Sundheim </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 8, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -151,54 +163,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The main goals of this assignment were to learn how to control the SPI peripheral on the STM32L432KC MCU and to learn how to interface sensor results with a webpage. I got more practice writing device drivers, and learned for the first time how to use a logic analyzer and write HTML code.<br>
+<p>And just like that, all the MicroPs labs are over! Sort of. It’s nice that almost all of the labs will have taught me a skill that we need for the final project. (Especially Lab 7, since we’re reusing a good chunk of it wholesale.) I think Labs 4 and 5 especially have given me the confidence to write device drivers, such that I’m feeling pretty good about the ADC driver I’ve been writing for the project (especially once I figure out how to make 0 volts read as zero volts and not some low but non-zero value).<br>
 </p>
-</section>
-<section id="video" class="level2">
-<h2 class="anchored" data-anchor-id="video">Video</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IM4z_4Q8VTQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="design-and-testing-methodology" class="level2">
-<h2 class="anchored" data-anchor-id="design-and-testing-methodology">Design and Testing Methodology</h2>
-<p>I split this lab into 3 main tasks: - 1, get SPI working on its own - 2, get SPI working with the temperature sensor, and - 3, get the temperature sensor working with the webpage</p>
-<p>Getting SPI working on its own was a challenge in its own right. I ran into some issues with controlling the chip select via the built-in SSM and SSI registers, so I switched to using a GPIO pin as CS and changing it manually.<br>
+<p>I was fairly happy with how our design review went, especially since our presentation was not interrupted by a fire alarm. The consensus on our analog design appears to be to do the bare minimum needed to read in an amplified and rectified signal that takes advantage of the full ADC range, but to perhaps move some of the filtering to the digital domain. That makes sense to me since this is supposed to be an digital class (analog is my spring tech elective). People had no shortage of other games for us to implement. We’ve only committed to a single player bar graph and a multiplayer arm wrestling, but I’m hoping we have time to do at least one other. I especially liked the suggestion of a game that takes into account how fast one can flex and relax - I think something like Cookie Clicker or the pomegranete in Fruit Ninja could be fun. Finally, the feedback was all over the place for the display updates, but I’m glad that other people think the one screen per state is reasonable. I’m not entirely sure what all the suggestions for multiplexing were about since I think we have enough pins for all the outputs, but I’ll keep it in the back of my mind in case we realize a need for it later.<br>
 </p>
-<p>This manual chip select was helpful when I started talking to the temperature sensor. I set up SPI to use 8 bit packets. However, the DS1722 needs to receive 16 bits at a time, 8 bits of address and 8 bits of data. I could have switched the bit packet size to be 16, but the method I chose was to keep 8 bits packets, and to keep CS high in between. Figure 1 shows the output of a single SPI transaction where I read both the MSB and LSB registers. Note that at this time, the register was configured with the default 8 bit resolution.<br>
-</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../..\labs/lab6/images/spi.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1: SPI Logic Analyzer Output</figcaption>
-</figure>
-</div>
-<p>After I got it working, I packaged the GPIO statements and individual SPI calls together in my functions <code>readTemperature()</code> and <code>configDS1722res()</code>. The way I chose to process the raw MSB and LSB registers into temperatures was by removing the sign bit from the MSB, then converting the remaining seven bits to an integer. For each of the decimals, I masked and shifted the bits to isolate each power of two and then multiplied them by their decimal equivalent. Because the unused resolution bits get padded with zeros, this had the advantage of being able to give the correct decimal without needing to know what resolution it was set to. The integer part is added to the decimal, and if the sign bit is 1, -128 is aldo added for two’s complement.<br>
-</p>
-<p>The final (and hardest) step was interfacing with the ESP8266 and the associated webpage. I tried to merge my main() function from SPI testing directly in, and kept running into an error where the chip would drop the wifi network once I tried to load the page. Because the example webpage worked, I went back to that version of main() and added in my lines one by one to see where it broke. It turned out to be assigning pin PA11 to MISO that crashed it, which likely means that pin was in use by the ESP8266 already. I switched it to PA6 (since that also had the SPI1 MISO alternate function) and the chip quit crashing.<br>
-</p>
-</section>
-<section id="technical-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
-<p>The source code for this lab can be found <a href="https://github.com/ellieSundheim/microPs-lab6">here</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../..\labs/lab6/images/lab6_schematic.png" class="img-fluid figure-img"></p>
-<figcaption>Lab 6 Schematic</figcaption>
-</figure>
-</div>
-</section>
-<section id="results-and-discussion" class="level2">
-<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
-<p>This lab still isn’t perfect because for some reason the temperature readout lags one refresh behind the temperature resolution. For example, if you select 12 bits, the page will update the resolution immediately. But you need to press another button before you will read out a temperature that includes four decimal places. I’m not sure why this is happening because the sensor is not set to one-shot mode, so it should store the correct resolution of temperature as soon as I write to the config register. I also tried calling <code>readTemperature()</code> again in the <code>configDS1722res()</code> function and throwing away that result to try to get ahead, but that didn’t work either.<br>
-</p>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>The design works as intended to read the temperature over SPI and display it via an HTML page. I spent roughly 16 hours on this lab. (Sat: 4.5, Sun: 5.5, Mon: 4, Tues: 2)</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
