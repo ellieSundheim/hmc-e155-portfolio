@@ -7,361 +7,102 @@
     "text": "This website was created as part of E155: Microprocessors, taught at Harvey Mudd College in Fall 2024 by Prof. Brake. The course website is found here."
   },
   {
-    "objectID": "posts/week6-post.html",
-    "href": "posts/week6-post.html",
-    "title": "Halfway Point",
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Project",
     "section": "",
-    "text": "It’s the start of fall break and the halfway pause in the semester that hopefully gives me the strength to get through the rest of it. It seems like a natural time to go back to the goals I set in the first week and evaluate how I’m stacking up.\n\nOne of the things I said I wanted to develop was better judgement. I can most easily see my progress on this in my progress through a lab. In the first few weeks, I had a hard time getting my bearings and figuring out how much work would be involved, and in what order, and what kinds of errors I could expect to encounter. Part of this might be that the labs have shifted to programming, something I’m more practiced with than digital design, but I think my ability to judge a task accurately has really improved.\n\nAnother character trait that I said I wanted to work on was neighborliness. To be honest, when I first identified this one, I looked at the whole catagory of moral traits and scoffed internally about how an engineering class could help me develop these. I’ve got to eat my words a little - after some long hours working alone in my room, it’s nice to go into the lab (even with its lack of windows) and talk to other people who are sturggling with similar things. I appreciate it when we can share the silly ways we’ve messed up on the labs and comiserate a little bit."
+    "text": "Ever wanted to arm wrestle, but without actually having to arm wrestle? Look no further! Our project measures the electrical signals on your skin with an EMG sensor, and uses that to control a miniature arm wrestling game. When you (and a friend) flex, the electrical signals from your nerves that tell your muscles to contract get picked up by the sticky electrodes and sent into a circuit that amplifies them so that they are big enough to measure with the analog-to-digital converter on a STM32L432KC microcontroller. The microcontroller then sends the signals to the Upduino 3.1, a field-programmable gate array (FPGA). The FPGA controls the LED matrix that displays the game. It has two modes, single and multiplayer. Selecting single player displays the raw signal as a bar chart. Selecting multiplayer displays two competing bars, and updates the relative size of each depending on how hard you flex. Getting your color to cover the entire screen means victory!\nClick here to go to the full website for my final project, Hands Free Arm Wrestling!"
   },
   {
-    "objectID": "posts/week4-post.html",
-    "href": "posts/week4-post.html",
-    "title": "Week 4 Reflection",
-    "section": "",
-    "text": "The project proposal is coming up and I’m taking stock of what ideas I have so far. To be honest, I’m not in love with any of the ones I have right now as they exist, but they’re a starting point. Prof Brake’s criteria are that it uses the MCU and FPGA meaningfully; my criteria are that I think it’s fun and/or cool enough to spend a few late nights on; project partner Daniel’s criteria are that it doesn’t take a lot of distracting mechanical aspects. The following in no particular order are my ideas and how they fit into everyone’s requirements for the project."
-  },
-  {
-    "objectID": "posts/week4-post.html#build-a-zhu-zhu-pet",
-    "href": "posts/week4-post.html#build-a-zhu-zhu-pet",
-    "title": "Week 4 Reflection",
-    "section": "Build-A-Zhu Zhu Pet",
-    "text": "Build-A-Zhu Zhu Pet\nThese cute little guys were incredibly popular when I was in second grade. They also seem like something I would be able to build myself from scratch now that I’m in the 16th grade.\n\nWhich new hardware? Motor, small speaker\n\nUses the FPGA? Yes, probably a FSM to track which noises it should be making based on nose button presses and if it should be moving based on back button presses\n\nUses the MCU? Yes, to control the motor and speaker\n\nIs useful or interesting? I really liked them when I was 7 at least\n\nInvolves a lot of mechanical acessories? Maybe…depends on how cute we want them to be"
-  },
-  {
-    "objectID": "posts/week4-post.html#hamster-treadmill",
-    "href": "posts/week4-post.html#hamster-treadmill",
-    "title": "Week 4 Reflection",
-    "section": "Hamster Treadmill",
-    "text": "Hamster Treadmill\nThere may or may not have been a theme when I asked the dinner table what I should do for this project. I can buy a hamster at Petsmart since I’m over 18. This is a functional treadmill with normal displays for distance and pace and controls for speed and incline.\n\nWhich new hardware? Motor, LED display\n\nUses the FPGA? Yes, needs to respond to input (up/down buttons) and output LEDs to show progress\n\nUses the MCU? Yes, to control the motors and maybe do some of the hard math about elapsed pace\n\nIs useful or interesting? Is a funny idea but loses a lot of appeal once Prof Brake and/or the IRB committee vetos the live hamster\n\nInvolves a lot of mechanical acessories? Treadmill structure, belt, two motors"
-  },
-  {
-    "objectID": "posts/week4-post.html#balancing-triple-pendulum",
-    "href": "posts/week4-post.html#balancing-triple-pendulum",
-    "title": "Week 4 Reflection",
-    "section": "Balancing Triple Pendulum",
-    "text": "Balancing Triple Pendulum\nThe only serious suggestion made. These people already did this so I’m not sure what we could do better/differently. We would still learn a lot by just trying to reverse engineer it but we should probably have a better reason before we commit to it.\n\n\nWhich new hardware? Motors, accelerometers?/other sensors?\n\nUses the FPGA/MCU? Not sure which one does which task(s) but probably both, FPGA for anything that needs to be done fast and MCU for beefier calculations\n\nIs useful or interesting? Is an interesting control problem but unclear if it can A) hold my attention long enough or B) attract visitors on demo day\n\nInvolves a lot of mechanical acessories? Three bars/pivots, track"
-  },
-  {
-    "objectID": "posts/week2-post.html",
-    "href": "posts/week2-post.html",
-    "title": "Week 2 Reflection",
-    "section": "",
-    "text": "A slightly late post this week, caused by spending 14 hours of my Friday traveling to my clinic sponsor for a site visit. For me this site visit brought into focus how MicroP’s really is just-in-time learning for this project. As I’ve spend the past couple weeks getting up to speed learning how to use Radiant, I’m also thinking about how we’re going to install Vivado and what features I do and don’t like. Even though I theorectically learned what FPGAs and MCUs are in E85, I feel like I can throw around the words more comfortably after eating, sleeping, and breathing Lab 1 tutorials for a weekend. I’m still working on the in’s and out’s of SPI (and QSOPI?) so there may be some reverse just-in-time learning from Clinic to MicroPs too.\nI’m kind of glad that I have my clinic project because for these past few weeks, I’ve been struggling to articulate what the new content in MicroP’s is. I’ve felt that thus far, I’ve already seen everything we’ve done in 85. For example, the combinational logic in lab1 was no different from any of the other combinational blocks I wrote in the spring. FSMs are somewhat cookie cutter. My current conclusion about what’s newer and harder in 155 is that the 85 gutter bumpers have come off. I no longer get specific modules to write- I have to break down the problem into modules myself. There is no more self-checking testbench with a hash code- I need to think of what tests would show if it works or not and then write them myself. I don’t get pointed to specific sections of the documentation, I just have to know what to look for myself. That’s cool and all, but I think I’m looking forward to seeing truly new material later this semester (and in my Clinic project) so that I don’t feel like this was all stuff I could have figured out with just 85 and saved myself the stress of doing so in a time-pressured environment."
-  },
-  {
-    "objectID": "posts/oct25-post.html",
-    "href": "posts/oct25-post.html",
-    "title": "Week 8(?) Reflection",
-    "section": "",
-    "text": "Taking a break from introspection this week, I found this article that I’d like to dig into, since it relates to both microPs and my Clinic project. The TL;DR is that quantum computing is a rapidly growing field that needs all the talent it can get. However, according to this article, women account for only 2% of the applicants to jobs in the field. Yikes. (For context, women make up 9% of electrical engineers currently in the workforce and 21% of physicists. The number I’d expect isn’t 50, but it is higher than 2.) The article goes on to hypothesize about why this is the case even though the number of quantum programs keeps increasing. To be honest, I didn’t find any of their reasoning to be particularly compelling. And that made me think about why I won’t be going into quantum computing (at least not now).\n\n\nI already have my dream job. I’m really excited to work on aerospace projects, especially space robots! Quantum computing is cool, but I wouldn’t get to travel to NASA to test my work.\n\nI don’t feel qualified. Given the team we work with on our Clinic project, I don’t think that I would have the career I want unless I got a PhD. And while I won’t rule that out entirely, I’m not really sure that I care about quantum computers (or anything, for that matter) deeply enough to commit another 7 years of my life to studying it.\n\n\nThings I do like about the quantum computing industry are that it is cutting edge,and the open environment. My friend from high school with degrees in engineering physics and EE works for a quantum computing company in CO, and his work sounds super cool! I have also been impressed by the short interactions that I have had with the qick creators, and appreciate the general spirit of prioritizing total knowledge of the field vs locking up pieces with patents as quickly as possible (not a pun). Also, there are quantum hubs near where I’d want to live and work in the future. So maybe, HRL, maybe. Keep the free t-shirts coming and we can talk."
-  },
-  {
-    "objectID": "posts/nov8-post.html",
-    "href": "posts/nov8-post.html",
-    "title": "Week 10 Reflection",
-    "section": "",
-    "text": "And just like that, all the MicroPs labs are over! Sort of. It’s nice that almost all of the labs will have taught me a skill that we need for the final project. (Especially Lab 7, since we’re reusing a good chunk of it wholesale.) I think Labs 4 and 5 especially have given me the confidence to write device drivers, such that I’m feeling pretty good about the ADC driver I’ve been writing for the project (especially once I figure out how to make 0 volts read as zero volts and not some low but non-zero value).\n\nI was fairly happy with how our design review went, especially since our presentation was not interrupted by a fire alarm. The consensus on our analog design appears to be to do the bare minimum needed to read in an amplified and rectified signal that takes advantage of the full ADC range, but to perhaps move some of the filtering to the digital domain. That makes sense to me since this is supposed to be an digital class (analog is my spring tech elective). People had no shortage of other games for us to implement. We’ve only committed to a single player bar graph and a multiplayer arm wrestling, but I’m hoping we have time to do at least one other. I especially liked the suggestion of a game that takes into account how fast one can flex and relax - I think something like Cookie Clicker or the pomegranete in Fruit Ninja could be fun. Finally, the feedback was all over the place for the display updates, but I’m glad that other people think the one screen per state is reasonable. I’m not entirely sure what all the suggestions for multiplexing were about since I think we have enough pins for all the outputs, but I’ll keep it in the back of my mind in case we realize a need for it later."
-  },
-  {
-    "objectID": "posts/lab1-post.html",
-    "href": "posts/lab1-post.html",
-    "title": "Week 1 Reflection",
-    "section": "",
-    "text": "At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn’t the first time I’ve come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I’m okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.\nAnyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It’s like breadboarding, but better: I don’t have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench."
-  },
-  {
-    "objectID": "posts/final-post.html",
-    "href": "posts/final-post.html",
-    "title": "End of Semester Reflection",
-    "section": "",
-    "text": "In my first post, I talked about what I wanted to get out of this class. In my last post, I’d like to talk about what I actually did, how it was different from what I thought I was going to learn, and what I want to do with this new knowledge.\nFirst, I did finally figure out why FPGA engineer is a job title. After fighting that keypad for timing (and not entirely winning), I understand how complex these systems can be, and how much they are capable of. I was helping an 85 student with their final microprocessor lab, and they asked “do we really have to make everything in this diagram?” I said, yes, and in MicroPs, you have to write the diagram too. I got lots of hands-on practice, in the labs and in-class tutorials and the project. And people seemed to enjoy the project on demo day too!\nSomething that I didn’t expect to learn, but was happy that we did, was PCB design. I liked that we got to build the board for the part we were going to use in our lab, and I wish they had come in fast enough for us to actually do so. In the future, it might be cool to have a PCB required as part of the project, although that might require an infeasibly early deadline. Our project definitely could have used one (although I suppose if we had had a larger budget, that could have also solved that problem with the commercial sensors).\nWith my newfound knowledge, I’d like to do some fun hobby projects. My dad wants an IOT gadget to tell if my little brother left the garage open again and I saw this cool video about making a marble pixel art machine. I’m also hoping that I can use microPs during work, but I am looking forward to not being a college student and having free time to work on microPs stuff, minus the stress.\nAll in all, I’m happy that Prof Spencer talked me out of RF and into taking this class. Thank you Prof Brake!"
-  },
-  {
-    "objectID": "labs/lab7/index.html",
-    "href": "labs/lab7/index.html",
-    "title": "Lab 7 - The Advanced Encryption Standard",
-    "section": "",
-    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI."
-  },
-  {
-    "objectID": "labs/lab7/index.html#summary",
-    "href": "labs/lab7/index.html#summary",
-    "title": "Lab 7 - The Advanced Encryption Standard",
-    "section": "",
-    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI."
-  },
-  {
-    "objectID": "labs/lab7/index.html#video",
-    "href": "labs/lab7/index.html#video",
-    "title": "Lab 7 - The Advanced Encryption Standard",
+    "objectID": "project.html#video",
+    "href": "project.html#video",
+    "title": "Project",
     "section": "Video",
     "text": "Video"
   },
   {
-    "objectID": "labs/lab7/index.html#design-and-testing-methodology",
-    "href": "labs/lab7/index.html#design-and-testing-methodology",
-    "title": "Lab 7 - The Advanced Encryption Standard",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThis design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.\n\nUsing the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys. The reason that the design must be sequential is that there are not enough LUTs on the FPGA to do it entirely combinationally. Therefore, the given sbox module was sequetial to fit in BRAM instead. I use the FSM to wait 3 clock cycles before outputting for one clock cycle."
-  },
-  {
-    "objectID": "labs/lab7/index.html#technical-documentation",
-    "href": "labs/lab7/index.html#technical-documentation",
-    "title": "Lab 7 - The Advanced Encryption Standard",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 7 Block Diagram\n\n\n\n\nSchematic\n\n\n\nLab 7 Schematic"
-  },
-  {
-    "objectID": "labs/lab7/index.html#results-and-discussion",
-    "href": "labs/lab7/index.html#results-and-discussion",
-    "title": "Lab 7 - The Advanced Encryption Standard",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nI tested each individual module (exept mux and flopenr because they were so simple, and mixColumns because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.\n\nsubBytes\n\nshiftRows\n\naddRoundKey\n\nkeyExpand\n\ncontroller\n Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing done and outmuxen.\n\nTo meet proficiency specs, I captured the testbenches for the overal aes_core and aes_spi modules.\n\n \nI added red and green LEDs to my breadboard to read out the failure and success pins.\n\nFinally, I recorded one SPI transaction on the logic analyzer. The entire AES encoding takes place in fewer than 2 microseconds! That’s fast.\n D0 = PA5 = load\nD1 = PB3 = sck\nD2 = PB5 = mosi\nD3 = PB4 = miso\nD4 = PA6 = done"
-  },
-  {
-    "objectID": "labs/lab7/index.html#conclusion",
-    "href": "labs/lab7/index.html#conclusion",
-    "title": "Lab 7 - The Advanced Encryption Standard",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to implement AES on an FPGA. I spent roughly 17 hours on this lab. (Fri: 2, Sat: 3.5, Sun: 6.5, Mon: 5)."
-  },
-  {
-    "objectID": "labs/lab5/index.html",
-    "href": "labs/lab5/index.html",
-    "title": "Lab 5",
+    "objectID": "posts/week5-post.html",
+    "href": "posts/week5-post.html",
+    "title": "ChatGPT, the musician",
     "section": "",
-    "text": "(note: updated 10/22/24 to include schematic, polling comparison)"
+    "text": "For this week’s lab, I built a system that can play music, provided that it is rendered as an array of pitches and durations. Sheet music already encodes this information in a way that is great for human musicians, but less so for microcontrollers. To bridge the gap, I translated a page of sheet music into two Excel columns of notes (e.g. C4, A4, Bb4) and durations (e.g. whole note = 1, quarter note = 0.25, tied half-quarter notes = 0.75). I then manually changed notes to frequencies and played around with a scaling factor to get durations in milliseconds. To be honest, this part was slightly tedious and I was complaining to my labmate Marina, who suggested that I use ChatGPT instead. Credit where credit is due, this was a great idea.\n\nChatGPT was willing to humor my request to “write a song in the format (pitch, duration) where pitch is in Hz and duration is in milliseconds.” I decided to ask for a recognizable tune of “Row, Row, Row Your Boat,” figuing that the internet probably has plenty of examples of this for fourth-graders with recorders. With some guidance, it spat out a nicely formatted C array, including comments, of each note and the lyrics it corresponded to. On first glance, it looked pretty decent! However, on further inspection it was missing word and missing obvious patterns (decending in pitch on the merrily’s). When played, it didn’t sound remotely close.\nI tried getting it to give me the notes separately, because it did fine converting notes to pitches, but it didn’t do any better. In conclusion, I think I could have used it to save me some time turning notes into frequencies and fomatting it into a C array, but I would need to get the melody into notes first. Too bad ChatGPT’s parents didn’t make it take piano lessons for all of elementary school!"
   },
   {
-    "objectID": "labs/lab5/index.html#summary",
-    "href": "labs/lab5/index.html#summary",
-    "title": "Lab 5",
-    "section": "Summary",
-    "text": "Summary\nThe main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction."
-  },
-  {
-    "objectID": "labs/lab5/index.html#video",
-    "href": "labs/lab5/index.html#video",
-    "title": "Lab 5",
-    "section": "Video",
-    "text": "Video"
-  },
-  {
-    "objectID": "labs/lab5/index.html#design-and-testing-methodology",
-    "href": "labs/lab5/index.html#design-and-testing-methodology",
-    "title": "Lab 5",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThis code made use of the Extended Interrupts and Events Controller (EXTI) peripheral on the STM32L432KC. The 2 channels of the quad encoder were connected to GPIO pins PA8 and PA10, which can be configured to trigger EXTI lines 8 and 10 on both rising and falling edges. Keeping track of all edges, not just one or the other, increased the resolution.\n\nThese interrupts are handled by two separate interrupt handlers because the interrupts are enabled by two separate registers in the NVIC. This made it slightly easier to keep track of which line had triggered (although I would have been able to check either way). I used a timer to measure when each edge occurred, arbitrarily choosing to reset the clock to zero on the rising A interrupt. As seen below, knowing the relative timing of the rising and falling edges on B allowed me to find the direction of rotation (which I verified by running the motor at a low speed and watching the flat edge rotate). From measurements at full speed I knew edges occurred roughly every 0.5 ms, so I set the clock to be 100 kHz so that there would be roughly 50 clock cycles per pulse.\n\n\n\n\nQuad encoder signals and relative phases\n\n\nTo convert number of edges per unit time into a rotational velocity, I used the following coverstion: $ * * = $"
-  },
-  {
-    "objectID": "labs/lab5/index.html#technical-documentation",
-    "href": "labs/lab5/index.html#technical-documentation",
-    "title": "Lab 5",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nFlowchart\n\n\n\nLab 5 Schematic\n\n\n\n\n\nLab 5 Flowchart\n\n\nThe flowchart shows how the interrupts exit and return from the main body loop."
-  },
-  {
-    "objectID": "labs/lab5/index.html#results-and-discussion",
-    "href": "labs/lab5/index.html#results-and-discussion",
-    "title": "Lab 5",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nTo verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\n\n\n\n\nFull speed encoder output\n\n\nFor example, I count 23 edges here in a time of 10 ms, which translates to 9.583 rev/s. I expect some difference between measured and the code output because I used a different time frame in which to measure. This difference can be attributed to both actual fluctutation in the motor speed and to the error that comes from sampling for a short-ish period of time. Overall, the measured and code-output speeds agree to within 0.25 rev/s (15 rpm).\n\n\nTable 1 - Comparison of actual to measured speeds\n\n\nVoltage\nHand-Calc Speed\nCode Output\n\n\n\n\n5V\n3.958 rev/s\n3.942 rev/s\n\n\n8V\n6.25 rev/s\n6.48 rev/s\n\n\n12v\n9.583 rev/s\n9.74 rev/s\n\n\n\nUsing interrupts provides an advantage over manual polling. The while loop in main() has a delay of 500 ms, but at no point does the entire loop run uninterrupted. When the motor is at its nominal 10 rev/s (12V) speed, there are approximately 50 interrupts that happen within a single loop. To reconstruct the square wave from the encoder by polling, we would need to sample at twice the frequency, or minimum 20Hz. This would mean our delay could at most be 50 ms, which is 10x the loop that we’re able to run using interrupts. Interrupts make this way easier!"
-  },
-  {
-    "objectID": "labs/lab5/index.html#conclusion",
-    "href": "labs/lab5/index.html#conclusion",
-    "title": "Lab 5",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to read the speed of a motor and print it in real time. I spent roughly 10 hours on this lab. (Sat: 3, Sun: 4, Mon: 1, Tues: 2)"
-  },
-  {
-    "objectID": "labs/lab3/index.html",
-    "href": "labs/lab3/index.html",
-    "title": "Lab 3",
+    "objectID": "posts/week3-post.html",
+    "href": "posts/week3-post.html",
+    "title": "Week 3 Reflection",
     "section": "",
-    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+    "text": "Something fun that I learned this week is that even when a testbench simulates perfectly, your design can still not work in hardware. And by fun, I mean frustrating.\nThere’s probably a bajillion (contrived) metaphors in there, but the one that scares me the most is the one where my cute little college tricks absolutely fail me in the real world. I sure can blink an LED and box an answer on the problem set, and that’s been holding up my GPA just fine. Simulation would suggest that I will be a fine engineer. And yet I worry that there are unsimualtable aspects that I cannot forsee, but that will casue sudden and serious problems when I try to take my life out of the testbench and into hardware. Anyhow, I don’t really have time for existential crises during the semester but I’ll schedule it in over winter break (sarcasm)."
   },
   {
-    "objectID": "labs/lab3/index.html#summary",
-    "href": "labs/lab3/index.html#summary",
-    "title": "Lab 3",
+    "objectID": "posts/oct31-post.html",
+    "href": "posts/oct31-post.html",
+    "title": "Future Applications of MicroPs",
     "section": "",
-    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+    "text": "I’ve been thinking about how I’ll use my very expensive education after college. For HSA classes, I never expected them to be useful, so that’s not a problem. Most of them I enjoyed in the moment. I still pull out fun facts and make random connections to other topics and sound well-rounded when I talk to other people, and that’s all I wanted out of my humanities anyway. For some of my classes, like E72 or E&M, I’ll continue to use tools built on the fundamental concepts they teach, like Fourier series and magnetic fields, even if I don’t necessarily develop them from first principles again. Some of my classes, like E83, I will just appreciate what my mech E colleagues think about (from a safe distance). But MicoPs (and perahps a select few others), I hope and expect to use for both work and personal projects. Work, I already know, will involve microcontrollers to some extent. I hope I can use more interesting ones than Arduinos - my background in E155 should be enough for me to make educated guesses about what an Arduino is and is not capable of, and why I might want a different microcontroller with other peripherals. Personal projects are where it gets fun. I rejected a suggestion of my dad’s for the final project for being “too simple,” but it is something I can see myself making for him as a gift - a sensor to see if the garage door is open, since my mom and siblings have a tendency to forget about it. Maybe I’ll make it like the temperature sensor in lab 6 so he can check it from anywhere, and even close it. My dad has also wanted to make some sort of candy delivery system for Halloween for a while, and I finally think I have the skills to make it cool and not lame. I think he wanted the screaming monkeys from the Wizard of Oz crossed with a Rube Goldberg machine, and with my new knowledge of speakers and motors, I think I can inflict some serious pyschic damage on unsuspecting trick-or-treaters. Hopefully, my $80,000/18 credits * 4 credits = 17,000 dollars of microPs tuition is worth it."
   },
   {
-    "objectID": "labs/lab3/index.html#design-and-testing-methodology",
-    "href": "labs/lab3/index.html#design-and-testing-methodology",
-    "title": "Lab 3",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nTo start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.\n\nState Transition Diagram\n\n\n\nState Transition Diagram\n\n\nI originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).\nThe debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit."
-  },
-  {
-    "objectID": "labs/lab3/index.html#technical-documentation",
-    "href": "labs/lab3/index.html#technical-documentation",
-    "title": "Lab 3",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 3 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs.\n\n\nSchematic\n\n\n\nLab 3 Schematic\n\n\nThe schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn’t match either of the given ones on the lab 3 page. I don’t know why we don’t have any handheld multimeters that scream when resistance is zero but I would have liked that."
-  },
-  {
-    "objectID": "labs/lab3/index.html#results-and-discussion",
-    "href": "labs/lab3/index.html#results-and-discussion",
-    "title": "Lab 3",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\n\nTestbench\nI simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later). \nThe FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high. \nI fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be “pulse R0 and read R2”. \nHere is the full simulation:\n\n\n\nFull simulation"
-  },
-  {
-    "objectID": "labs/lab3/index.html#conclusion",
-    "href": "labs/lab3/index.html#conclusion",
-    "title": "Lab 3",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)"
-  },
-  {
-    "objectID": "labs/lab1/index.html",
-    "href": "labs/lab1/index.html",
-    "title": "Lab 1: Board Assembly and Test",
+    "objectID": "posts/oct18-post.html",
+    "href": "posts/oct18-post.html",
+    "title": "(Re)building momentum",
     "section": "",
-    "text": "(Editor’s Note: This lab was updated onn 9/9 to reflect changes made in hopes of acheiving an excellence rating. The original of this page as it was when first submitted can be found on the website Github repo.)"
+    "text": "To complement my post from last week, where I looked back at the 7 weeks that have already past, this week I want to look at the 8 weeks that remain in the semester. I still have two labs (6 and 7) left to go. Lab 6 shouldn’t be too bad (I say now, having not started it yet) because it is more of the same device driver writing that we’ve been doing for the past two labs. Lab 7 makes me a bit more nervous because I think the FPGA is a harder to work with and to debug than the MCU (I may just be traumatized by lab 3). Still, I feel like I’ve got a handle on both of them. Imagine telling my week 2 self that!\n\nAs for the upcoming project, my lab partner and I are going to build a hands-free arm wrestling system using two electromyography EMG sensors and an LED display. The sensors will be on armbands and all you have to do is flex and based on the difference in the readings, the LEDs will display who is currently putting out more force and winning. I’m excitingly waiting for our parts from Digikey and Amazon to get in so we can get started! One, I think our project is fun but also two, I want to cut down the risk as soon as possible by getting the EMG sensor built and tested. It will be a bit rough to get much done while we still have the labs but I think we can swing it."
   },
   {
-    "objectID": "labs/lab1/index.html#summary",
-    "href": "labs/lab1/index.html#summary",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Summary",
-    "text": "Summary\nThe main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
-  },
-  {
-    "objectID": "labs/lab1/index.html#design-approach",
-    "href": "labs/lab1/index.html#design-approach",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Design Approach",
-    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. The oscillator module uses the onboard high speed oscillator (HSOSC) which was configured to run at 24 Mhz and then divided down to 2.4 Hz for led[2]. The led module uses the clock because it has a counter, but the rest of the LEDs use combinational logic. The seven-segment display is its own module for reusability. \nThe schematic shows all the connections to the FPGA. The DIP switches were configured to use internal 100 kOhm pull-up resistors. Putting the same resistor on each line made it so that each LED got the same amount of current running through it. The resistor was chosen so that the current on each segment was no more than 20 mA (which is giving plenty of headroom according to the datasheet, which on page 2, Table “Absolute Maximum Ratings” says 30 mA is the limit.) \\((3.3V - 0.7V)/20 mA = 130 \\Omega\\). I used 150 Ohm resistors because they were available."
-  },
-  {
-    "objectID": "labs/lab1/index.html#testing-approach",
-    "href": "labs/lab1/index.html#testing-approach",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Testing Approach",
-    "text": "Testing Approach\nI tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination. The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24]."
-  },
-  {
-    "objectID": "labs/lab1/index.html#requirements",
-    "href": "labs/lab1/index.html#requirements",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Requirements",
-    "text": "Requirements\nMy lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.\nNumber of hours spent: 15 + 2"
-  },
-  {
-    "objectID": "labs/lab1/index.html#comments-for-next-time",
-    "href": "labs/lab1/index.html#comments-for-next-time",
-    "title": "Lab 1: Board Assembly and Test",
-    "section": "Comments for next time",
-    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly. This lab was waaaay easier the second time around when I fixed it for excellence after completing lab 2. I think I just needed more practice with the tools and workflow to be comfortable with it."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "E155 Blog",
+    "objectID": "posts/nov15-post.html",
+    "href": "posts/nov15-post.html",
+    "title": "Week 10.5 Reflection",
     "section": "",
-    "text": "End of Semester Reflection\n\n\n\n\n\nAnswers to the question ‘what did I get out of this class?’\n\n\n\n\n\nDec 8, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10.5 Reflection\n\n\n\n\n\nProf Brake didn’t make a Canvas assignment this week\n\n\n\n\n\nNov 15, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10 Reflection\n\n\n\n\n\nwhat a week.\n\n\n\n\n\nNov 8, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nFuture Applications of MicroPs\n\n\n\n\n\nInspired by some cool Youtube videos\n\n\n\n\n\nOct 31, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8(?) Reflection\n\n\n\n\n\nPlaying numbers games\n\n\n\n\n\nOct 25, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\n(Re)building momentum\n\n\n\n\n\nPlanning ahead for the rest of the semester\n\n\n\n\n\nOct 18, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nHalfway Point\n\n\n\n\n\nTaking stock of my progress thus far\n\n\n\n\n\nOct 11, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT, the musician\n\n\n\n\n\nMerrily, merrily, merrily, merrily, life is but a dream\n\n\n\n\n\nOct 4, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Reflection\n\n\n\n\n\nTrying to think of a cool final project\n\n\n\n\n\nSep 27, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Reflection\n\n\n\n\n\nAnother week, another learning opportunity\n\n\n\n\n\nSep 20, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Reflection\n\n\n\n\n\nConnections of every kind\n\n\n\n\n\nSep 17, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+    "text": "Since I’m tutoring for E85 this semester, I’m on the mailing list for Prof. Harris’ class. This week, I received a great photo of the class doing their traditional microprocessor in sidewalk chalk (something I missed when I took the class while he was on sabbatical). In this reflection, I’d like to thank Prof. Harris for how useful his textbook was, and especially thet way the microprocessor was taught.\nFirst up, I appreciated how we explored almost all of the individual modules before we even knew exactly what they built towards. For example, making the ALU decoder way back at the beginning of the semester with structural Verilog was a great way to demystify something that could have been overwhelming. Secondly, I appreciated how we went through a couple different iterations of the processor, making it slightly more complex each time. I felt like I truly understood the system as a whole and its limitations in a way that truly justified why we needed each new thing. Finally, I appreciated E85 for the many useful structures that I have continued to use in MicroPs. I’ve used the three part scaffold for an FSM (flops, next state logic and output logic) way more than I realized I would when we learned it. As evidenced by lab 7, the basic architecture of a processor with datapath and controller can be reused and recycled to fit any task that vaguely resembles a datapath, which is to say most of the ones I’ve seen thus far. So anyhow, thank you Prof. Harris for setting us up for success in MircoPs."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "E155 Portfolio",
+    "objectID": "posts/first-post.html",
+    "href": "posts/first-post.html",
+    "title": "Learning Goals",
     "section": "",
-    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
+    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
   },
   {
-    "objectID": "labs/lab2/index.html",
-    "href": "labs/lab2/index.html",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "",
-    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+    "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
+    "href": "labs.html#lab-2-multiplexed-7-segment-display",
+    "title": "Labs",
+    "section": "Lab 2: Multiplexed 7-Segment Display",
+    "text": "Lab 2: Multiplexed 7-Segment Display"
   },
   {
-    "objectID": "labs/lab2/index.html#summary",
-    "href": "labs/lab2/index.html#summary",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "",
-    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+    "objectID": "labs.html#lab-3-keypad-scanner",
+    "href": "labs.html#lab-3-keypad-scanner",
+    "title": "Labs",
+    "section": "Lab 3: Keypad Scanner",
+    "text": "Lab 3: Keypad Scanner"
   },
   {
-    "objectID": "labs/lab2/index.html#design-and-testing-methodology",
-    "href": "labs/lab2/index.html#design-and-testing-methodology",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 mA\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: The FPGA pins output 3.3V so \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nFor the transistor: The gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = $, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. The 5V supply from the dev board should be able to supply that much. I need at least 7*25mA = 175 mA to power my seven segments at 25mA each. \\(5V/ 200 mA = 25 \\Omega\\) -&gt; used \\(27 \\Omega\\) because that was available.\nFor each cathode: we cannot exceed more than 30 mA per segment and the transistor can only provide up to 200 mA so I want 25mA per segment. Since we’re now powering them with 5V instead of 3.3V like lab 1, \\(R_{cathode} = (5V - 0.7V)/ 0.025 A = 172 \\Omega\\). Rounding to the nearest available resistor, I used ???.\nHumans can only see flickering up to about 90 Hz (source). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount of flicker. I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode."
+    "objectID": "labs.html#lab-4-digital-audio",
+    "href": "labs.html#lab-4-digital-audio",
+    "title": "Labs",
+    "section": "Lab 4: Digital Audio",
+    "text": "Lab 4: Digital Audio"
   },
   {
-    "objectID": "labs/lab2/index.html#technical-documentation",
-    "href": "labs/lab2/index.html#technical-documentation",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+    "objectID": "labs.html#lab-5-interrupts",
+    "href": "labs.html#lab-5-interrupts",
+    "title": "Labs",
+    "section": "Lab 5: Interrupts",
+    "text": "Lab 5: Interrupts"
   },
   {
-    "objectID": "labs/lab2/index.html#results-and-discussion",
-    "href": "labs/lab2/index.html#results-and-discussion",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time. I learned that ModelSim will default to picoseconds, not nanoseconds, which I figured out when I didn’t see reset finish its initial pulse. I didn’t bother to test the seven segment module again as it didn’t change from last week’s code.  \nGoing forward, I should probably use testvectors with my testbench, but I appreciated the simple way of just forcing values and pausing as a nice transition from the manual way I did originally.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
+    "objectID": "labs.html#lab-6-the-iot-and-spi",
+    "href": "labs.html#lab-6-the-iot-and-spi",
+    "title": "Labs",
+    "section": "Lab 6: The IOT and SPI",
+    "text": "Lab 6: The IOT and SPI"
   },
   {
-    "objectID": "labs/lab2/index.html#conclusion",
-    "href": "labs/lab2/index.html#conclusion",
-    "title": "Lab 2: Multiplexed Seven Segment Displays",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 15 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 3)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
-  },
-  {
-    "objectID": "labs/lab4/index.html",
-    "href": "labs/lab4/index.html",
-    "title": "Lab 4",
-    "section": "",
-    "text": "The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals."
-  },
-  {
-    "objectID": "labs/lab4/index.html#summary",
-    "href": "labs/lab4/index.html#summary",
-    "title": "Lab 4",
-    "section": "",
-    "text": "The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals."
-  },
-  {
-    "objectID": "labs/lab4/index.html#videos",
-    "href": "labs/lab4/index.html#videos",
-    "title": "Lab 4",
-    "section": "Videos",
-    "text": "Videos"
-  },
-  {
-    "objectID": "labs/lab4/index.html#design-and-testing-methodology",
-    "href": "labs/lab4/index.html#design-and-testing-methodology",
-    "title": "Lab 4",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe main idea behind this lab is that there are two timers, one for frequency and one for duration. The frequency timer generates the square wave that is output to the speaker; the duration timer controls how long a given frequency is played. I used TIM2 for frequency because it can be output to a GPIO pin that is already on the E155 breakout board (PB3) and 32-bit auto-reset register. I was going to use TIM3 for duration because they have the same memory structure so I could reuse code, but then I read the fine print and the STM32L432KC doesn’t actually have TIM3 (the datasheet is for a couple different MCUs). Luckily, standardization meant that I could still reuse a lot of the struct when I switched to TIM15.\n\nBecause of the integer division that happens when frequency is updated, it is possible that ARR could be up to one clock cycle short or long. (Same with CCRx, but we don’t really care about duty cycle so long as it’s close to 50%.) Therefore, one clock cycle can take no longer than 0.01ms and the clock needs to be run at a minimum of 100kHz.\n\n\nTable 1 - Periods at 220Hz and 100Hz\n\n\n\n220Hz\n1000Hz\n\n\n\n\n-1%\n4.591ms\n1.010ms\n\n\nnominal\n4.545ms\n1.000ms\n\n\n+1%\n4.500ms\n0.990ms\n\n\n\nThe overall system clock was chosen to run at 80 MHz using the PLL. The prescaler for TIM2 was 800 so that its counter ran at 100 kHz, and the prescaler for TIM15 was 10,000 so that its counter ran at 8 kHz.\n\nFor the frequency clock, 100 kHz means that a single clock cycle takes 1E-5 seconds. The maximum frequency that can be produced* is 50 kHz, if CCRx is set to 1 and ARR is set to 2 (the smallest possible square wave). The minimum frequency is 1.53 Hz (\\(\\frac{100E3}{2^{16}}\\)) if CCRx is set to 0xFFFF and ARR is set to 0xFFFFFFFF.\n\nFor the duration clock, 8 kHz means that a single clock cycle takes 1.25E-4 seconds (0.125 ms). The minimum duration is 0.125 ms because the delay can be a single clock cycle if ARR is set to 1. The ARR register for TIM15 is only 16 bits, so the maximum duration that can be produced is \\(\\frac{1}{8E3}2^{16}\\) or 8.19 seconds. This frequency was chosen so that longer notes could be held.\n\nFor testing, I used an LED connected to the PB3 pin and blinked it slowly in two different ways. To test the duration counter, I used one of the existing GPIO functions to wait 2 seconds, then toggle the pin in an infinite loop. To test the frequency counter, I slowed the clock temporarily to 4 kHz and blinked the LED at a frequency of 4 Hz.\n\n*produced by the MCU, to be clear. The speaker has its own range of possible frequencies which is a much smaller subset of the frequencies that the PWM can produce."
-  },
-  {
-    "objectID": "labs/lab4/index.html#technical-documentation",
-    "href": "labs/lab4/index.html#technical-documentation",
-    "title": "Lab 4",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nSchematic\n\n\n\nLab 4 Schematic\n\n\nThe schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips.\n\n\nSheet Music\n\n\n\n“You Are My Sunshine”, trad. American melody"
-  },
-  {
-    "objectID": "labs/lab4/index.html#results-and-discussion",
-    "href": "labs/lab4/index.html#results-and-discussion",
-    "title": "Lab 4",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nThe hardest parts about this lab were 1) figuring out how many timers to use and which ones and 2) figuring out which registers needed to be set and when. However, once the code worked it was pretty fun to play music! Check out my blog post from this week for an exploration of ChatGPT’s hidden musical talents."
-  },
-  {
-    "objectID": "labs/lab4/index.html#conclusion",
-    "href": "labs/lab4/index.html#conclusion",
-    "title": "Lab 4",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe design works as intended to play music using the timers on the STM32L432KC MCU. I spent roughly 16 hours on this lab. (Tues: 2, Fri: 4, Sat: 3, Sun: 4, Mon: 3)"
+    "objectID": "labs.html#lab-7-the-advanced-encryption-standard",
+    "href": "labs.html#lab-7-the-advanced-encryption-standard",
+    "title": "Labs",
+    "section": "Lab 7: The Advanced Encryption Standard",
+    "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
     "objectID": "labs/lab6/index.html",
@@ -413,87 +154,360 @@
     "text": "Conclusion\nThe design works as intended to read the temperature over SPI and display it via an HTML page. I spent roughly 16 hours on this lab. (Sat: 4.5, Sun: 5.5, Mon: 4, Tues: 2)"
   },
   {
-    "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
-    "href": "labs.html#lab-2-multiplexed-7-segment-display",
-    "title": "Labs",
-    "section": "Lab 2: Multiplexed 7-Segment Display",
-    "text": "Lab 2: Multiplexed 7-Segment Display"
-  },
-  {
-    "objectID": "labs.html#lab-3-keypad-scanner",
-    "href": "labs.html#lab-3-keypad-scanner",
-    "title": "Labs",
-    "section": "Lab 3: Keypad Scanner",
-    "text": "Lab 3: Keypad Scanner"
-  },
-  {
-    "objectID": "labs.html#lab-4-digital-audio",
-    "href": "labs.html#lab-4-digital-audio",
-    "title": "Labs",
-    "section": "Lab 4: Digital Audio",
-    "text": "Lab 4: Digital Audio"
-  },
-  {
-    "objectID": "labs.html#lab-5-interrupts",
-    "href": "labs.html#lab-5-interrupts",
-    "title": "Labs",
-    "section": "Lab 5: Interrupts",
-    "text": "Lab 5: Interrupts"
-  },
-  {
-    "objectID": "labs.html#lab-6-the-iot-and-spi",
-    "href": "labs.html#lab-6-the-iot-and-spi",
-    "title": "Labs",
-    "section": "Lab 6: The IOT and SPI",
-    "text": "Lab 6: The IOT and SPI"
-  },
-  {
-    "objectID": "labs.html#lab-7-the-advanced-encryption-standard",
-    "href": "labs.html#lab-7-the-advanced-encryption-standard",
-    "title": "Labs",
-    "section": "Lab 7: The Advanced Encryption Standard",
-    "text": "Lab 7: The Advanced Encryption Standard"
-  },
-  {
-    "objectID": "posts/first-post.html",
-    "href": "posts/first-post.html",
-    "title": "Learning Goals",
+    "objectID": "labs/lab4/index.html",
+    "href": "labs/lab4/index.html",
+    "title": "Lab 4",
     "section": "",
-    "text": "This semester, I want to learn everything there is to know in the whole world about embedded systems! Perhaps more realistically, I would like to understand the basics of programming FPGAs (and why it is complicated enough to be a complete job title). I also want to get more hands-on practice with digital design and to make a cool project that I can show off to my friends at Demo Day.\nNote: I’m already learning things! Thing #1: While making this website, I learned that whitespaces can mess up markdown. Thing #2: I avoided a problem with Github Authentication by choosing the coward’s route and using github desktop. Really, I probably have three or four half-understood and ill-advised config settings from previous projects over the lifetime of this laptop and I suspect to address the root causes I should wipe it and start fresh."
+    "text": "The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals."
   },
   {
-    "objectID": "posts/nov15-post.html",
-    "href": "posts/nov15-post.html",
-    "title": "Week 10.5 Reflection",
+    "objectID": "labs/lab4/index.html#summary",
+    "href": "labs/lab4/index.html#summary",
+    "title": "Lab 4",
     "section": "",
-    "text": "Since I’m tutoring for E85 this semester, I’m on the mailing list for Prof. Harris’ class. This week, I received a great photo of the class doing their traditional microprocessor in sidewalk chalk (something I missed when I took the class while he was on sabbatical). In this reflection, I’d like to thank Prof. Harris for how useful his textbook was, and especially thet way the microprocessor was taught.\nFirst up, I appreciated how we explored almost all of the individual modules before we even knew exactly what they built towards. For example, making the ALU decoder way back at the beginning of the semester with structural Verilog was a great way to demystify something that could have been overwhelming. Secondly, I appreciated how we went through a couple different iterations of the processor, making it slightly more complex each time. I felt like I truly understood the system as a whole and its limitations in a way that truly justified why we needed each new thing. Finally, I appreciated E85 for the many useful structures that I have continued to use in MicroPs. I’ve used the three part scaffold for an FSM (flops, next state logic and output logic) way more than I realized I would when we learned it. As evidenced by lab 7, the basic architecture of a processor with datapath and controller can be reused and recycled to fit any task that vaguely resembles a datapath, which is to say most of the ones I’ve seen thus far. So anyhow, thank you Prof. Harris for setting us up for success in MircoPs."
+    "text": "The main goal of this assignment was to generate digital audio by using the timer peripheral(s) on the STM32L4322KC microcontroller. I learned how to work with memory-mapped registers, how to read the reference manual and datasheet, how to use alternate functions on the GPIO pins, and how to use timers to make PWM signals."
   },
   {
-    "objectID": "posts/oct18-post.html",
-    "href": "posts/oct18-post.html",
-    "title": "(Re)building momentum",
-    "section": "",
-    "text": "To complement my post from last week, where I looked back at the 7 weeks that have already past, this week I want to look at the 8 weeks that remain in the semester. I still have two labs (6 and 7) left to go. Lab 6 shouldn’t be too bad (I say now, having not started it yet) because it is more of the same device driver writing that we’ve been doing for the past two labs. Lab 7 makes me a bit more nervous because I think the FPGA is a harder to work with and to debug than the MCU (I may just be traumatized by lab 3). Still, I feel like I’ve got a handle on both of them. Imagine telling my week 2 self that!\n\nAs for the upcoming project, my lab partner and I are going to build a hands-free arm wrestling system using two electromyography EMG sensors and an LED display. The sensors will be on armbands and all you have to do is flex and based on the difference in the readings, the LEDs will display who is currently putting out more force and winning. I’m excitingly waiting for our parts from Digikey and Amazon to get in so we can get started! One, I think our project is fun but also two, I want to cut down the risk as soon as possible by getting the EMG sensor built and tested. It will be a bit rough to get much done while we still have the labs but I think we can swing it."
+    "objectID": "labs/lab4/index.html#videos",
+    "href": "labs/lab4/index.html#videos",
+    "title": "Lab 4",
+    "section": "Videos",
+    "text": "Videos"
   },
   {
-    "objectID": "posts/oct31-post.html",
-    "href": "posts/oct31-post.html",
-    "title": "Future Applications of MicroPs",
-    "section": "",
-    "text": "I’ve been thinking about how I’ll use my very expensive education after college. For HSA classes, I never expected them to be useful, so that’s not a problem. Most of them I enjoyed in the moment. I still pull out fun facts and make random connections to other topics and sound well-rounded when I talk to other people, and that’s all I wanted out of my humanities anyway. For some of my classes, like E72 or E&M, I’ll continue to use tools built on the fundamental concepts they teach, like Fourier series and magnetic fields, even if I don’t necessarily develop them from first principles again. Some of my classes, like E83, I will just appreciate what my mech E colleagues think about (from a safe distance). But MicoPs (and perahps a select few others), I hope and expect to use for both work and personal projects. Work, I already know, will involve microcontrollers to some extent. I hope I can use more interesting ones than Arduinos - my background in E155 should be enough for me to make educated guesses about what an Arduino is and is not capable of, and why I might want a different microcontroller with other peripherals. Personal projects are where it gets fun. I rejected a suggestion of my dad’s for the final project for being “too simple,” but it is something I can see myself making for him as a gift - a sensor to see if the garage door is open, since my mom and siblings have a tendency to forget about it. Maybe I’ll make it like the temperature sensor in lab 6 so he can check it from anywhere, and even close it. My dad has also wanted to make some sort of candy delivery system for Halloween for a while, and I finally think I have the skills to make it cool and not lame. I think he wanted the screaming monkeys from the Wizard of Oz crossed with a Rube Goldberg machine, and with my new knowledge of speakers and motors, I think I can inflict some serious pyschic damage on unsuspecting trick-or-treaters. Hopefully, my $80,000/18 credits * 4 credits = 17,000 dollars of microPs tuition is worth it."
+    "objectID": "labs/lab4/index.html#design-and-testing-methodology",
+    "href": "labs/lab4/index.html#design-and-testing-methodology",
+    "title": "Lab 4",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe main idea behind this lab is that there are two timers, one for frequency and one for duration. The frequency timer generates the square wave that is output to the speaker; the duration timer controls how long a given frequency is played. I used TIM2 for frequency because it can be output to a GPIO pin that is already on the E155 breakout board (PB3) and 32-bit auto-reset register. I was going to use TIM3 for duration because they have the same memory structure so I could reuse code, but then I read the fine print and the STM32L432KC doesn’t actually have TIM3 (the datasheet is for a couple different MCUs). Luckily, standardization meant that I could still reuse a lot of the struct when I switched to TIM15.\n\nBecause of the integer division that happens when frequency is updated, it is possible that ARR could be up to one clock cycle short or long. (Same with CCRx, but we don’t really care about duty cycle so long as it’s close to 50%.) Therefore, one clock cycle can take no longer than 0.01ms and the clock needs to be run at a minimum of 100kHz.\n\n\nTable 1 - Periods at 220Hz and 100Hz\n\n\n\n220Hz\n1000Hz\n\n\n\n\n-1%\n4.591ms\n1.010ms\n\n\nnominal\n4.545ms\n1.000ms\n\n\n+1%\n4.500ms\n0.990ms\n\n\n\nThe overall system clock was chosen to run at 80 MHz using the PLL. The prescaler for TIM2 was 800 so that its counter ran at 100 kHz, and the prescaler for TIM15 was 10,000 so that its counter ran at 8 kHz.\n\nFor the frequency clock, 100 kHz means that a single clock cycle takes 1E-5 seconds. The maximum frequency that can be produced* is 50 kHz, if CCRx is set to 1 and ARR is set to 2 (the smallest possible square wave). The minimum frequency is 1.53 Hz (\\(\\frac{100E3}{2^{16}}\\)) if CCRx is set to 0xFFFF and ARR is set to 0xFFFFFFFF.\n\nFor the duration clock, 8 kHz means that a single clock cycle takes 1.25E-4 seconds (0.125 ms). The minimum duration is 0.125 ms because the delay can be a single clock cycle if ARR is set to 1. The ARR register for TIM15 is only 16 bits, so the maximum duration that can be produced is \\(\\frac{1}{8E3}2^{16}\\) or 8.19 seconds. This frequency was chosen so that longer notes could be held.\n\nFor testing, I used an LED connected to the PB3 pin and blinked it slowly in two different ways. To test the duration counter, I used one of the existing GPIO functions to wait 2 seconds, then toggle the pin in an infinite loop. To test the frequency counter, I slowed the clock temporarily to 4 kHz and blinked the LED at a frequency of 4 Hz.\n\n*produced by the MCU, to be clear. The speaker has its own range of possible frequencies which is a much smaller subset of the frequencies that the PWM can produce."
   },
   {
-    "objectID": "posts/week3-post.html",
-    "href": "posts/week3-post.html",
-    "title": "Week 3 Reflection",
-    "section": "",
-    "text": "Something fun that I learned this week is that even when a testbench simulates perfectly, your design can still not work in hardware. And by fun, I mean frustrating.\nThere’s probably a bajillion (contrived) metaphors in there, but the one that scares me the most is the one where my cute little college tricks absolutely fail me in the real world. I sure can blink an LED and box an answer on the problem set, and that’s been holding up my GPA just fine. Simulation would suggest that I will be a fine engineer. And yet I worry that there are unsimualtable aspects that I cannot forsee, but that will casue sudden and serious problems when I try to take my life out of the testbench and into hardware. Anyhow, I don’t really have time for existential crises during the semester but I’ll schedule it in over winter break (sarcasm)."
+    "objectID": "labs/lab4/index.html#technical-documentation",
+    "href": "labs/lab4/index.html#technical-documentation",
+    "title": "Lab 4",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nSchematic\n\n\n\nLab 4 Schematic\n\n\nThe schematic shows the multiple stages of signal conditioning. First, a voltage divider ensures that the input to the LM386 is never outside of its -0.4V to 0.4V operating range. The potentiometer on the positive input pin can be tuned to further divide the signal and control the volume. The rest of the capacitors/resistors were included based on the sample circuit shown in the datasheet. The speaker connected to the board via alligator clips.\n\n\nSheet Music\n\n\n\n“You Are My Sunshine”, trad. American melody"
   },
   {
-    "objectID": "posts/week5-post.html",
-    "href": "posts/week5-post.html",
-    "title": "ChatGPT, the musician",
+    "objectID": "labs/lab4/index.html#results-and-discussion",
+    "href": "labs/lab4/index.html#results-and-discussion",
+    "title": "Lab 4",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nThe hardest parts about this lab were 1) figuring out how many timers to use and which ones and 2) figuring out which registers needed to be set and when. However, once the code worked it was pretty fun to play music! Check out my blog post from this week for an exploration of ChatGPT’s hidden musical talents."
+  },
+  {
+    "objectID": "labs/lab4/index.html#conclusion",
+    "href": "labs/lab4/index.html#conclusion",
+    "title": "Lab 4",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to play music using the timers on the STM32L432KC MCU. I spent roughly 16 hours on this lab. (Tues: 2, Fri: 4, Sat: 3, Sun: 4, Mon: 3)"
+  },
+  {
+    "objectID": "labs/lab2/index.html",
+    "href": "labs/lab2/index.html",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
     "section": "",
-    "text": "For this week’s lab, I built a system that can play music, provided that it is rendered as an array of pitches and durations. Sheet music already encodes this information in a way that is great for human musicians, but less so for microcontrollers. To bridge the gap, I translated a page of sheet music into two Excel columns of notes (e.g. C4, A4, Bb4) and durations (e.g. whole note = 1, quarter note = 0.25, tied half-quarter notes = 0.75). I then manually changed notes to frequencies and played around with a scaling factor to get durations in milliseconds. To be honest, this part was slightly tedious and I was complaining to my labmate Marina, who suggested that I use ChatGPT instead. Credit where credit is due, this was a great idea.\n\nChatGPT was willing to humor my request to “write a song in the format (pitch, duration) where pitch is in Hz and duration is in milliseconds.” I decided to ask for a recognizable tune of “Row, Row, Row Your Boat,” figuing that the internet probably has plenty of examples of this for fourth-graders with recorders. With some guidance, it spat out a nicely formatted C array, including comments, of each note and the lyrics it corresponded to. On first glance, it looked pretty decent! However, on further inspection it was missing word and missing obvious patterns (decending in pitch on the merrily’s). When played, it didn’t sound remotely close.\nI tried getting it to give me the notes separately, because it did fine converting notes to pitches, but it didn’t do any better. In conclusion, I think I could have used it to save me some time turning notes into frequencies and fomatting it into a C array, but I would need to get the melody into notes first. Too bad ChatGPT’s parents didn’t make it take piano lessons for all of elementary school!"
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+  },
+  {
+    "objectID": "labs/lab2/index.html#summary",
+    "href": "labs/lab2/index.html#summary",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to multiplex hardware in order to use fewer FPGA input/output pins to drive two seven segment displays simaultaneously. I also learned how to write a testbench in SystemVerilog and how to design modularly."
+  },
+  {
+    "objectID": "labs/lab2/index.html#design-and-testing-methodology",
+    "href": "labs/lab2/index.html#design-and-testing-methodology",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe FPGA pins can only handle \\(8 mA\\) of current (source: Table 4.17, row 3V3 in the FPGA datasheet). The resistors were chosen to keep them under this limit with a simple Ohm’s Law calculation.\nFor LEDS: The FPGA pins output 3.3V so \\(3.3V/8 mA =  413 \\Omega.\\) -&gt; rounded to \\(470 \\Omega\\).\nFor the transistor: The gate current \\(i_b\\) is supposed to be no more than 8 mA, so using $ i_b = $, the gate resistor should be \\(R_b = 325\\Omega\\). With some margin and using common resistor sizes, I used \\(330 \\Omega\\).\nThe large current \\(I_c\\) flowing through the transistor is limited to 200 mA by its datasheet, “MAXIMUM RATINGS” table on page 1. The 5V supply from the dev board should be able to supply that much. I need at least 7*25mA = 175 mA to power my seven segments at 25mA each. \\(5V/ 200 mA = 25 \\Omega\\) -&gt; used \\(27 \\Omega\\) because that was available.\nFor each cathode: we cannot exceed more than 30 mA per segment and the transistor can only provide up to 200 mA so I want 25mA per segment. Since we’re now powering them with 5V instead of 3.3V like lab 1, \\(R_{cathode} = (5V - 0.7V)/ 0.025 A = 172 \\Omega\\). Rounding to the nearest available resistor, I used ???.\nHumans can only see flickering up to about 90 Hz (source). This corresponded to a divider of approximately 2^18, but when I implemented it I could see a small amount of flicker. I sped up the switching by a factor of 4 (2^16 counter) which got rid of the flicker without causing bleeding from switching too fast for the transistors to cut off power to the dark anode."
+  },
+  {
+    "objectID": "labs/lab2/index.html#technical-documentation",
+    "href": "labs/lab2/index.html#technical-documentation",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 2 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 4 other modules. The seven segment module and the clock module are the same as in last week’s lab.\n\n\nSchematic\n\n\n\nLab 2 Schematic\n\n\nThe schematic shows how the physical connections were made. Note that the second DIP switch block is on the development board and hardwired to the FPGA pins that it connects to."
+  },
+  {
+    "objectID": "labs/lab2/index.html#results-and-discussion",
+    "href": "labs/lab2/index.html#results-and-discussion",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\nTestbench\nThe testbench was especially key for tracking down the clock signal and making sure things were triggering at the right time. I learned that ModelSim will default to picoseconds, not nanoseconds, which I figured out when I didn’t see reset finish its initial pulse. I didn’t bother to test the seven segment module again as it didn’t change from last week’s code.  \nGoing forward, I should probably use testvectors with my testbench, but I appreciated the simple way of just forcing values and pausing as a nice transition from the manual way I did originally.\nOne thing that would be nice to add is to have only one signal for digit selection. I could do this by changing one of the transistors to be active low instead of active high and connecting the same digit selection signal to the gates of the transistors for both anodes. Also, it wouldn’t hurt to use a synchronizer for the inputs."
+  },
+  {
+    "objectID": "labs/lab2/index.html#conclusion",
+    "href": "labs/lab2/index.html#conclusion",
+    "title": "Lab 2: Multiplexed Seven Segment Displays",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to display two seven-segment numbers using a single set of FPGA pins. I spent roughly 15 hours on this lab. (Fri: 4, Sat: 5, Sun: 3, Mon: 3)\nLicensing really sucks - I wish we had used our first week’s lab time to do a synchronous (with Prof) downloading session and also demo it once for the group before we each followed the written demos on our own. I think I would’ve known better what to expect and I keep learning things that weren’t in the instructions but that are kind of important. Case in point: if you have a testbench, you have to specify not to synthesize it. I understood it conceptually from class but didn’t know how to actually disntinguish between non- and synthesizable modules in Radiant."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Hi! I’m Ellie, a senior at Harvey Mudd College studying engineering. I’m interested in all things aerospace but especially robotic exploration. Given the chance, I would go to the Moon or Mars, with the caveat that it be a round-trip ticket."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "End of Semester Reflection\n\n\n\n\n\nAnswers to the question ‘what did I get out of this class?’\n\n\n\n\n\nDec 8, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10.5 Reflection\n\n\n\n\n\nProf Brake didn’t make a Canvas assignment this week\n\n\n\n\n\nNov 15, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10 Reflection\n\n\n\n\n\nwhat a week.\n\n\n\n\n\nNov 8, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nFuture Applications of MicroPs\n\n\n\n\n\nInspired by some cool Youtube videos\n\n\n\n\n\nOct 31, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8(?) Reflection\n\n\n\n\n\nPlaying numbers games\n\n\n\n\n\nOct 25, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\n(Re)building momentum\n\n\n\n\n\nPlanning ahead for the rest of the semester\n\n\n\n\n\nOct 18, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nHalfway Point\n\n\n\n\n\nTaking stock of my progress thus far\n\n\n\n\n\nOct 11, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nChatGPT, the musician\n\n\n\n\n\nMerrily, merrily, merrily, merrily, life is but a dream\n\n\n\n\n\nOct 4, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4 Reflection\n\n\n\n\n\nTrying to think of a cool final project\n\n\n\n\n\nSep 27, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3 Reflection\n\n\n\n\n\nAnother week, another learning opportunity\n\n\n\n\n\nSep 20, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 Reflection\n\n\n\n\n\nConnections of every kind\n\n\n\n\n\nSep 17, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1 Reflection\n\n\n\n\n\nSome lessons were learned…\n\n\n\n\n\nSep 6, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Goals\n\n\n\n\n\nAnswers to the question ‘what do I want to get out of this class?’\n\n\n\n\n\nAug 26, 2024\n\n\nEllie Sundheim\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/lab1/index.html",
+    "href": "labs/lab1/index.html",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "",
+    "text": "(Editor’s Note: This lab was updated onn 9/9 to reflect changes made in hopes of acheiving an excellence rating. The original of this page as it was when first submitted can be found on the website Github repo.)"
+  },
+  {
+    "objectID": "labs/lab1/index.html#summary",
+    "href": "labs/lab1/index.html#summary",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Summary",
+    "text": "Summary\nThe main goal of this assignement was to familiarize myself with all the tools that I will be using this semester. In this lab, I soldered and tested my development board. I also installed all the software programs I will need, making my GitHub repositories, and learned what the workflow is. Finally, I dusted off my SystemVerilog skills by programming a seven-segment LED display that will display all the hex digits (0x0 to 0xF)."
+  },
+  {
+    "objectID": "labs/lab1/index.html#design-approach",
+    "href": "labs/lab1/index.html#design-approach",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Design Approach",
+    "text": "Design Approach\nTo design the seven-segment display, I started with the given inputs and outputs of the system. The oscillator module uses the onboard high speed oscillator (HSOSC) which was configured to run at 24 Mhz and then divided down to 2.4 Hz for led[2]. The led module uses the clock because it has a counter, but the rest of the LEDs use combinational logic. The seven-segment display is its own module for reusability. \nThe schematic shows all the connections to the FPGA. The DIP switches were configured to use internal 100 kOhm pull-up resistors. Putting the same resistor on each line made it so that each LED got the same amount of current running through it. The resistor was chosen so that the current on each segment was no more than 20 mA (which is giving plenty of headroom according to the datasheet, which on page 2, Table “Absolute Maximum Ratings” says 30 mA is the limit.) \\((3.3V - 0.7V)/20 mA = 130 \\Omega\\). I used 150 Ohm resistors because they were available."
+  },
+  {
+    "objectID": "labs/lab1/index.html#testing-approach",
+    "href": "labs/lab1/index.html#testing-approach",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Testing Approach",
+    "text": "Testing Approach\nI tested my code using an automated testbench. The clock just needed to be shown to oscillate to pass. The seven_segment_display was tested with each value from 0x0 to 0xF and compared to the truth table. The led logic was checked by passing in each of the 4 cases for each combination. The first screenshot shows the oscillator and seven_segment logic; the second screenshot is a much longer timespan to show the 2.4Hz logic for led[2] based on counter[24]."
+  },
+  {
+    "objectID": "labs/lab1/index.html#requirements",
+    "href": "labs/lab1/index.html#requirements",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Requirements",
+    "text": "Requirements\nMy lab meets both the Proficiency and the Excellence specs. If I were to continue to spend time on it, I would note that while the brightness is equal for all numbers, it is equally dim. I think it should be brighter but I might just need to power it off the 5V rail.\nNumber of hours spent: 15 + 2"
+  },
+  {
+    "objectID": "labs/lab1/index.html#comments-for-next-time",
+    "href": "labs/lab1/index.html#comments-for-next-time",
+    "title": "Lab 1: Board Assembly and Test",
+    "section": "Comments for next time",
+    "text": "Comments for next time\nI thought that I had started early enough, but I was incorrect! Part of that might have been the fact that I spent somewhere around 5-6 hours on the quarto assignement from the first week, which ate into my time for this lab. I’m fixing this problem by starting earlier this upcoming week. Also, I learned that reading over the lab specs will not give me a full idea of what the lab entails - I was excited to get started on my seven-segment display and the amount of demo tutorials hidden under the heading “Testing Your Board” caught me off guard. I’m fixing this issue by printing the lab on paper next week so I can see the whole thing and gauge accordingly. This lab was waaaay easier the second time around when I fixed it for excellence after completing lab 2. I think I just needed more practice with the tools and workflow to be comfortable with it."
+  },
+  {
+    "objectID": "labs/lab3/index.html",
+    "href": "labs/lab3/index.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+  },
+  {
+    "objectID": "labs/lab3/index.html#summary",
+    "href": "labs/lab3/index.html#summary",
+    "title": "Lab 3",
+    "section": "",
+    "text": "The main goal of this assignement was learn how to design an efficient FSM that can read real-world inputs from a 4x4 matrix keypad and output them to a dual seven-segment display. I also learned more about synchronizers and debouncing."
+  },
+  {
+    "objectID": "labs/lab3/index.html#design-and-testing-methodology",
+    "href": "labs/lab3/index.html#design-and-testing-methodology",
+    "title": "Lab 3",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nTo start the design for this lab, I considered how I would need to read the keypad. There are 8 pins, one for each row and column; each press connects the row and column of that key. Since the FPGA pin reads voltages, not resistances between givne pins, I decided to power the rows and read from the columns (with appropriate current-limiting resistors). However, to identify a unique key, only one row can be powered at a time. This alternating pattern informed the design of the FSM, which powers each row individually and looks for the keys in that row.\n\nState Transition Diagram\n\n\n\nState Transition Diagram\n\n\nI originally designed a FSM with 36 states, which would have made the debouncing easier since I could detect a new press vs a hold, but ultimately for clarity I brought it down to 20 states (4 scan states and 20 button press states).\nThe debouncer works by checking how long the output has been constant, ignoring times when the output was constantly not pressed. Only presses that last longer than the threshold number of clock cycles are considered real. It also stores the second-to-last value to display on the left-hand digit."
+  },
+  {
+    "objectID": "labs/lab3/index.html#technical-documentation",
+    "href": "labs/lab3/index.html#technical-documentation",
+    "title": "Lab 3",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 3 Block Diagram\n\n\nThe top level is structural Verilog, which instantiates the 5 other modules. The design was intended to use a synchronizer (shown crossed out), but that was removed due to issues interfacing with the FSM. The display_muxer module, the seven segment module and the oscillator module are the same as in the previous labs.\n\n\nSchematic\n\n\n\nLab 3 Schematic\n\n\nThe schematic shows how the physical connections were made. It took some real debugging with the oscilloscope to get this pinout (numbered left to right when the keys face upwards) because it didn’t match either of the given ones on the lab 3 page. I don’t know why we don’t have any handheld multimeters that scream when resistance is zero but I would have liked that."
+  },
+  {
+    "objectID": "labs/lab3/index.html#results-and-discussion",
+    "href": "labs/lab3/index.html#results-and-discussion",
+    "title": "Lab 3",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\nTestbench\nI simulated each new module on its own before combining them. Here is the synchronizer storing an asynchronous output and outputting it two clocks later (remember that, it comes back later). \nThe FSM was trickier. As originally designed, the pulsed row would also be the row that was checked. However, the synchronizer meant that the row current pulsed was not the row that was being read, but rather two rows in the past. For example, in ScanR2 state, row 2 was high but the incoming column data was from a time when row 0 had been high. \nI fixed this by shifting the column states two scans ahead, so the full, long names of the state scanR0 would be “pulse R0 and read R2”. \nHere is the full simulation:\n\n\n\nFull simulation"
+  },
+  {
+    "objectID": "labs/lab3/index.html#conclusion",
+    "href": "labs/lab3/index.html#conclusion",
+    "title": "Lab 3",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to display the two most recent keypad presses on the dual seven-segment display (with debouncing). It does not use a synchronizer (yet). I spent roughly 16.5 hours on this lab. (Sat: 5, Sun: 5, Mon: 4.5, Tues: 2)"
+  },
+  {
+    "objectID": "labs/lab5/index.html",
+    "href": "labs/lab5/index.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "(note: updated 10/22/24 to include schematic, polling comparison)"
+  },
+  {
+    "objectID": "labs/lab5/index.html#summary",
+    "href": "labs/lab5/index.html#summary",
+    "title": "Lab 5",
+    "section": "Summary",
+    "text": "Summary\nThe main goal of this assignment was to use interrupts with a quadrature encoder to determine the speed and direction of a motor. The speed is displayed with an update rate of 2 Hz. The speed calculation is relatively simple: it uses a count of how many total edges it has seen in a set amount of time to determine the average pulse length, which is converted to rotational speed. It uses the relative ordering of edges to determine direction."
+  },
+  {
+    "objectID": "labs/lab5/index.html#video",
+    "href": "labs/lab5/index.html#video",
+    "title": "Lab 5",
+    "section": "Video",
+    "text": "Video"
+  },
+  {
+    "objectID": "labs/lab5/index.html#design-and-testing-methodology",
+    "href": "labs/lab5/index.html#design-and-testing-methodology",
+    "title": "Lab 5",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThis code made use of the Extended Interrupts and Events Controller (EXTI) peripheral on the STM32L432KC. The 2 channels of the quad encoder were connected to GPIO pins PA8 and PA10, which can be configured to trigger EXTI lines 8 and 10 on both rising and falling edges. Keeping track of all edges, not just one or the other, increased the resolution.\n\nThese interrupts are handled by two separate interrupt handlers because the interrupts are enabled by two separate registers in the NVIC. This made it slightly easier to keep track of which line had triggered (although I would have been able to check either way). I used a timer to measure when each edge occurred, arbitrarily choosing to reset the clock to zero on the rising A interrupt. As seen below, knowing the relative timing of the rising and falling edges on B allowed me to find the direction of rotation (which I verified by running the motor at a low speed and watching the flat edge rotate). From measurements at full speed I knew edges occurred roughly every 0.5 ms, so I set the clock to be 100 kHz so that there would be roughly 50 clock cycles per pulse.\n\n\n\n\nQuad encoder signals and relative phases\n\n\nTo convert number of edges per unit time into a rotational velocity, I used the following coverstion: $ * * = $"
+  },
+  {
+    "objectID": "labs/lab5/index.html#technical-documentation",
+    "href": "labs/lab5/index.html#technical-documentation",
+    "title": "Lab 5",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nFlowchart\n\n\n\nLab 5 Schematic\n\n\n\n\n\nLab 5 Flowchart\n\n\nThe flowchart shows how the interrupts exit and return from the main body loop."
+  },
+  {
+    "objectID": "labs/lab5/index.html#results-and-discussion",
+    "href": "labs/lab5/index.html#results-and-discussion",
+    "title": "Lab 5",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nTo verify my results, I used the oscilloscope to read out the A encoder signal and manually counted edges in order to calculate a second source of truth to compare to my interrupt code. I did this at 3 different speeds (i.e. different voltages).\n\n\n\n\nFull speed encoder output\n\n\nFor example, I count 23 edges here in a time of 10 ms, which translates to 9.583 rev/s. I expect some difference between measured and the code output because I used a different time frame in which to measure. This difference can be attributed to both actual fluctutation in the motor speed and to the error that comes from sampling for a short-ish period of time. Overall, the measured and code-output speeds agree to within 0.25 rev/s (15 rpm).\n\n\nTable 1 - Comparison of actual to measured speeds\n\n\nVoltage\nHand-Calc Speed\nCode Output\n\n\n\n\n5V\n3.958 rev/s\n3.942 rev/s\n\n\n8V\n6.25 rev/s\n6.48 rev/s\n\n\n12v\n9.583 rev/s\n9.74 rev/s\n\n\n\nUsing interrupts provides an advantage over manual polling. The while loop in main() has a delay of 500 ms, but at no point does the entire loop run uninterrupted. When the motor is at its nominal 10 rev/s (12V) speed, there are approximately 50 interrupts that happen within a single loop. To reconstruct the square wave from the encoder by polling, we would need to sample at twice the frequency, or minimum 20Hz. This would mean our delay could at most be 50 ms, which is 10x the loop that we’re able to run using interrupts. Interrupts make this way easier!"
+  },
+  {
+    "objectID": "labs/lab5/index.html#conclusion",
+    "href": "labs/lab5/index.html#conclusion",
+    "title": "Lab 5",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to read the speed of a motor and print it in real time. I spent roughly 10 hours on this lab. (Sat: 3, Sun: 4, Mon: 1, Tues: 2)"
+  },
+  {
+    "objectID": "labs/lab7/index.html",
+    "href": "labs/lab7/index.html",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "",
+    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI."
+  },
+  {
+    "objectID": "labs/lab7/index.html#summary",
+    "href": "labs/lab7/index.html#summary",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "",
+    "text": "The main goals of this assignment were to understand how the Advanced Encryption Standard (AES) works and to implement it from scratch on an FPGA. I designed a controller (with a FSM) and a datapath to interface with the MCU over SPI."
+  },
+  {
+    "objectID": "labs/lab7/index.html#video",
+    "href": "labs/lab7/index.html#video",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "Video",
+    "text": "Video"
+  },
+  {
+    "objectID": "labs/lab7/index.html#design-and-testing-methodology",
+    "href": "labs/lab7/index.html#design-and-testing-methodology",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThis design implements the Advanced Encryption Standard (AES), specifically AES-128. It takes a 128-bit plaintext and a 128-bit key and returns the 128-bit ciphertext. The MCU sends the key and plaintext to the FPGA, which actually implements it in both combinational and sequential logic before returning the ciphertext to the MCU. The MCU also checks the encryption. The communication happens over SPI, using a link that was provided in the lab.\n\nUsing the hint, I designed my system to be a controller and datapath structure. For each step of the AES pseudocode, I wrote a separate module with its own enable line. By selectively enabling them each round, I can control which steps happen when using which keys. The reason that the design must be sequential is that there are not enough LUTs on the FPGA to do it entirely combinationally. Therefore, the given sbox module was sequetial to fit in BRAM instead. I use the FSM to wait 3 clock cycles before outputting for one clock cycle."
+  },
+  {
+    "objectID": "labs/lab7/index.html#technical-documentation",
+    "href": "labs/lab7/index.html#technical-documentation",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\nThe source code for this lab can be found here.\n\nBlock Diagram\n\n\n\nLab 7 Block Diagram\n\n\n\n\nSchematic\n\n\n\nLab 7 Schematic"
+  },
+  {
+    "objectID": "labs/lab7/index.html#results-and-discussion",
+    "href": "labs/lab7/index.html#results-and-discussion",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nI tested each individual module (exept mux and flopenr because they were so simple, and mixColumns because it was almost all given) with its own testbench. I got sample values from the AES spec in order to check my results.\n\nsubBytes\n\nshiftRows\n\naddRoundKey\n\nkeyExpand\n\ncontroller\n Note that the controller one is actually slightly messed up even though all the signals went through. After I combined them all in the top aes_core module, I realized that I needed to change how I was doing done and outmuxen.\n\nTo meet proficiency specs, I captured the testbenches for the overal aes_core and aes_spi modules.\n\n \nI added red and green LEDs to my breadboard to read out the failure and success pins.\n\nFinally, I recorded one SPI transaction on the logic analyzer. The entire AES encoding takes place in fewer than 2 microseconds! That’s fast.\n D0 = PA5 = load\nD1 = PB3 = sck\nD2 = PB5 = mosi\nD3 = PB4 = miso\nD4 = PA6 = done"
+  },
+  {
+    "objectID": "labs/lab7/index.html#conclusion",
+    "href": "labs/lab7/index.html#conclusion",
+    "title": "Lab 7 - The Advanced Encryption Standard",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe design works as intended to implement AES on an FPGA. I spent roughly 17 hours on this lab. (Fri: 2, Sat: 3.5, Sun: 6.5, Mon: 5)."
+  },
+  {
+    "objectID": "posts/final-post.html",
+    "href": "posts/final-post.html",
+    "title": "End of Semester Reflection",
+    "section": "",
+    "text": "In my first post, I talked about what I wanted to get out of this class. In my last post, I’d like to talk about what I actually did, how it was different from what I thought I was going to learn, and what I want to do with this new knowledge.\nFirst, I did finally figure out why FPGA engineer is a job title. After fighting that keypad for timing (and not entirely winning), I understand how complex these systems can be, and how much they are capable of. I was helping an 85 student with their final microprocessor lab, and they asked “do we really have to make everything in this diagram?” I said, yes, and in MicroPs, you have to write the diagram too. I got lots of hands-on practice, in the labs and in-class tutorials and the project. And people seemed to enjoy the project on demo day too!\nSomething that I didn’t expect to learn, but was happy that we did, was PCB design. I liked that we got to build the board for the part we were going to use in our lab, and I wish they had come in fast enough for us to actually do so. In the future, it might be cool to have a PCB required as part of the project, although that might require an infeasibly early deadline. Our project definitely could have used one (although I suppose if we had had a larger budget, that could have also solved that problem with the commercial sensors).\nWith my newfound knowledge, I’d like to do some fun hobby projects. My dad wants an IOT gadget to tell if my little brother left the garage open again and I saw this cool video about making a marble pixel art machine. I’m also hoping that I can use microPs during work, but I am looking forward to not being a college student and having free time to work on microPs stuff, minus the stress.\nAll in all, I’m happy that Prof Spencer talked me out of RF and into taking this class. Thank you Prof Brake!"
+  },
+  {
+    "objectID": "posts/lab1-post.html",
+    "href": "posts/lab1-post.html",
+    "title": "Week 1 Reflection",
+    "section": "",
+    "text": "At the beginning of the semester, I said that I wanted to develop better judgement. A week later, the judgement was more so a technical skill that I hoped to develop by gaining familiarity with all the pieces that go into being a digital designer. I imagined that I would neutrally know what everything should do and how to make it do that. This was probably a naive way to conceptualize this trait. Really, judgement will comes as I make mistakes. This isn’t the first time I’ve come across this thought, but it is the difference in mindset between a start of year prompt (when the world is wide open) and 15 hours in the lab later. I’m okay with making mistakes, but I think I should start making them sooner and faster and stop making the same ones (looking at you, GitHub). Hardly groundbreaking, but I seem to have to relearn it more often than I care to admit.\nAnyhow, I remembered as I was working how much I enjoyed working with Verilog back in E85. Programming is fine, but I appreciate that this is not programming - it is hardware designing. I like how I can design each module and then all I have to do is put them in the same place with the same signal names. It’s like breadboarding, but better: I don’t have to flip back and forth between two datasheets to get all the correct pin numbers. My goal for this upcoming week is to learn how to write a testbench."
+  },
+  {
+    "objectID": "posts/nov8-post.html",
+    "href": "posts/nov8-post.html",
+    "title": "Week 10 Reflection",
+    "section": "",
+    "text": "And just like that, all the MicroPs labs are over! Sort of. It’s nice that almost all of the labs will have taught me a skill that we need for the final project. (Especially Lab 7, since we’re reusing a good chunk of it wholesale.) I think Labs 4 and 5 especially have given me the confidence to write device drivers, such that I’m feeling pretty good about the ADC driver I’ve been writing for the project (especially once I figure out how to make 0 volts read as zero volts and not some low but non-zero value).\n\nI was fairly happy with how our design review went, especially since our presentation was not interrupted by a fire alarm. The consensus on our analog design appears to be to do the bare minimum needed to read in an amplified and rectified signal that takes advantage of the full ADC range, but to perhaps move some of the filtering to the digital domain. That makes sense to me since this is supposed to be an digital class (analog is my spring tech elective). People had no shortage of other games for us to implement. We’ve only committed to a single player bar graph and a multiplayer arm wrestling, but I’m hoping we have time to do at least one other. I especially liked the suggestion of a game that takes into account how fast one can flex and relax - I think something like Cookie Clicker or the pomegranete in Fruit Ninja could be fun. Finally, the feedback was all over the place for the display updates, but I’m glad that other people think the one screen per state is reasonable. I’m not entirely sure what all the suggestions for multiplexing were about since I think we have enough pins for all the outputs, but I’ll keep it in the back of my mind in case we realize a need for it later."
+  },
+  {
+    "objectID": "posts/oct25-post.html",
+    "href": "posts/oct25-post.html",
+    "title": "Week 8(?) Reflection",
+    "section": "",
+    "text": "Taking a break from introspection this week, I found this article that I’d like to dig into, since it relates to both microPs and my Clinic project. The TL;DR is that quantum computing is a rapidly growing field that needs all the talent it can get. However, according to this article, women account for only 2% of the applicants to jobs in the field. Yikes. (For context, women make up 9% of electrical engineers currently in the workforce and 21% of physicists. The number I’d expect isn’t 50, but it is higher than 2.) The article goes on to hypothesize about why this is the case even though the number of quantum programs keeps increasing. To be honest, I didn’t find any of their reasoning to be particularly compelling. And that made me think about why I won’t be going into quantum computing (at least not now).\n\n\nI already have my dream job. I’m really excited to work on aerospace projects, especially space robots! Quantum computing is cool, but I wouldn’t get to travel to NASA to test my work.\n\nI don’t feel qualified. Given the team we work with on our Clinic project, I don’t think that I would have the career I want unless I got a PhD. And while I won’t rule that out entirely, I’m not really sure that I care about quantum computers (or anything, for that matter) deeply enough to commit another 7 years of my life to studying it.\n\n\nThings I do like about the quantum computing industry are that it is cutting edge,and the open environment. My friend from high school with degrees in engineering physics and EE works for a quantum computing company in CO, and his work sounds super cool! I have also been impressed by the short interactions that I have had with the qick creators, and appreciate the general spirit of prioritizing total knowledge of the field vs locking up pieces with patents as quickly as possible (not a pun). Also, there are quantum hubs near where I’d want to live and work in the future. So maybe, HRL, maybe. Keep the free t-shirts coming and we can talk."
+  },
+  {
+    "objectID": "posts/week2-post.html",
+    "href": "posts/week2-post.html",
+    "title": "Week 2 Reflection",
+    "section": "",
+    "text": "A slightly late post this week, caused by spending 14 hours of my Friday traveling to my clinic sponsor for a site visit. For me this site visit brought into focus how MicroP’s really is just-in-time learning for this project. As I’ve spend the past couple weeks getting up to speed learning how to use Radiant, I’m also thinking about how we’re going to install Vivado and what features I do and don’t like. Even though I theorectically learned what FPGAs and MCUs are in E85, I feel like I can throw around the words more comfortably after eating, sleeping, and breathing Lab 1 tutorials for a weekend. I’m still working on the in’s and out’s of SPI (and QSOPI?) so there may be some reverse just-in-time learning from Clinic to MicroPs too.\nI’m kind of glad that I have my clinic project because for these past few weeks, I’ve been struggling to articulate what the new content in MicroP’s is. I’ve felt that thus far, I’ve already seen everything we’ve done in 85. For example, the combinational logic in lab1 was no different from any of the other combinational blocks I wrote in the spring. FSMs are somewhat cookie cutter. My current conclusion about what’s newer and harder in 155 is that the 85 gutter bumpers have come off. I no longer get specific modules to write- I have to break down the problem into modules myself. There is no more self-checking testbench with a hash code- I need to think of what tests would show if it works or not and then write them myself. I don’t get pointed to specific sections of the documentation, I just have to know what to look for myself. That’s cool and all, but I think I’m looking forward to seeing truly new material later this semester (and in my Clinic project) so that I don’t feel like this was all stuff I could have figured out with just 85 and saved myself the stress of doing so in a time-pressured environment."
+  },
+  {
+    "objectID": "posts/week4-post.html",
+    "href": "posts/week4-post.html",
+    "title": "Week 4 Reflection",
+    "section": "",
+    "text": "The project proposal is coming up and I’m taking stock of what ideas I have so far. To be honest, I’m not in love with any of the ones I have right now as they exist, but they’re a starting point. Prof Brake’s criteria are that it uses the MCU and FPGA meaningfully; my criteria are that I think it’s fun and/or cool enough to spend a few late nights on; project partner Daniel’s criteria are that it doesn’t take a lot of distracting mechanical aspects. The following in no particular order are my ideas and how they fit into everyone’s requirements for the project."
+  },
+  {
+    "objectID": "posts/week4-post.html#build-a-zhu-zhu-pet",
+    "href": "posts/week4-post.html#build-a-zhu-zhu-pet",
+    "title": "Week 4 Reflection",
+    "section": "Build-A-Zhu Zhu Pet",
+    "text": "Build-A-Zhu Zhu Pet\nThese cute little guys were incredibly popular when I was in second grade. They also seem like something I would be able to build myself from scratch now that I’m in the 16th grade.\n\nWhich new hardware? Motor, small speaker\n\nUses the FPGA? Yes, probably a FSM to track which noises it should be making based on nose button presses and if it should be moving based on back button presses\n\nUses the MCU? Yes, to control the motor and speaker\n\nIs useful or interesting? I really liked them when I was 7 at least\n\nInvolves a lot of mechanical acessories? Maybe…depends on how cute we want them to be"
+  },
+  {
+    "objectID": "posts/week4-post.html#hamster-treadmill",
+    "href": "posts/week4-post.html#hamster-treadmill",
+    "title": "Week 4 Reflection",
+    "section": "Hamster Treadmill",
+    "text": "Hamster Treadmill\nThere may or may not have been a theme when I asked the dinner table what I should do for this project. I can buy a hamster at Petsmart since I’m over 18. This is a functional treadmill with normal displays for distance and pace and controls for speed and incline.\n\nWhich new hardware? Motor, LED display\n\nUses the FPGA? Yes, needs to respond to input (up/down buttons) and output LEDs to show progress\n\nUses the MCU? Yes, to control the motors and maybe do some of the hard math about elapsed pace\n\nIs useful or interesting? Is a funny idea but loses a lot of appeal once Prof Brake and/or the IRB committee vetos the live hamster\n\nInvolves a lot of mechanical acessories? Treadmill structure, belt, two motors"
+  },
+  {
+    "objectID": "posts/week4-post.html#balancing-triple-pendulum",
+    "href": "posts/week4-post.html#balancing-triple-pendulum",
+    "title": "Week 4 Reflection",
+    "section": "Balancing Triple Pendulum",
+    "text": "Balancing Triple Pendulum\nThe only serious suggestion made. These people already did this so I’m not sure what we could do better/differently. We would still learn a lot by just trying to reverse engineer it but we should probably have a better reason before we commit to it.\n\n\nWhich new hardware? Motors, accelerometers?/other sensors?\n\nUses the FPGA/MCU? Not sure which one does which task(s) but probably both, FPGA for anything that needs to be done fast and MCU for beefier calculations\n\nIs useful or interesting? Is an interesting control problem but unclear if it can A) hold my attention long enough or B) attract visitors on demo day\n\nInvolves a lot of mechanical acessories? Three bars/pivots, track"
+  },
+  {
+    "objectID": "posts/week6-post.html",
+    "href": "posts/week6-post.html",
+    "title": "Halfway Point",
+    "section": "",
+    "text": "It’s the start of fall break and the halfway pause in the semester that hopefully gives me the strength to get through the rest of it. It seems like a natural time to go back to the goals I set in the first week and evaluate how I’m stacking up.\n\nOne of the things I said I wanted to develop was better judgement. I can most easily see my progress on this in my progress through a lab. In the first few weeks, I had a hard time getting my bearings and figuring out how much work would be involved, and in what order, and what kinds of errors I could expect to encounter. Part of this might be that the labs have shifted to programming, something I’m more practiced with than digital design, but I think my ability to judge a task accurately has really improved.\n\nAnother character trait that I said I wanted to work on was neighborliness. To be honest, when I first identified this one, I looked at the whole catagory of moral traits and scoffed internally about how an engineering class could help me develop these. I’ve got to eat my words a little - after some long hours working alone in my room, it’s nice to go into the lab (even with its lack of windows) and talk to other people who are sturggling with similar things. I appreciate it when we can share the silly ways we’ve messed up on the labs and comiserate a little bit."
   }
 ]
