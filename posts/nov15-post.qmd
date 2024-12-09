@@ -7,5 +7,18 @@ categories:
   - reflection
 draft: false
 ---
-Since I'm tutoring for E85 this semester, I'm on the mailing list for Prof. Harris' class. This week, I received a great photo of the class doing their traditional microprocessor in sidewalk chalk (something I missed when I took the class while he was on sabbatical). In this reflection, I'd like to thank Prof. Harris for how useful his textbook was, and especially thet way the microprocessor was taught.\
-First up, I appreciated how we explored almost all of the individual modules before we even knew exactly what they built towards. For example, making the ALU decoder way back at the beginning of the semester with structural Verilog was a great way to demystify something that could have been overwhelming. Secondly, I appreciated how we went through a couple different iterations of the processor, making it slightly more complex each time. I felt like I truly understood the system as a whole and its limitations in a way that truly justified why we needed each new thing. Finally, I appreciated E85 for the many useful structures that I have continued to use in MicroPs. I've used the three part scaffold for an FSM (flops, next state logic and output logic) way more than I realized I would when we learned it. As evidenced by lab 7, the basic architecture of a processor with datapath and controller can be reused and recycled to fit any task that vaguely resembles a datapath, which is to say most of the ones I've seen thus far. So anyhow, thank you Prof. Harris for setting us up for success in MircoPs.\
+Since I'm tutoring for E85 this semester, I'm on the mailing list for Prof. Harris' class.
+ This week, I received a great photo of the class doing their traditional microprocessor in sidewalk chalk
+  (something I missed when I took the class while he was on sabbatical). 
+  In this reflection, I'd like to thank Prof. Harris for how useful his textbook was, 
+  and especially thet way the microprocessor was taught.\
+First up, I appreciated how we explored almost all of the individual modules before we even knew exactly what they built towards. 
+For example, making the ALU decoder way back at the beginning of the semester with structural Verilog was a great way to
+ demystify something that could have been overwhelming. Secondly, I appreciated how we went through a couple different iterations 
+ of the processor, making it slightly more complex each time. I felt like I truly understood the system as a whole and 
+ its limitations in a way that truly justified why we needed each new thing. 
+ Finally, I appreciated E85 for the many useful structures that I have continued to use in MicroPs. 
+ I've used the three part scaffold for an FSM (flops, next state logic and output logic) way more than 
+ I realized I would when we learned it. As evidenced by lab 7, the basic architecture of a processor with datapath and controller 
+ can be reused and recycled to fit any task that vaguely resembles a datapath, which is to say most of the ones I've seen thus far.
+  So anyhow, thank you Prof. Harris for setting us up for success in MircoPs.\

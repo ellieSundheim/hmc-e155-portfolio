@@ -1,0 +1,21 @@
+---
+title: "End of Semester Reflection"
+description: "Answers to the question 'what did I get out of this class?'"
+author: "Ellie Sundheim"
+date: "12/8/24"
+categories:
+  - reflection
+draft: false
+---
+In my first post, I talked about what I wanted to get out of this class. In my last post, I'd like to talk about what I actually did,
+how it was different from what I thought I was going to learn, and what I want to do with this new knowledge.  
+
+First, I did finally figure out why FPGA engineer is a job title. After fighting that keypad for timing (and not entirely winning), I 
+understand how complex these systems can be, and how much they are capable of. I was helping an 85 student with their final microprocessor lab, and they asked "do we really have to make everything in this diagram?" I said, yes, and in MicroPs, you have to write the diagram too. I got lots of hands-on practice, in the labs and in-class tutorials and the project. And people seemed to enjoy the project on demo day too!  
+
+Something that I didn't expect to learn, but was happy that we did, was PCB design. I liked that we got to build the board for the part we were going to use in our lab, and I wish they had come in fast enough for us to actually do so. 
+In the future, it might be cool to have a PCB required as part of the project, although that might require an infeasibly early deadline. Our project definitely could have used one (although I suppose if we had had a larger budget, that could have also solved that problem with the commercial sensors).  
+
+With my newfound knowledge, I'd like to do some fun hobby projects. My dad wants an IOT gadget to tell if my little brother left the garage open again and I saw this cool video about making a marble pixel art machine. I'm also hoping that I can use microPs during work, but I am looking forward to not being a college student and having free time to work on microPs stuff, minus the stress.   
+
+All in all, I'm happy that Prof Spencer talked me out of RF and into taking this class. Thank you Prof Brake!
