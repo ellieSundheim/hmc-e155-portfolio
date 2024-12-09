@@ -1,0 +1,23 @@
+---
+title: Project
+---
+
+
+Ever wanted to arm wrestle, but without actually having to arm wrestle? Look no further! 
+Our project measures the electrical signals on your skin with an EMG sensor, and uses that to control a miniature arm wrestling game. 
+When you (and a friend) flex, the electrical signals from your nerves that tell your muscles to contract get picked up by the 
+sticky electrodes and sent into a circuit that amplifies them so that they are big enough to measure with the analog-to-digital
+ converter on a STM32L432KC microcontroller.
+ The microcontroller then sends the signals to the Upduino 3.1, a field-programmable gate array (FPGA). 
+ The FPGA controls the LED matrix that displays the game.
+  It has two modes, single and multiplayer. Selecting single player displays the raw signal as a bar chart. 
+  Selecting multiplayer displays two competing bars, and updates the relative size of each depending on how hard you flex. 
+  Getting your color to cover the entire screen means victory!  
+
+
+  [Click here](https://daniel-fajardo.github.io/e155-project-website/) to go to the full website for my final project, Hands Free Arm Wrestling!
+
+## Video 
+{{< video  https://youtu.be/EtVBqZWrvIg >}}
+
+
